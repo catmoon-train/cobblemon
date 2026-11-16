@@ -19,7 +19,8 @@ listOf(
     "common",
     "fabric",
     "neoforge"
-).forEach { setupProject(it, file(it)) }
+).filterNot { it == "neoforge" && providers.gradleProperty("trainFabricOnly").orNull == "true" }
+    .forEach { setupProject(it, file(it)) }
 
 fun setupProject(name: String, projectDirectory: File) = setupProject(name) {
     projectDir = projectDirectory

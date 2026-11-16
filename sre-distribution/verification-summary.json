@@ -1,0 +1,94 @@
+{
+  "shell-original": {
+    "passed": true,
+    "label": "shell-original",
+    "serverJar": {
+      "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\Cobblemon-fabric-1.8.4+1.21.1-server-shell.jar",
+      "sha256": "bc68e817ec458b7b10c38ee24bad074bdf728c552e00c21cb4db4b24be42a3b3"
+    },
+    "clientJar": {
+      "path": "G:\\download\\Cobblemon-fabric-1.8.4+1.21.1.jar",
+      "sha256": "a37e948eaf381fcba6c6a62ab8543058973d237292454e889c9100b7593eab11"
+    },
+    "resourcePack": {
+      "path": "G:\\download\\Cobblemon-1.8.4-resource-split\\Cobblemon-1.8.4-resources.zip",
+      "sha256": "529e027a082d49ba637a1c29823db0642db346d4cfdd485e04b603fc1992a826"
+    },
+    "serverRegistries": {
+      "registryTypes": 26,
+      "entries": 1652,
+      "blockStates": 34143
+    },
+    "clientRegistries": {
+      "registryTypes": 26,
+      "entries": 1652,
+      "blockStates": 34143
+    },
+    "clientResult": [
+      "[06:42:30] [Render thread/INFO]: [STDOUT]: TRAIN_CLIENT_JOIN_PASS ticks=120 models=985 player=TrainVerify"
+    ],
+    "elapsedSeconds": 65.44
+  },
+  "shell-final": {
+    "passed": true,
+    "label": "shell-final",
+    "serverHeapLimit": "-Xmx512M",
+    "serverJar": {
+      "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\cobblemon-three-variants\\Cobblemon-fabric-1.8.4+1.21.1-server-shell.jar",
+      "sha256": "bc68e817ec458b7b10c38ee24bad074bdf728c552e00c21cb4db4b24be42a3b3"
+    },
+    "clientJar": {
+      "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\cobblemon-three-variants\\Cobblemon-fabric-1.8.4+1.21.1-client-full-split.jar",
+      "sha256": "543dbcc1884400e84238a58db3c0e41b62093f41e08bef5a90d568fbcad7a981"
+    },
+    "resourcePack": {
+      "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\cobblemon-three-variants\\resourcepacks\\Cobblemon-1.8.4-resources.zip",
+      "sha256": "ac42c3cecba10a4ccf8fee28cc652660d3a5fdd287705d1a0d6b09001bb6d909"
+    },
+    "serverRegistries": {
+      "registryTypes": 26,
+      "entries": 1652,
+      "blockStates": 34143
+    },
+    "clientRegistries": {
+      "registryTypes": 26,
+      "entries": 1652,
+      "blockStates": 34143
+    },
+    "clientResult": [
+      "[07:05:38] [Render thread/INFO]: [STDOUT]: TRAIN_CLIENT_JOIN_PASS ticks=120 models=985 player=TrainVerify"
+    ],
+    "elapsedSeconds": 114.21
+  },
+  "full-final": {
+    "passed": true,
+    "label": "full-final",
+    "serverHeapLimit": "-Xmx3G",
+    "serverJar": {
+      "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\cobblemon-three-variants\\Cobblemon-fabric-1.8.4+1.21.1-server-full-split.jar",
+      "sha256": "add9b33e19ebd35f25ba843427121116868aebc8dbe45c06a5ecca47aa458bbe"
+    },
+    "clientJar": {
+      "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\cobblemon-three-variants\\Cobblemon-fabric-1.8.4+1.21.1-client-full-split.jar",
+      "sha256": "543dbcc1884400e84238a58db3c0e41b62093f41e08bef5a90d568fbcad7a981"
+    },
+    "resourcePack": {
+      "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\cobblemon-three-variants\\resourcepacks\\Cobblemon-1.8.4-resources.zip",
+      "sha256": "ac42c3cecba10a4ccf8fee28cc652660d3a5fdd287705d1a0d6b09001bb6d909"
+    },
+    "serverRegistries": {
+      "registryTypes": 26,
+      "entries": 1652,
+      "blockStates": 34143
+    },
+    "clientRegistries": {
+      "registryTypes": 26,
+      "entries": 1652,
+      "blockStates": 34143
+    },
+    "clientResult": [
+      "[07:06:07] [Render thread/INFO]: [STDOUT]: TRAIN_CLIENT_JOIN_PASS ticks=120 models=985 player=TrainVerify"
+    ],
+    "elapsedSeconds": 133.53
+  }
+}
