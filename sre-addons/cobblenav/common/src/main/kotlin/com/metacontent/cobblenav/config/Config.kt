@@ -1,0 +1,68 @@
+package com.metacontent.cobblenav.config
+
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.metacontent.cobblenav.CobbleNav
+import java.io.File
+import java.io.FileReader
+import java.io.FileWriter
+
+abstract class Config<T : Config<T>> {
+
+	companion object {
+		private const val PATH = "config/cobblenav"
+
+		private val GSON: Gson = GsonBuilder()
+			.disableHtmlEscaping()
+			.setPrettyPrinting()
+			.create()
+
+		fun <C : Config<C>> load(clazz: Class<C>): C {
+			val default = clazz.getConstructor().newInstance()
+
+			val configFile = File("$PATH/${default.fileName}")
+			configFile.parentFile.mkdirs()
+
+			val config = runCatching {
+				if (!configFile.exists()) {
+					configFile.createNewFile()
+				}
+
+				FileReader(configFile).use {
+					GSON.fromJson(it, clazz) ?: default
+				}
+			}.onFailure {
+				CobbleNav.LOGGER.error(it.message, it)
+			}.getOrDefault(default)
+
+			config.applyToLoadedConfig(default)
+			config.save()
+
+			return config
+		}
+	}
+
+	abstract val fileName: String
+
+	fun save() {
+		val configFile = File("$PATH/$fileName")
+
+		try {
+			FileWriter(configFile).use {
+				GSON.toJson(this, it)
+			}
+		} catch (e: Exception) {
+			CobbleNav.LOGGER.error(e.message, e)
+		}
+	}
+
+	@Suppress("UNCHECKED_CAST")
+	fun clone(): T = GSON.fromJson(
+		GSON.toJson(this),
+		this.javaClass,
+	) as T
+
+	protected open fun applyToLoadedConfig(default: T) {}
+
+	open fun options(): List<ConfigOption<*>> = emptyList()
+}

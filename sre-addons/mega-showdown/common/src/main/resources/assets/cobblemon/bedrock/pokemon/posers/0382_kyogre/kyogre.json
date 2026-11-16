@@ -1,0 +1,41 @@
+{
+  "portraitScale": 0.8,
+  "portraitTranslation": [-0.72, 0.36, 0],
+  "profileScale": 0.45,
+  "profileTranslation": [-0.34, 0.65, 0],
+  "rootBone": "kyogre",
+  "animations": {
+    "cry": "q.bedrock_stateful('kyogre', 'cry')",
+    "recoil": "q.bedrock_stateful('kyogre', 'recoil')",
+    "special": "q.bedrock_primary('kyogre', 'special', q.curve('symmetrical_wide'))"
+  },
+  "poses": {
+    "standing": {
+      "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE"],
+      "isBattle": false,
+      "animations": ["q.bedrock('kyogre', 'ground_idle')"],
+      "quirks": ["q.bedrock_quirk('kyogre', 'blink')", "q.bedrock_quirk('kyogre', 'quirk')"]
+    },
+    "battle-standing": {
+      "poseTypes": ["STAND"],
+      "isBattle": true,
+      "animations": ["q.bedrock('kyogre', 'battle_idle')"],
+      "quirks": ["q.bedrock_quirk('kyogre', 'blink')"],
+      "namedAnimations": {
+        "cry": "q.bedrock_primary('kyogre', 'battle_cry', q.curve('symmetrical_wide'))"
+      }
+    },
+    "walking": {
+      "poseTypes": ["WALK"],
+      "animations": ["q.bedrock('kyogre', 'ground_walk')"],
+      "quirks": ["q.bedrock_quirk('kyogre', 'blink')"]
+    },
+    "sleep": {
+      "poseTypes": ["SLEEP"],
+      "namedAnimations": {
+        "cry": "q.bedrock_stateful('dummy', 'cry')"
+      },
+      "animations": ["q.bedrock('kyogre', 'sleep')"]
+    }
+  }
+}

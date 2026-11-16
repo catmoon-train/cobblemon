@@ -1,0 +1,122 @@
+package com.github.yajatkaul.mega_showdown.neoforge.datapack.showdown;
+
+import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.api.data.DataRegistry;
+import com.cobblemon.mod.common.api.reactive.SimpleObservable;
+import com.cobblemon.mod.common.battles.runner.graal.GraalShowdownService;
+import com.cobblemon.mod.relocations.graalvm.polyglot.Value;
+import com.github.yajatkaul.mega_showdown.MegaShowdown;
+import com.github.yajatkaul.mega_showdown.utils.TypeEffectivenessUtils;
+import kotlin.Unit;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.resources.ResourceManager;
+import org.jetbrains.annotations.NotNull;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class TypeCharts implements DataRegistry {
+    private static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(MegaShowdown.MOD_ID, "mega_showdown/showdown/typecharts");
+    private static final SimpleObservable<TypeCharts> OBSERVABLE = new SimpleObservable<>();
+    private final Map<String, String> typeChartScripts = new HashMap<>();
+    public static final TypeCharts INSTANCE = new TypeCharts();
+
+    private TypeCharts() {
+        OBSERVABLE.subscribe(Priority.NORMAL, this::typeChartsLoad);
+    }
+
+    public void typeChartsLoad(TypeCharts typeChart) {
+        Cobblemon.INSTANCE.getShowdownThread().queue(showdownService -> {
+            if (showdownService instanceof GraalShowdownService service) {
+                Value receiveTypeChartDataFn = service.context.getBindings("js").getMember("receiveTypeChartData");
+                for (Map.Entry<String, String> entry : TypeCharts.INSTANCE.getTypeChartScripts().entrySet()) {
+                    String typeChartId = entry.getKey();
+                    String js = entry.getValue().replace("\n", " ");
+                    receiveTypeChartDataFn.execute(typeChartId, js);
+                }
+
+                Value getTypeChartDataFn = service.context.getBindings("js").getMember("getTypeChartData");
+                Value result = getTypeChartDataFn.execute();
+
+                // Typechart data
+                for (String defendingType : result.getMemberKeys()) {
+                    Value typeData = result.getMember(defendingType);
+                    Value damageTaken = typeData.getMember("damageTaken");
+
+                    Map<String, Double> matchups = new HashMap<>();
+
+                    for (String attackingType : damageTaken.getMemberKeys()) {
+
+                        int value = damageTaken.getMember(attackingType).asInt();
+
+                        double multiplier = switch (value) {
+                            case 1 -> 2.0;
+                            case 2 -> 0.5;
+                            case 3 -> 0.0;
+                            default -> 1.0;
+                        };
+
+                        matchups.put(attackingType.toLowerCase(), multiplier);
+                    }
+
+                    TypeEffectivenessUtils.typeChartMap.put(defendingType.toLowerCase(), matchups);
+                }
+            }
+            return Unit.INSTANCE;
+        });
+    }
+
+    public Map<String, String> getTypeChartScripts() {
+        return typeChartScripts;
+    }
+
+    @NotNull
+    @Override
+    public ResourceLocation getId() {
+        return ID;
+    }
+
+    @NotNull
+    @Override
+    public PackType getType() {
+        return PackType.SERVER_DATA;
+    }
+
+    @NotNull
+    @Override
+    public SimpleObservable<? extends DataRegistry> getObservable() {
+        return OBSERVABLE;
+    }
+
+    @Override
+    public void reload(@NotNull ResourceManager resourceManager) {
+        typeChartScripts.clear();
+        TypeEffectivenessUtils.typeChartMap.clear();
+
+        resourceManager.listResources("mega_showdown/showdown/typecharts", path -> path.getPath().endsWith(".js")).forEach((id, resource) -> {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.open(), StandardCharsets.UTF_8))) {
+                String js = reader.lines().collect(Collectors.joining("\n"));
+                String typeChartId = new File(id.getPath()).getName().replace(".js", "");
+                typeChartScripts.put(typeChartId, js);
+            } catch (IOException e) {
+                MegaShowdown.LOGGER.error("Failed to load typechart script: {} {}", id, e);
+            }
+        });
+
+        OBSERVABLE.emit(this);
+    }
+
+    @Override
+    public void sync(@NotNull ServerPlayer serverPlayer) {
+        // no sync needed for showdown injection
+    }
+}

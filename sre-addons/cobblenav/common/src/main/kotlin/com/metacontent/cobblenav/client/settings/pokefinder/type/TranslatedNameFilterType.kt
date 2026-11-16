@@ -1,0 +1,15 @@
+package com.metacontent.cobblenav.client.settings.pokefinder.type
+
+import com.metacontent.cobblenav.client.settings.pokefinder.filter.TranslatedNameFilter
+import com.metacontent.cobblenav.utils.I18nUtil.label
+import com.metacontent.cobblenav.utils.extensions.gui
+
+object TranslatedNameFilterType : EditableTextFilterType<TranslatedNameFilter>() {
+	override val filterClass = TranslatedNameFilter::class.java
+
+	override val typeIcon = gui("pokefinder/name")
+
+	override val displayedName = label("pokefinder.filter.name")
+
+	override fun createFilter(): TranslatedNameFilter = TranslatedNameFilter()
+}

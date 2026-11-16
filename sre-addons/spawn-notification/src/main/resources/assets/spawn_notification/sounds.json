@@ -1,0 +1,8 @@
+{
+  "pla_shiny": {
+    "subtitle": "spawn_notification_shinysoundsubtitle",
+    "sounds": [
+      "spawn_notification:shiny"
+    ]
+  }
+}

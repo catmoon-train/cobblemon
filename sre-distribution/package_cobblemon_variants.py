@@ -1,6 +1,6 @@
 """从精确 1.8.4 源码构建的完整 JAR 生成客户端/服务端资源外置发行包。"""
 from pathlib import Path, PurePosixPath
-import argparse, copy, hashlib, json, re, sys, zipfile
+import argparse, copy, hashlib, json, re, subprocess, sys, zipfile
 if not Path(__file__).with_name('split_cobblemon_resources.py').is_file():
     sys.path.insert(0, str(Path('G:/exmo/StarRailExpress2/StarRailExpress/tools')))
 from split_cobblemon_resources import fallback, language, FALLBACK_FILES
@@ -22,28 +22,38 @@ def keep_client(name):
 
 def write(z, name, content):z.writestr(name,content,compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
 
-def build(source, destination, shell, asset_reference):
+def build(source, destination, shell, asset_reference, source_repo):
     assert not destination.exists(),destination
     assert sha256(asset_reference)=='77c4866b2e4c38afb488ed09b62ffd2729ce291dc793fca9c055c087f0b03978'
+    build_commit=subprocess.check_output(['git','-C',str(source_repo),'rev-parse','HEAD'],text=True).strip()
+    subprocess.run(['git','-C',str(source_repo),'merge-base','--is-ancestor',COMMIT,build_commit],check=True)
+    changed=subprocess.check_output(['git','-C',str(source_repo),'diff','--name-only',COMMIT,build_commit,'--','common/src/main/resources/assets','fabric/src/main/resources/assets'],text=True).splitlines()
+    asset_overrides={p.split('/src/main/resources/',1)[1] for p in changed}
     with zipfile.ZipFile(source) as original, zipfile.ZipFile(asset_reference) as assets:
         names=[i.filename for i in original.infolist() if not i.is_dir()]
+        reference_names=set(assets.namelist())
         def payload(name):
+            if name in asset_overrides or name not in reference_names:return original.read(name)
             return assets.read(name) if name.startswith(('assets/','resourcepacks/')) else original.read(name)
         assert len(names)==len(set(names))
         assert all(not PurePosixPath(n).is_absolute() and '..' not in PurePosixPath(n).parts and '\\' not in n for n in names)
         mod=json.loads(original.read('fabric.mod.json'))
         assert mod['id']=='cobblemon' and mod['version']=='1.8.4+1.21.1',mod
         gitinfo=original.read('cobblemon-git.properties').decode('utf-8')
-        assert 'commit='+COMMIT in gitinfo,gitinfo
+        assert 'commit='+build_commit in gitinfo,gitinfo
         assert FALLBACK_FILES <= set(names)
         asset_names={n for n in names if n.startswith(('assets/','resourcepacks/'))}
-        assert asset_names=={i.filename for i in assets.infolist() if not i.is_dir() and i.filename.startswith(('assets/','resourcepacks/'))}
+        old_assets={i.filename for i in assets.infolist() if not i.is_dir() and i.filename.startswith(('assets/','resourcepacks/'))}
+        assert asset_names - old_assets <= asset_overrides, asset_names - old_assets
+        assert old_assets - asset_names <= asset_overrides, old_assets - asset_names
         assert 'assets/cobblemon/bedrock/pokemon/animations/0025_pikachu/pikachu.animation.json' in asset_names
         assert not any(n.startswith('META-INF/') and n.upper().endswith(('.RSA','.SF','.DSA','.EC')) for n in names)
         destination.mkdir(parents=True)
         packs=destination/'resourcepacks';packs.mkdir()
-        client=destination/'Cobblemon-fabric-1.8.4+1.21.1-client-full-split.jar'
-        server=destination/'Cobblemon-fabric-1.8.4+1.21.1-server-full-split.jar'
+        filename='Cobblemon-fabric-1.8.4+1.21.1.jar'
+        for variant in ['client','server-full','server-shell']:(destination/variant).mkdir()
+        client=destination/'client'/filename
+        server=destination/'server-full'/filename
         pack=packs/'Cobblemon-1.8.4-resources.zip'
         optional_names=sorted({n.split('/')[1] for n in names if n.startswith('resourcepacks/') and len(n.split('/'))>2})
         optional={key:packs/f'Cobblemon-1.8.4-optional-{key}.zip' for key in optional_names}
@@ -78,7 +88,7 @@ def build(source, destination, shell, asset_reference):
                 data=payload(name)
                 if name in expected_client and name!='fabric.mod.json':assert c.read(name)==data,name
                 if name in expected_server and name!='fabric.mod.json':assert s.read(name)==data,name
-                if name.startswith('assets/') and not language(name):assert p.read(name)==assets.read(name),name
+                if name.startswith('assets/') and not language(name):assert p.read(name)==payload(name),name
                 if name.endswith('.class'):
                     assert name in expected_client and name in expected_server
                     classes+=1
@@ -91,7 +101,7 @@ def build(source, destination, shell, asset_reference):
                 assert z.testzip() is None
                 for name in z.namelist():
                     if name!='LICENSE':assert z.read(name)==assets.read(prefix+name)
-        shell_target=destination/shell.name
+        shell_target=destination/'server-shell'/filename
         with shell.open('rb') as input,shell_target.open('xb') as out:
             import shutil;shutil.copyfileobj(input,out)
         with zipfile.ZipFile(shell_target) as z:
@@ -100,6 +110,10 @@ def build(source, destination, shell, asset_reference):
             assert json.loads(z.read('fabric.mod.json'))['environment']=='server'
         outputs=[client,server,shell_target,pack,*optional.values()]
         manifest={'upstream':'https://gitlab.com/cable-mc/cobblemon','tag':'1.8.4','commit':COMMIT,'sourceJar':{'path':str(source),'sha256':sha256(source),'bytes':source.stat().st_size},'classesPreservedInBothCompleteVariants':classes,'clientLanguages':language_files,'retainedFallbacks':[n for n in names if n.startswith('assets/') and not language(n) and fallback(n)],'outputs':{p.relative_to(destination).as_posix():{'sha256':sha256(p),'bytes':p.stat().st_size} for p in outputs},'scope':'Shell excludes gameplay, addons and old Cobblemon saves. Complete variants preserve every class, gameplay data and nested runtime from exact upstream source build.'}
+        manifest['upstreamBaseCommit']=COMMIT
+        manifest['commit']=build_commit
+        manifest['sourceAssetOverrides']=sorted(asset_overrides)
+        manifest['scope']='Full variants retain gameplay, runtime libraries and integrated native riding. Shells retain registration only, no Pokemon gameplay or old saves.'
         manifest['assetReference']={'path':str(asset_reference),'sha256':sha256(asset_reference),'resourceEntries':len(asset_names),'reason':'Reuse exact previously split 1.8.4 release resources; avoid inflating unprocessed source assets.'}
         (destination/'distribution-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         (destination/'SHA256SUMS.txt').write_text(''.join(v['sha256']+'  '+k+'\n' for k,v in sorted(manifest['outputs'].items())),encoding='utf-8')
@@ -107,4 +121,5 @@ def build(source, destination, shell, asset_reference):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('source',type=Path);parser.add_argument('destination',type=Path);parser.add_argument('--shell',type=Path,required=True);parser.add_argument('--asset-reference',type=Path,required=True)
-    args=parser.parse_args();build(args.source,args.destination,args.shell,args.asset_reference)
+    parser.add_argument('--source-repo',type=Path,required=True)
+    args=parser.parse_args();build(args.source,args.destination,args.shell,args.asset_reference,args.source_repo)

@@ -1,0 +1,88 @@
+package com.metacontent.cobblenav.client.gui.widget.location
+
+import com.cobblemon.mod.common.api.gui.blitk
+import com.cobblemon.mod.common.api.text.onHover
+import com.cobblemon.mod.common.api.text.red
+import com.cobblemon.mod.common.client.gui.summary.widgets.SoundlessWidget
+import com.cobblemon.mod.common.client.render.drawScaledTextJustifiedRight
+import com.metacontent.cobblenav.utils.I18nUtil.label
+import com.metacontent.cobblenav.utils.extensions.gui
+import net.minecraft.client.Minecraft
+import net.minecraft.client.gui.GuiGraphics
+import net.minecraft.network.chat.Component
+import net.minecraft.resources.ResourceLocation
+
+class LocationInfoWidget(
+	x: Int,
+	y: Int,
+	biome: String,
+) : SoundlessWidget(x, y, WIDTH, HEIGHT, label("location_info")) {
+	companion object {
+		const val SYMBOL_WIDTH: Int = 13
+		const val SYMBOL_HEIGHT: Int = 14
+		const val SPACE: Int = 5
+		const val BIOME_WIDTH: Int = 140
+		const val WIDTH: Int = SYMBOL_WIDTH + SPACE + BIOME_WIDTH
+		const val HEIGHT: Int = 14
+		const val BIOME_KEY_BASE: String = "biome"
+		val DAY = gui("location/day_symbol")
+		val NIGHT = gui("location/night_symbol")
+		val UNKNOWN_BIOME = gui("location/unknown_biome")
+	}
+
+	private val biomeResourceLocation = ResourceLocation.parse(biome)
+
+	override fun renderWidget(guiGraphics: GuiGraphics, i: Int, j: Int, f: Float) {
+		val poseStack = guiGraphics.pose()
+		val biomeKey = biomeResourceLocation.toLanguageKey(BIOME_KEY_BASE)
+		val translatedBiome = Component.translatable(biomeKey)
+		val hasTranslation = translatedBiome.string != biomeKey
+
+		val biomeLabel = if (hasTranslation) {
+			translatedBiome
+		} else {
+			label("unknown_biome")
+				.red()
+				.onHover(Component.literal(biomeResourceLocation.toString()))
+		}
+
+		if (!hasTranslation) {
+			blitk(
+				matrixStack = poseStack,
+				texture = UNKNOWN_BIOME,
+				x = x + BIOME_WIDTH - SYMBOL_WIDTH,
+				y = y + (HEIGHT - SYMBOL_HEIGHT) / 2,
+				width = SYMBOL_WIDTH,
+				height = SYMBOL_HEIGHT,
+			)
+		}
+
+		drawScaledTextJustifiedRight(
+			context = guiGraphics,
+			text = biomeLabel,
+			x = x + BIOME_WIDTH - if (!hasTranslation) (SYMBOL_WIDTH + SPACE) else 0,
+			y = y + 3,
+			maxCharacterWidth = BIOME_WIDTH,
+		)
+
+		val isDay = ((Minecraft.getInstance().level?.dayTime ?: 0) % 24000) in 0..12999
+
+		blitk(
+			matrixStack = poseStack,
+			texture = if (isDay) DAY else NIGHT,
+			x = x + BIOME_WIDTH + SPACE,
+			y = y + (HEIGHT - SYMBOL_HEIGHT) / 2,
+			width = SYMBOL_WIDTH,
+			height = SYMBOL_HEIGHT,
+		)
+
+		if (ishHovered(i, j) && !hasTranslation) {
+			guiGraphics.renderComponentHoverEffect(
+				Minecraft.getInstance().font,
+				biomeLabel.style,
+				i - 100,
+				j + height + 10,
+			)
+		}
+	}
+}

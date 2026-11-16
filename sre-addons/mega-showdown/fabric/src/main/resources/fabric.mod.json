@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "mega_showdown",
+  "version": "${version}",
+  "name": "Cobblemon: Mega Showdown",
+  "description":  "Adds Mega Evolutions, Z-Moves, Teralization, Dyna/Gigantamax, Ultra Burst and fusions to the game!\nFeatures:\n- Adds every Pokémon & form related to gimmicks (megas, form changes, gmax, fusions etc.) & many legendary models\n- Riding supported for many of them\n- Accessories support",
+  "authors": [
+    "YajatKaul"
+  ],
+  "contributors": [
+    "Provismet"
+  ],
+  "contact": {
+    "homepage": "https://github.com/yajatkaul"
+  },
+  "license": "MEGA SHOWDOWN LICENSE v2.1",
+  "icon": "assets/mega_showdown/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.yajatkaul.mega_showdown.fabric.MegaShowdownFabric"
+    ],
+    "client": [
+      "com.github.yajatkaul.mega_showdown.fabric.MegaShowdownFabricClient"
+    ],
+    "jade": [
+      "com.github.yajatkaul.mega_showdown.plugin.JadePlugin"
+    ]
+  },
+  "mixins": [
+    "mega_showdown.mixins.json",
+    "mega_showdown.fabric.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*",
+    "cobblemon": ">=1.8.0",
+    "accessories": ">=1.1.0-beta.52+1.21.1"
+  }
+}

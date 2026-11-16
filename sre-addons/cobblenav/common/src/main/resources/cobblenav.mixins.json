@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "package": "com.metacontent.cobblenav.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "EditBoxMixin",
+    "GameRendererMixin",
+    "GuiMixin",
+    "ItemRendererMixin",
+    "ModelBakeryMixin",
+    "accessor.GrowingPlantBlockMixin"
+  ],
+  "mixins": [
+    "GlobalSpeciesFeaturesMixin",
+    "PokedexManagerMixin",
+    "PokemonSpawnActionMixin",
+    "PokeRodFishingBobberEntityMixin",
+    "PokeRodItemMixin",
+    "accessor.FormDataMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "id": "cobblenav:plains",
+    "platform": "cobblenav:textures/gui/biome_platforms/plains.png",
+    "platformHighlighting": {
+        "offset": {
+            "y": -2
+        }
+    },
+    "hoveredPokemonOffset": {
+        "y": -2
+    }
+}

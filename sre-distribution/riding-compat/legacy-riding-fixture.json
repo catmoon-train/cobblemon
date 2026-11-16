@@ -1,0 +1,13 @@
+{
+  "mustAllowEntityRiding": false,
+  "pokemonTypes": {
+    "Nidoking": {
+      "mountType": ["WALK"], "speedModifier": 1.25, "stamina": 240,
+      "ridingOffSet": [0.2, 1.4, 0.3], "passengersOffSet": [[-0.5, 1.2, 0.4]]
+    },
+    "Espahtla": {"mountType": ["WALK"], "speedModifier": 1, "stamina": 200},
+    "Charizard": {"mountType": ["WALK", "FLY"], "speedModifier": 1, "stamina": 200},
+    "Ninetales": {"mountType": ["WALK"], "speedModifier": "NaN"},
+    "MissingSpecies": {"mountType": ["WALK"]}
+  }
+}

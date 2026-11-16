@@ -1,0 +1,76 @@
+plugins {
+    id 'dev.architectury.loom' version '1.11.458' apply false
+    id 'architectury-plugin' version '3.4.164'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+    id 'org.jetbrains.kotlin.jvm' version '2.2.20'
+}
+
+architectury {
+    minecraft = project.minecraft_version
+}
+
+allprojects {
+    group = rootProject.maven_group
+    version = rootProject.mod_version
+}
+
+subprojects {
+    apply plugin: 'dev.architectury.loom'
+    apply plugin: 'architectury-plugin'
+    apply plugin: 'maven-publish'
+    apply plugin: 'org.jetbrains.kotlin.jvm'
+
+    base {
+        archivesName = "$rootProject.archives_name-$project.name"
+    }
+
+    repositories {
+        mavenCentral()
+        exclusiveContent {
+            forRepository { maven { url 'https://maven.architectury.dev/' } }
+            filter { includeGroup 'dev.architectury' }
+        }
+        maven { url 'https://maven.wispforest.io/releases'; content { includeGroupByRegex 'io[.]wispforest.*'; includeGroup 'blue.endless' } }
+        maven { url 'https://maven.fabricmc.net'; content { includeGroupByRegex 'net[.]fabricmc.*' } }
+        maven { url 'https://api.modrinth.com/maven'; content { includeGroup 'maven.modrinth' } }
+    }
+
+    dependencies {
+        if (!rootProject.hasProperty('cobblemonNamedJar')) {
+            throw new GradleException('Pass -PcobblemonNamedJar=/path/to/Cobblemon-fabric-1.8.4+1.21.1-dev-shadow.jar (named API)')
+        }
+        def cobblemonApi = rootProject.file(rootProject.property('cobblemonNamedJar'))
+        if (!cobblemonApi.isFile()) {
+            throw new GradleException("Missing named Cobblemon API: $cobblemonApi")
+        }
+        compileOnly files(cobblemonApi)
+        minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
+        mappings loom.officialMojangMappings()
+    }
+
+    java {
+        withSourcesJar()
+
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        it.options.release = 21
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                artifactId = base.archivesName.get()
+                from components.java
+            }
+        }
+
+        repositories {
+
+        }
+    }
+}
+
+// Publication is intentionally disabled in this local Fabric-only source import.

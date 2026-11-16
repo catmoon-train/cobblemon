@@ -1,0 +1,29 @@
+{
+  "modId": "cobblemon_spawn_notification",
+  "version": "1.5-fabric-1.2.1",
+  "sourceJar": {
+    "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\spawn-notification-build\\spawnnotification-1.5-fabric-1.2.1-mc1.21.1.jar",
+    "sha256": "cb67eceb6180ffa764b69c5558f6290d827484ae3dc3f41fb86ed37765376a76"
+  },
+  "preservedClasses": 21,
+  "shellRegistries": {},
+  "outputs": {
+    "client/cobblemon_spawn_notification-fabric-1.5-fabric-1.2.1.jar": {
+      "sha256": "3e9fb1272f77bc0dfd4c20c1fb3b4ee56adceec64cfbf4b4d2ded52427c9eb50",
+      "bytes": 46606
+    },
+    "server-full/cobblemon_spawn_notification-fabric-1.5-fabric-1.2.1.jar": {
+      "sha256": "f76235ab8893a9e43ede8136c0646c8756890b1c5b9d6d514363d4699f3173cb",
+      "bytes": 45680
+    },
+    "server-shell/cobblemon_spawn_notification-fabric-1.5-fabric-1.2.1.jar": {
+      "sha256": "624870c45b4246ea6be791330cff6a3cf4250032cd91e010b33388f054fc063a",
+      "bytes": 21163
+    },
+    "resourcepacks/cobblemon_spawn_notification-1.5-fabric-1.2.1-resources.zip": {
+      "sha256": "f8b651a1e1cc2aa7d45db5ccc226fc3329538fcbc9471007979248ebd2e0acc3",
+      "bytes": 25150
+    }
+  },
+  "scope": "Full: all gameplay retained, art externalized, English/Simplified/Traditional Chinese where supplied. Shell: registration only; no gameplay, API, old saves, or business component payload support."
+}

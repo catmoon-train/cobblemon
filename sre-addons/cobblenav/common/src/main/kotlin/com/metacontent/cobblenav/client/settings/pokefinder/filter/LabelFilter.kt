@@ -1,0 +1,25 @@
+package com.metacontent.cobblenav.client.settings.pokefinder.filter
+
+import com.cobblemon.mod.common.pokemon.Pokemon
+import com.metacontent.cobblenav.client.CobblenavClient
+import com.metacontent.cobblenav.utils.cobblenavResource
+import net.minecraft.resources.ResourceLocation
+
+class LabelFilter(private var labels: List<String> = emptyList()) : EditableTextFilter() {
+	companion object {
+		val TYPE: ResourceLocation = cobblenavResource("label")
+	}
+
+	override val type = TYPE
+
+	override fun test(pokemon: Pokemon): Boolean = labels.isEmpty() || labels.all { label ->
+		pokemon.form.labels.any { it.equals(label, true) }
+	}
+
+	override fun update(value: String) {
+		labels = value.split(",").map(String::trim)
+		CobblenavClient.pokefinderSettings?.changed = true
+	}
+
+	override fun asString(): String = labels.joinToString()
+}

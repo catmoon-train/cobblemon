@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "cobblemon_spawn_notification",
+  "version": "1.5-fabric-1.2.1",
+  "name": "Cobblemon Spawn Notification",
+  "description": "When a Legendary and/or Shiny Pokemon shows up, a message is broadcast to all players on the server.",
+  "authors": [
+    "timinc aka Timothy Metcalfe"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "us.timinc.mc.cobblemon.spawnnotification.SpawnNotificationBootstrap"
+    ]
+  },
+  "depends": {
+    "java": ">=21",
+    "minecraft": "1.21.1",
+    "fabricloader": ">=0.17.2",
+    "fabric-api": "*",
+    "cobblemon": ">=1.8.4 <1.9.0"
+  },
+  "custom": {
+    "train:upstreamCommit": "21c2359d9246145d15ae06e92ef9b4f105f90d74",
+    "train:fullImplementation": "us.timinc.mc.cobblemon.spawnnotification.SpawnNotification",
+    "train:shellBehavior": "no-initialization"
+  }
+}

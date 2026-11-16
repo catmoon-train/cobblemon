@@ -1,0 +1,12 @@
+{
+    "id": "cobblenav:lava",
+    "platform": "cobblenav:textures/gui/biome_platforms/lava.png",
+    "platformHighlighting": {
+        "offset": {
+            "y": -2
+        }
+    },
+    "hoveredPokemonOffset": {
+        "y": -2
+    }
+}

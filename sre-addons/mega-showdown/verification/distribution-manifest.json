@@ -1,0 +1,52 @@
+{
+  "modId": "mega_showdown",
+  "version": "1.3.3+1.8.4+1.21.1-release",
+  "sourceJar": {
+    "path": "G:\\download\\cobblemon-main (1)\\cobblemon-main\\sre-addons\\mega-showdown\\fabric\\build\\libs\\mega_showdown-fabric-1.3.3+1.8.4+1.21.1-release.jar",
+    "sha256": "c69066236bb8bc66d1d2a031a1b05f76a1a047d739af04be2f5a69d73e9da87d"
+  },
+  "preservedClasses": 295,
+  "shellRegistries": {
+    "minecraft:sound_event": 11,
+    "minecraft:block": 33,
+    "minecraft:item": 306,
+    "minecraft:block_entity_type": 4,
+    "minecraft:menu": 2,
+    "minecraft:creative_mode_tab": 7,
+    "minecraft:data_component_type": 6
+  },
+  "outputs": {
+    "client/mega_showdown-fabric-1.3.3+1.8.4+1.21.1-release.jar": {
+      "sha256": "d39d60b65b1a25cf541165beca7bcc8db54fa0d47f1e6f6ddcbaf6c6c31da346",
+      "bytes": 3272560
+    },
+    "server-full/mega_showdown-fabric-1.3.3+1.8.4+1.21.1-release.jar": {
+      "sha256": "fa53ed9c412fa93f11e90ea45624d4c00a2c68f52b7b59fe642e14cef5f4a4e2",
+      "bytes": 1421548
+    },
+    "server-shell/mega_showdown-fabric-1.3.3+1.8.4+1.21.1-release.jar": {
+      "sha256": "42d1fbd2d2a86bf5815e76731d95ca2a8a46db622e7c9b66ec34707fcbd83092",
+      "bytes": 27860
+    },
+    "resourcepacks/mega_showdown-1.3.3+1.8.4+1.21.1-release-resources.zip": {
+      "sha256": "0658d11d461f1685f11fa5d5998ed01eb38caf4b917c5f6466db4e5faddbddf9",
+      "bytes": 16258302
+    }
+  },
+  "scope": "Full: all gameplay retained, art externalized, English/Simplified/Traditional Chinese where supplied. Shell: registration only; no gameplay, API, old saves, or business component payload support.",
+  "retainedRuntimeResources": [
+    "assets/mega_showdown/showdown/abilities.js",
+    "assets/mega_showdown/showdown/battle-actions.js",
+    "assets/mega_showdown/showdown/battle.js",
+    "assets/mega_showdown/showdown/conditions.js",
+    "assets/mega_showdown/showdown/index.js",
+    "assets/mega_showdown/showdown/mods/abilities.js",
+    "assets/mega_showdown/showdown/mods/conditions.js",
+    "assets/mega_showdown/showdown/mods/items.js",
+    "assets/mega_showdown/showdown/mods/moves.js",
+    "assets/mega_showdown/showdown/mods/typechart.js",
+    "assets/mega_showdown/showdown/moves.js",
+    "assets/mega_showdown/showdown/pokemon.js",
+    "assets/mega_showdown/showdown/side.js"
+  ]
+}

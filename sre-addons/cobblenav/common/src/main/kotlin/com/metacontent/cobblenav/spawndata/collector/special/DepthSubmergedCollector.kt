@@ -1,0 +1,26 @@
+package com.metacontent.cobblenav.spawndata.collector.special
+
+import com.cobblemon.mod.common.api.spawning.condition.SubmergedTypeSpawningCondition
+import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail
+import com.metacontent.cobblenav.spawndata.collector.ConditionCollector
+import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.MutableComponent
+import net.minecraft.server.level.ServerPlayer
+
+class DepthSubmergedCollector : ConditionCollector<SubmergedTypeSpawningCondition<*>>() {
+	companion object {
+		const val NAME = "depth_submerged"
+	}
+
+	override val name = NAME
+	override val color = 0x000080
+	override val conditionClass = SubmergedTypeSpawningCondition::class.java
+
+	override fun collectValues(
+		detail: SpawnDetail,
+		condition: SubmergedTypeSpawningCondition<*>,
+		player: ServerPlayer,
+	): List<MutableComponent>? = formatValueRange(condition.minDepth, condition.maxDepth)?.let {
+		listOf(Component.literal(it))
+	}
+}

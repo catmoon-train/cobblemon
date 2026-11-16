@@ -1,0 +1,12 @@
+{
+    "id": "cobblenav:water",
+    "platform": "cobblenav:textures/gui/biome_platforms/water.png",
+    "platformHighlighting": {
+        "offset": {
+            "y": -2
+        }
+    },
+    "hoveredPokemonOffset": {
+        "y": -2
+    }
+}

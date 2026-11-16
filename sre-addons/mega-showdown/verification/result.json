@@ -1,0 +1,29 @@
+{
+  "build": "passed",
+  "task": ":fabric:remapJar",
+  "source_snapshot": "G:/download/CobblemonMegaShowdown-main",
+  "source_version": "1.3.3+1.8.4+1.21.1-release",
+  "original_files": 5039,
+  "changed_original_files": [
+    "build.gradle",
+    "common/build.gradle",
+    "fabric/build.gradle",
+    "gradle/wrapper/gradle-wrapper.properties",
+    "gradle.properties",
+    "README.md",
+    "settings.gradle"
+  ],
+  "gameplay_source_or_resource_changes": 0,
+  "license_unchanged": true,
+  "production_jar": "mega_showdown-fabric-1.3.3+1.8.4+1.21.1-release.jar",
+  "production_jar_bytes": 20197761,
+  "production_jar_sha256": "c69066236bb8bc66d1d2a031a1b05f76a1a047d739af04be2f5a69d73e9da87d",
+  "classes": 295,
+  "common_main_resources_preserved": 4123,
+  "common_generated_resources_preserved": 610,
+  "fabric_resources_preserved": 2,
+  "fabric_metadata_strict_json_valid": true,
+  "compile_api_errors_remaining": 0,
+  "runtime_gameplay_test": "not run",
+  "build_log": "fabric-remapJar.log"
+}

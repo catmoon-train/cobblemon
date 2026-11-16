@@ -1,0 +1,32 @@
+{
+  "modId": "cobblenav",
+  "version": "2.4.2",
+  "sourceJar": {
+    "path": "H:\\pi\\data\\scratch\\52a41f9c-b48c-4c2b-a60d-dd0f4fafe637\\addons-work\\cobblenav\\train-build\\build\\libs\\cobblenav-fabric-2.4.2.jar",
+    "sha256": "84a3bea6506c7d2b905859520706842fbca7d1369c09e3d24b287f5ef7d1d68e"
+  },
+  "preservedClasses": 413,
+  "shellRegistries": {
+    "minecraft:item": 29,
+    "minecraft:creative_mode_tab": 1
+  },
+  "outputs": {
+    "client/cobblenav-fabric-2.4.2.jar": {
+      "sha256": "5b054ecee7b7d045c3dd11f4fc255d479b2e9c4472f352572a124789645dd9c8",
+      "bytes": 921457
+    },
+    "server-full/cobblenav-fabric-2.4.2.jar": {
+      "sha256": "d528874cb4ab1178db6c8ff7b4615ed253a1f5a945d25df560b0a7d08ae3bc87",
+      "bytes": 900935
+    },
+    "server-shell/cobblenav-fabric-2.4.2.jar": {
+      "sha256": "a0ac11d83054bf0b40500d6a6e7006a795b5e87c2bad03f0da54239ae1fd3d7c",
+      "bytes": 25587
+    },
+    "resourcepacks/cobblenav-2.4.2-resources.zip": {
+      "sha256": "c64aa0cc69d8d0e3d19e94fe02b016c2556d84ddecb14fd8fe70312c2f801e3e",
+      "bytes": 193937
+    }
+  },
+  "scope": "Full: all gameplay retained, art externalized, English/Simplified/Traditional Chinese where supplied. Shell: registration only; no gameplay, API, old saves, or business component payload support."
+}

@@ -1,0 +1,21 @@
+{
+  "species": "cobblemon:alakazam",
+  "order": 2,
+  "variations": [
+    {
+      "aspects": [
+        "mega"
+      ],
+      "poser": "cobblemon:alakazam_mega",
+      "model": "cobblemon:alakazam_mega.geo",
+      "texture": "cobblemon:textures/pokemon/0065_alakazam/alakazam_mega.png"
+    },
+    {
+      "aspects": [
+        "mega",
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0065_alakazam/alakazam_mega_shiny.png"
+    }
+  ]
+}

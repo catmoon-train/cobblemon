@@ -1,0 +1,137 @@
+package com.metacontent.cobblenav
+
+import com.cobblemon.mod.common.Cobblemon
+import com.cobblemon.mod.common.api.Priority
+import com.cobblemon.mod.common.api.events.CobblemonEvents
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
+import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider
+import com.cobblemon.mod.common.api.pokemon.feature.GlobalSpeciesFeatures
+import com.cobblemon.mod.common.api.properties.CustomPokemonProperty
+import com.cobblemon.mod.common.api.scheduling.ScheduledTask
+import com.cobblemon.mod.common.api.scheduling.ServerTaskTracker
+import com.cobblemon.mod.common.api.spawning.CobblemonSpawnPools
+import com.cobblemon.mod.common.api.spawning.detail.PokemonHerdSpawnDetail
+import com.cobblemon.mod.common.api.spawning.detail.PokemonSpawnDetail
+import com.cobblemon.mod.common.api.storage.player.factory.CachedPlayerDataStoreFactory
+import com.cobblemon.mod.common.data.CobblemonDataProvider
+import com.cobblemon.mod.common.platform.events.PlatformEvents
+import com.metacontent.cobblenav.api.platform.BiomePlatforms
+import com.metacontent.cobblenav.config.CobblenavConfig
+import com.metacontent.cobblenav.config.Config
+import com.metacontent.cobblenav.event.CobblenavEvents
+import com.metacontent.cobblenav.networking.packet.client.CloseFishingnavPacket
+import com.metacontent.cobblenav.networking.packet.client.EvYieldDataEntry
+import com.metacontent.cobblenav.networking.packet.client.EvYieldSyncPacket
+import com.metacontent.cobblenav.networking.packet.client.LabelSyncPacket
+import com.metacontent.cobblenav.properties.BucketSpeciesFeatureProvider
+import com.metacontent.cobblenav.properties.SpawnDetailIdPropertyType
+import com.metacontent.cobblenav.spawndata.PokenavSpawnablePositionResolver
+import com.metacontent.cobblenav.spawndata.SpawnDataHelper
+import com.metacontent.cobblenav.spawndata.collector.ConditionCollectors
+import com.metacontent.cobblenav.spawndata.resultdata.PokemonHerdSpawnResultData
+import com.metacontent.cobblenav.spawndata.resultdata.PokemonSpawnResultData
+import com.metacontent.cobblenav.spawndata.resultdata.SpawnResultData
+import com.metacontent.cobblenav.spawndata.resultdata.UnknownSpawnResultData
+import com.metacontent.cobblenav.storage.CobblenavDataStoreTypes
+import com.metacontent.cobblenav.storage.adapter.SpawnDataCatalogueNbtBackend
+import com.metacontent.cobblenav.utils.extensions.registerDirectly
+import net.minecraft.world.entity.npc.VillagerTrades
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
+object CobbleNav {
+	const val MOD_ID = "cobblenav"
+	const val VERSION = "2.4.2"
+	val LOGGER: Logger = LoggerFactory.getLogger(MOD_ID)
+
+	lateinit var config: CobblenavConfig
+	lateinit var implementation: CobbleNavImplementation
+	val resolver = PokenavSpawnablePositionResolver()
+
+	fun init(implementation: CobbleNavImplementation) {
+		ConditionCollectors.registerConfigEntries()
+		config = Config.load(CobblenavConfig::class.java)
+		this.implementation = implementation
+		implementation.registerItems()
+		registerArgumentTypes()
+		implementation.registerCommands()
+		implementation.injectLootTables()
+
+		CobblemonDataProvider.register(BiomePlatforms, true)
+
+		CobblenavEvents.FISH_TRAVEL_STARTED.subscribe { event ->
+			CloseFishingnavPacket().sendToPlayer(event.player)
+		}
+
+		CobblemonEvents.DATA_SYNCHRONIZED.subscribe { player ->
+			if (config.syncLabelsWithClient) {
+				LabelSyncPacket(PokemonSpecies.species.map { it.resourceIdentifier to it.labels }).sendToPlayer(player)
+			}
+			if (config.syncEvYieldWithClient) {
+				EvYieldSyncPacket(PokemonSpecies.species.map(EvYieldDataEntry::fromSpecies)).sendToPlayer(player)
+			}
+		}
+
+		CobblenavDataStoreTypes.info()
+
+		PlatformEvents.SERVER_STARTING.subscribe(Priority.LOWEST) { (server) ->
+			ConditionCollectors.init()
+
+			val spawnDataNbtFactory = CachedPlayerDataStoreFactory(SpawnDataCatalogueNbtBackend())
+			spawnDataNbtFactory.setup(server)
+
+			val manager = Cobblemon.playerDataManager
+			manager.setFactory(spawnDataNbtFactory, CobblenavDataStoreTypes.SPAWN_DATA)
+			manager.saveTasks[CobblenavDataStoreTypes.SPAWN_DATA] = ScheduledTask.Builder()
+				.execute { manager.saveAllOfOneType(CobblenavDataStoreTypes.SPAWN_DATA) }
+				.delay(30f)
+				.interval(120f)
+				.infiniteIterations()
+				.tracker(ServerTaskTracker)
+				.build()
+
+			SpawnDataHelper.onInit()
+		}
+
+		PlatformEvents.SERVER_STARTED.subscribe { (server) ->
+			SpawnDataHelper.reloadSpawnDetails()
+			CobblemonSpawnPools.WORLD_SPAWN_POOL.observable.subscribe {
+				SpawnDataHelper.reloadSpawnDetails()
+			}
+
+			BiomePlatforms.onServerStarted(server)
+		}
+
+		SpawnResultData.register(
+			PokemonSpawnDetail.TYPE,
+			PokemonSpawnResultData::transform,
+			PokemonSpawnResultData::decodeResultData,
+		)
+		SpawnResultData.register(
+			PokemonHerdSpawnDetail.TYPE,
+			PokemonHerdSpawnResultData::transform,
+			PokemonHerdSpawnResultData::decodeResultData,
+		)
+		SpawnResultData.register(
+			UnknownSpawnResultData.TYPE,
+			UnknownSpawnResultData::transform,
+			UnknownSpawnResultData::decodeResultData,
+		)
+
+		registerCustomProperties()
+	}
+
+	private fun registerArgumentTypes() {
+	}
+
+	fun resolveWandererTrades() = listOf(
+		VillagerTrades.ItemsForEmeralds(CobbleNavItems.WANDERER_POKENAV, 24, 1, 1, 60),
+	)
+
+	fun registerCustomProperties() {
+		CustomPokemonProperty.properties.add(SpawnDetailIdPropertyType)
+		AspectProvider.register(BucketSpeciesFeatureProvider)
+		CustomPokemonProperty.properties.add(BucketSpeciesFeatureProvider)
+		GlobalSpeciesFeatures.registerDirectly(BucketSpeciesFeatureProvider.NAME, BucketSpeciesFeatureProvider)
+	}
+}

@@ -1,0 +1,10 @@
+.gradle
+.idea
+build
+run
+
+.architectury-transformer
+.kotlin
+bin
+.env
+.cache

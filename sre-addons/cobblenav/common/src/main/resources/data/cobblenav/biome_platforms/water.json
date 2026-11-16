@@ -1,0 +1,10 @@
+{
+    "id": "cobblenav:water",
+    "condition": {
+        "biomes": [
+            "#cobblemon:is_freshwater",
+            "#cobblemon:is_river",
+            "#cobblemon:is_ocean"
+        ]
+    }
+}

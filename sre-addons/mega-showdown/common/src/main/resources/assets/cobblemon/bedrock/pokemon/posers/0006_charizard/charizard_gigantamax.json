@@ -1,0 +1,55 @@
+{
+  "portraitScale": 1.45,
+  "portraitTranslation": [
+    -0.98,
+    3.29,
+    0
+  ],
+  "profileScale": 0.37,
+  "profileTranslation": [
+    0.05,
+    1.1,
+    -10
+  ],
+  "rootBone": "charizard_gigantamax",
+  "poses": {
+    "portrait": {
+      "poseTypes": [
+        "PORTRAIT",
+        "PROFILE"
+      ],
+      "animations": [
+        "q.look('head_ai')",
+        "q.bedrock('charizard_gigantamax', 'battle_idle')"
+      ],
+      "quirks": [
+        "q.bedrock_quirk('charizard_gigantamax', 'blink')"
+      ]
+    },
+    "standing": {
+      "poseTypes": [
+        "STAND",
+        "NONE"
+      ],
+      "animations": [
+        "q.look('head_ai')",
+        "q.bedrock('charizard_gigantamax', 'battle_idle')"
+      ],
+      "quirks": [
+        "q.bedrock_quirk('charizard_gigantamax', 'blink')"
+      ]
+    },
+    "hover": {
+      "poseTypes": [
+        "HOVER"
+      ],
+      "animations": [
+        "q.look('head_ai')",
+        "q.bedrock('charizard_gigantamax', 'air_idle')"
+      ],
+      "quirks": [
+        "q.bedrock_quirk('charizard_gigantamax', 'blink')"
+      ]
+    }
+  }
+}

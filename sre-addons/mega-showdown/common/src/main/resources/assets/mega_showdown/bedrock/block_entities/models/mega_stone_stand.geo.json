@@ -1,0 +1,62 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.megastonerock",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "megastonestand",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 180, 0]
+				},
+				{
+					"name": "bone3",
+					"parent": "megastonestand",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "bone",
+					"parent": "bone3",
+					"pivot": [-8, 0, 8],
+					"cubes": [
+						{"origin": [-4.25, -0.5, 12.75], "size": [3, 4, 3], "pivot": [-4.25, -0.5, 13.75], "rotation": [0, 0, 15], "uv": [38, 0]},
+						{"origin": [-9, -0.5, 0.25], "size": [3, 4, 3], "pivot": [-6, -0.5, 1.25], "rotation": [0, 0, -15], "uv": [20, 37]},
+						{"origin": [-14.75, 0, 12.75], "size": [3, 4, 3], "pivot": [-11.75, 0, 13.75], "rotation": [0, 0, -15], "uv": [32, 37]}
+					]
+				},
+				{
+					"name": "ball",
+					"parent": "bone3",
+					"pivot": [-8, 0, 8],
+					"cubes": [
+						{"origin": [-5.5, 24.5, 10.5], "size": [-5, -5, -5], "uv": [20, 53]},
+						{"origin": [-9.5, 19.5, 8], "size": [3, 5, 0], "uv": [38, 7]},
+						{"origin": [-7.25, 23.25, 10], "size": [1, 1, 0], "uv": [20, 33]},
+						{"origin": [-9.25, 23, 5.99], "size": [1, 1, 0], "uv": [26, 33]},
+						{"origin": [-9.75, 23.25, 6], "size": [1, 1, 0], "uv": [24, 33]},
+						{"origin": [-7.75, 23, 10.01], "size": [1, 1, 0], "uv": [22, 33]}
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "bone3",
+					"pivot": [-8, 0, 8],
+					"cubes": [
+						{"origin": [-10.5, 14, 5.5], "size": [5, 5, 5], "uv": [0, 33]},
+						{"origin": [-11.5, 5, 4.5], "size": [7, 9, 7], "pivot": [-10.5, 14, 8], "rotation": [0, 0, -10], "uv": [0, 17]},
+						{"origin": [-11.13751, 4.85674, 5.5], "size": [7, 7, 5], "pivot": [-11.13751, 11.85674, 8], "rotation": [0, 0, 25], "uv": [28, 25]},
+						{"origin": [-12.02832, -1.82138, 3.5], "size": [10, 8, 9], "pivot": [-3.02832, 6.17862, 8], "rotation": [0, 0, 10], "uv": [0, 0]},
+						{"origin": [-11.5, 19, 4.5], "size": [7, 1, 7], "uv": [28, 17]}
+					]
+				}
+			]
+		}
+	]
+}

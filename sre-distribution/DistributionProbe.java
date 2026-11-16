@@ -35,7 +35,7 @@ public final class DistributionProbe implements ModInitializer {
             JsonArray entries = new JsonArray();
             for (Object value : registry) {
                 var id = registry.getKey(value);
-                if (!id.getNamespace().equals("cobblemon") && !(key.equals("minecraft:menu") && Set.of("cooking_pot_menu", "tm_machine_menu").contains(id.getPath()))) continue;
+                if (!Set.of(System.getProperty("train.registry.namespaces", "cobblemon,mega_showdown,cobblenav,cobblemon_spawn_notification").split(",")).contains(id.getNamespace()) && !(key.equals("minecraft:menu") && Set.of("cooking_pot_menu", "tm_machine_menu").contains(id.getPath()))) continue;
                 JsonObject entry = new JsonObject();
                 entry.addProperty("id", id.toString());
                 entry.addProperty("rawId", registry.getId(value));

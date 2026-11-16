@@ -1,0 +1,26 @@
+package com.metacontent.cobblenav.spawndata.collector.general
+
+import com.cobblemon.mod.common.api.spawning.condition.SpawningCondition
+import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail
+import com.metacontent.cobblenav.utils.extensions.getTimeString
+import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.MutableComponent
+import net.minecraft.server.level.ServerPlayer
+
+class TimeRangeCollector : GeneralConditionCollector() {
+	companion object {
+		const val NAME = "time_range"
+	}
+
+	override val name = NAME
+	override val color = 0xFF8C00
+
+	override fun collectValues(
+		detail: SpawnDetail,
+		condition: SpawningCondition<*>,
+		player: ServerPlayer,
+	): List<MutableComponent>? =
+		condition.timeRange?.ranges?.map { ranges ->
+			Component.literal(getTimeString(ranges))
+		}
+}

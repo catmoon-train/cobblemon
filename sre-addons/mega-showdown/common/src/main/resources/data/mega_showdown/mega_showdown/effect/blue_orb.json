@@ -1,0 +1,22 @@
+{
+  "minecraft": {
+    "particle_revert": "minecraft:bubble",
+    "sound_revert": {
+      "sound_id": "minecraft:block.amethyst_block.chime"
+    },
+    "animations": {
+      "revert_delay": 0.2,
+      "animations_revert": ["cry"]
+    }
+  },
+  "snowstorm": {
+    "source_apply": ["target"],
+    "particle_apply": "cobblemon:primal_kyogre",
+    "apply_after": 4.8,
+    "animations": {
+      "apply_delay": 5,
+      "animations_apply": ["cry"]
+    }
+  },
+  "battle_pause_apply": 4
+}

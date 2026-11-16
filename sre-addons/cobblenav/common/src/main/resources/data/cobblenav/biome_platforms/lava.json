@@ -1,0 +1,7 @@
+{
+    "id": "cobblenav:lava",
+    "condition": {
+        "type": "surface",
+        "fluid": "#minecraft:lava"
+    }
+}

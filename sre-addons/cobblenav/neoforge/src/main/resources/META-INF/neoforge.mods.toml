@@ -1,0 +1,38 @@
+modLoader="kotlinforforge"
+loaderVersion="[5.5,)"
+issueTrackerURL = "https://github.com/gatekeep06/cobblenav/issues"
+license = "MPL-2.0"
+
+[[mods]]
+modId = "cobblenav"
+version = "${version}"
+displayName = "Cobblenav"
+authors = "MeAlam, gatekeep"
+description = '''
+The Cobblenav mod is inspired by the item and related mechanics featured in the games Pokémon RSE and Pokémon ORAS
+'''
+logoFile = "assets/cobblenav/logo.png"
+
+[[dependencies.cobblenav]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cobblenav]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cobblenav]]
+modId = "cobblemon"
+type = "required"
+versionRange = "[1.8.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "cobblenav.mixins.json"

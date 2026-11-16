@@ -1,0 +1,11 @@
+{
+    "id": "cobblenav:plains",
+    "condition": {
+        "type": "grounded",
+        "biomes": [
+            "#cobblemon:is_plains",
+            "#cobblemon:is_grassland",
+            "#cobblemon:is_temperate"
+        ]
+    }
+}

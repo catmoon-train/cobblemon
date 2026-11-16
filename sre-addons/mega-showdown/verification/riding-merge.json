@@ -1,0 +1,15 @@
+{
+  "mergedSpecies": [
+    "data/cobblemon/species/generation1/blastoise.json",
+    "data/cobblemon/species/generation1/charizard.json",
+    "data/cobblemon/species/generation1/lapras.json",
+    "data/cobblemon/species/generation3/metagross.json",
+    "data/cobblemon/species/generation3/swampert.json",
+    "data/cobblemon/species/generation8a/ursaluna.json"
+  ],
+  "addedSeatLocators": [],
+  "warnings": [
+    "ursaluna:Bloodmoon: kept 0 seat(s); no model locator available"
+  ],
+  "scope": "Only riding blocks and missing seat_2 locators merged; all other Mega gameplay data unchanged."
+}

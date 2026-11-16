@@ -1,0 +1,22 @@
+{
+  "species": "cobblemon:kangaskhan",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "mega"
+      ],
+      "poser": "cobblemon:kangaskhan_mega",
+      "model": "cobblemon:kangaskhan_mega.geo",
+      "texture": "cobblemon:textures/pokemon/0115_kangaskhan/megakangaskhan.png",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "mega",
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0115_kangaskhan/megakangaskhan_shiny.png"
+    }
+  ]
+}

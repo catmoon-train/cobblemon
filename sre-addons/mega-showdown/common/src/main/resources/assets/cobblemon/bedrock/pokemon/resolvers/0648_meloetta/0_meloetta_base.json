@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:meloetta",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:meloetta",
+      "model": "cobblemon:meloetta.geo",
+      "texture": "cobblemon:textures/pokemon/0648_meloetta/meloetta.png"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "cobblemon:textures/pokemon/0648_meloetta/meloetta_shiny.png"
+    }
+  ]
+}

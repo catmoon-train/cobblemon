@@ -1,0 +1,19 @@
+package com.metacontent.cobblenav.client.settings.pokefinder.type
+
+import com.metacontent.cobblenav.client.gui.widget.pokefinder.UncaughtFilterWidget
+import com.metacontent.cobblenav.client.settings.pokefinder.filter.UncaughtFilter
+import com.metacontent.cobblenav.utils.I18nUtil.label
+import com.metacontent.cobblenav.utils.extensions.gui
+import net.minecraft.client.gui.components.AbstractWidget
+
+object UncaughtFilterType : RadarFilterType<UncaughtFilter> {
+	override val filterClass = UncaughtFilter::class.java
+
+	override val typeIcon = gui("pokefinder/uncaught")
+
+	override val displayedName = label("pokefinder.filter.uncaught")
+
+	override fun createFilter(): UncaughtFilter = UncaughtFilter()
+
+	override fun createWidget(filter: UncaughtFilter): AbstractWidget = UncaughtFilterWidget()
+}

@@ -1,0 +1,33 @@
+plugins {
+    id 'dev.architectury.loom' version '1.11.458'
+    id 'org.jetbrains.kotlin.jvm' version '2.2.20'
+}
+version = '2.4.2'
+group = 'com.metacontent.cobblenav'
+base { archivesName = 'cobblenav-fabric' }
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.terraformersmc.com/' }
+}
+loom { silentMojangMappingsLicense() }
+def cobblemonApi = providers.gradleProperty('cobblemonNamedJar').get()
+assert file(cobblemonApi).isFile(): 'Pass -PcobblemonNamedJar=<1.8.4 dev-shadow.jar>'
+dependencies {
+    minecraft 'net.minecraft:minecraft:1.21.1'
+    mappings loom.officialMojangMappings()
+    modImplementation 'net.fabricmc:fabric-loader:0.17.2'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.116.6+1.21.1'
+    modImplementation 'net.fabricmc:fabric-language-kotlin:1.13.6+kotlin.2.2.20'
+    modCompileOnly 'com.terraformersmc:modmenu:11.0.3'
+    compileOnly files(cobblemonApi)
+}
+sourceSets.main {
+    java.srcDirs = ['../common/src/main/java']
+    kotlin.srcDirs = ['../common/src/main/kotlin', '../fabric/src/main/kotlin', '../common/src/main/java']
+    resources.srcDirs = ['../common/src/main/resources', '../fabric/src/main/resources']
+}
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
+kotlin { jvmToolchain(21) }
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+processResources { inputs.property 'version', version; filesMatching('fabric.mod.json') { expand version: version } }
+jar { from('../LICENSE') { rename { 'LICENSE-cobblenav' } } }

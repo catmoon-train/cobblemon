@@ -1,0 +1,42 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Shared read-only dependency cache is an incubating feature.
+
+> Configure project :
+Architect Plugin: 3.4.164
+Architectury Loom: 1.11.458
+
+> Task :common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :fabric:clean
+> Task :fabric:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :common:compileKotlin UP-TO-DATE
+> Task :common:compileJava UP-TO-DATE
+> Task :fabric:processResources
+> Task :fabric:processIncludeJars
+> Task :common:processResources UP-TO-DATE
+> Task :common:classes UP-TO-DATE
+> Task :common:jar UP-TO-DATE
+
+> Task :common:transformProductionFabric
+[Architectury Transformer] Read classpath in 2.488 s
+[Architectury Transformer] Transformed jar with 5 transformer(s) in 5.044 s
+
+> Task :fabric:compileKotlin
+> Task :fabric:compileJava
+> Task :fabric:classes
+> Task :fabric:jar
+> Task :fabric:compileTestKotlin NO-SOURCE
+> Task :fabric:compileTestJava NO-SOURCE
+> Task :fabric:shadowJar
+> Task :fabric:remapJar
+
+[Incubating] Problems report is available at: file:///H:/pi/data/scratch/52a41f9c-b48c-4c2b-a60d-dd0f4fafe637/addons-work/mega-showdown/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 34s
+13 actionable tasks: 9 executed, 4 up-to-date

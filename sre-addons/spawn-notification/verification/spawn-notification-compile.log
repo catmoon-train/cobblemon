@@ -1,0 +1,9 @@
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+11月 16, 2026 7:39:11 上午 us.timinc.mc.cobblemon.spawnnotification.SpawnNotificationBootstrap onInitialize
+信息: Registry-only Cobblemon shell: Spawn Notification gameplay is disabled.
+BOOTSTRAP_ISOLATION_PASS (no Cobblemon/Minecraft/Kotlin/Fabric API classes available)
+CONFIG_COMPATIBILITY_PASS (all 15 upstream fields/defaults, overrides, formatting, JSON file roundtrip)
+ARTIFACT_CONTRACT_PASS (JVM21/intermediary, metadata, exact upstream archive/license/audio/languages, subtitle)
+BUILD_PASS H:/pi/data/scratch/52a41f9c-b48c-4c2b-a60d-dd0f4fafe637/spawn-notification-build/spawnnotification-1.5-fabric-1.2.1-mc1.21.1.jar

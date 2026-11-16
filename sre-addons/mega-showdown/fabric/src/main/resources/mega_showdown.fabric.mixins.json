@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "com.github.yajatkaul.mega_showdown.fabric.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "GameRendererMixin",
+    "ShaderInstanceMixin",
+    "PokemonClientDelegateMixin"
+  ],
+  "mixins": [
+    "CobblemonDataProviderMixin",
+    "CobblemonInitialiserMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
