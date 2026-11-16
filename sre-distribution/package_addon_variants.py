@@ -7,7 +7,11 @@ LANGUAGES={'zh_cn','zh_tw','en_us'}
 def digest(p):
     with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def lang(n):return n.startswith('assets/') and '/lang/' in n and n.endswith('.json')
-def runtime_resource(n):return n.startswith('assets/mega_showdown/showdown/')
+def runtime_resource(n):
+    # 运行期由渲染/战斗代码直接读取，必须留在 JAR：外置成资源包会让未启用资源包的客户端直接崩。
+    if not n.startswith('assets/'):
+        return False
+    return n.startswith('assets/mega_showdown/showdown/') or '/shaders/' in n or '/post_effect/' in n
 def fallback(n):
     return n.endswith('/icon.png') or (n.endswith('.json') and not any(x in n for x in ['/models/','/blockstates/','/bedrock/','/lang/']))
 def write(z,n,b):z.writestr(n,b,compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
@@ -59,6 +63,11 @@ def build(source, snapshot, destination, license_file):
                     assert c.read(n)==original.read(n)==s.read(n),n
                 if n.startswith('assets/') and not lang(n) and not runtime_resource(n):assert p.read(n)==original.read(n),n
             assert not any(n.startswith(('com/','dev/','data/','assets/','META-INF/jars/')) for n in h.namelist())
+            # 着色器/后处理/Showdown 脚本：源码里所有非 JSON 运行文件都必须在客户端 JAR 内，不能只存在于资源包。
+            code_assets=[n for n in names if n.startswith('assets/') and n.endswith(('.vsh','.fsh','.glsl','.js'))]
+            for n in code_assets:
+                assert n in c.namelist(), f'runtime asset missing from client jar: {n}'
+                assert n not in p.namelist(), f'runtime asset must not be externalized: {n}'
         outputs=[client,server,shell,pack]
         manifest={'modId':modid,'version':version,'sourceJar':{'path':str(source),'sha256':digest(source)},'preservedClasses':len(classes),'shellRegistries':{k:len(v) for k,v in entries.items()},'outputs':{p.relative_to(destination).as_posix():{'sha256':digest(p),'bytes':p.stat().st_size} for p in outputs},'scope':'Full: all gameplay retained, art externalized, English/Simplified/Traditional Chinese where supplied. Shell: registration only; no gameplay, API, old saves, or business component payload support.'}
         manifest['retainedRuntimeResources']=[n for n in names if runtime_resource(n)]
