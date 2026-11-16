@@ -1,0 +1,19 @@
+{
+  "source": "G:\\exmo\\StarRailExpress2\\StarRailExpress\\sre-pokemon-compat\\build\\libs\\sre-pokemon-compat-1.0.0.jar",
+  "sha256": "8eb3dd34a77e0ff844eae2141f890ca87875623c4e0aeae82ad18f38c08a8fad",
+  "bytes": 267751,
+  "replaced": {
+    "客户端更新mod": {
+      "previousSha256": "c92dc2c150f610f1e8172a7cb78cb8fc9f9170de5072815f46b4a5ed2c2ea206",
+      "previousBytes": 266124
+    },
+    "其余列车服务器更新mod": {
+      "previousSha256": "c92dc2c150f610f1e8172a7cb78cb8fc9f9170de5072815f46b4a5ed2c2ea206",
+      "previousBytes": 266124
+    },
+    "哈比生存服务器更新mod": {
+      "previousSha256": "c92dc2c150f610f1e8172a7cb78cb8fc9f9170de5072815f46b4a5ed2c2ea206",
+      "previousBytes": 266124
+    }
+  }
+}
