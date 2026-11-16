@@ -113,6 +113,9 @@
     "seats": [
       {
         "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
       }
     ]
   },
@@ -309,42 +312,26 @@
       },
       "baseExperienceYield": 290,
       "riding": {
-        "behaviour": {
-          "key": "cobblemon:land/horse"
-        },
-        "seats": [],
-        "stats": {
-          "ACCELERATION": {
-            "ranges": {
-              "AIR": "25-60",
-              "LAND": "10-100"
-            }
-          },
-          "JUMP": {
-            "ranges": {
-              "AIR": "25-50",
-              "LAND": "15-30"
-            }
-          },
-          "SKILL": {
-            "ranges": {
-              "AIR": "30-60",
-              "LAND": "15-30"
-            }
-          },
-          "SPEED": {
-            "ranges": {
-              "AIR": "30-80",
-              "LAND": "15-30"
-            }
-          },
-          "STAMINA": {
-            "ranges": {
-              "AIR": "25-60",
-              "LAND": "20-40"
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "stats": {
+              "ACCELERATION": "10-100",
+              "JUMP": "15-30",
+              "SKILL": "15-30",
+              "SPEED": "15-30",
+              "STAMINA": "20-40"
             }
           }
-        }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       },
       "behaviour": {
         "combat": {

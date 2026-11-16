@@ -524,6 +524,39 @@
 						{"origin": [-1.75, 0, 6.75], "size": [0, 1, 2], "uv": [1, 35]}
 					]
 				}
+			,
+				{
+					"name": "compat_locator_seat_1",
+					"parent": "body",
+					"pivot": [
+						0,
+						25,
+						0
+					],
+					"locators": {
+						"seat_1": [
+							0,
+							25,
+							0
+						]
+					}
+				},
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "body",
+					"pivot": [
+						0,
+						25,
+						12
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							25,
+							12
+						]
+					}
+				}
 			]
 		}
 	]

@@ -277,6 +277,23 @@
 						"item": [0, 2.5, -9.25]
 					}
 				}
+			,
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "locator_seat_1",
+					"pivot": [
+						0,
+						15,
+						22
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							15,
+							22
+						]
+					}
+				}
 			]
 		}
 	]

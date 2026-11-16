@@ -484,6 +484,10 @@ class PokemonServerDelegate : PokemonSideDelegate {
         passenger: Entity,
         positionUpdater: Entity.MoveFunction
     ) {
+        entity.occupiedSeats.entries.firstOrNull { it.value == passenger }?.key?.offsetPosition(entity)?.let {
+            positionUpdater.accept(passenger, it.x, it.y, it.z)
+            return
+        }
         val offset = passengerOffsets[passenger.id] ?: Vec3.ZERO
         positionUpdater.accept(
             passenger,

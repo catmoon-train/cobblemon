@@ -187,6 +187,11 @@ class FormData(
     val riding: RidingProperties
         get() = _riding ?: species.riding
 
+    /** Server-side compatibility import; null restores ordinary species inheritance. */
+    internal var ridingOverride: RidingProperties?
+        get() = _riding
+        set(value) { _riding = value }
+
     /**
      * The height in decimeters
      */

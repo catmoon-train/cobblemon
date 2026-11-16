@@ -766,6 +766,23 @@
 						"special2": [-4, 2, 10.77]
 					}
 				}
+			,
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "locator_seat_1",
+					"pivot": [
+						0,
+						29,
+						16
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							29,
+							16
+						]
+					}
+				}
 			]
 		}
 	]

@@ -256,6 +256,7 @@ class Species : ShowdownIdentifiable {
         }
 
         this.riding.encode(buffer)
+        buffer.writeNullable(this.standardForm.ridingOverride) { _, riding -> riding.encode(buffer) }
     }
 
     fun decode(buffer: RegistryFriendlyByteBuf) {
@@ -299,6 +300,7 @@ class Species : ShowdownIdentifiable {
             }
         }
         this.riding = RidingProperties.decode(buffer)
+        this.standardForm.ridingOverride = buffer.readNullable { RidingProperties.decode(buffer) }
         this.initialize()
     }
 

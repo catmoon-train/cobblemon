@@ -254,7 +254,7 @@ class HorseBehaviour : RidingBehaviour<HorseSettings, HorseState> {
 
         // Turn rate should be quick when walking and slower when sprinting.
         // Smoothly move between these based on speed
-        val walkSpeed = getWalkSpeed(vehicle)
+        val walkSpeed = getWalkSpeed(vehicle) * settings.walkSpeedMultiplier
         val w = max(walkSpeed, vehicle.deltaMovement.horizontalDistance())
         val invRelSpeed = (RidingBehaviour.scaleToRange(w, walkSpeed, topSpeed ) - 1.0f) * -1.0f
         val turnRate = ((handling.toFloat() / 20.0f) * max(walkHandlingBoost * sqrt(abs(invRelSpeed)), 1.0)).toFloat()
@@ -288,7 +288,7 @@ class HorseBehaviour : RidingBehaviour<HorseSettings, HorseState> {
         val canJump = vehicle.runtime.resolveBoolean(settings.canJump ?: globalHorse.canJump!!)
         val jumpForce = vehicle.runtime.resolveDouble(settings.jumpExpr ?: globalHorse.jumpExpr!!) * 0.75
         val rideTopSpeed = vehicle.runtime.resolveDouble(settings.speedExpr ?: globalHorse.speedExpr!!)
-        val walkSpeed = getWalkSpeed(vehicle)
+        val walkSpeed = getWalkSpeed(vehicle) * settings.walkSpeedMultiplier
         val topSpeed = if(canSprint && state.sprinting.get()) rideTopSpeed else walkSpeed
         val accelTime = if(state.sprinting.get()) (vehicle.runtime.resolveDouble(settings.accelerationExpr ?: globalHorse.accelerationExpr!!) * 20.0) else 0.5 * 20.0
         val accel = topSpeed / accelTime
@@ -564,6 +564,9 @@ class HorseBehaviour : RidingBehaviour<HorseSettings, HorseState> {
 }
 
 class HorseSettings : RidingBehaviourSettings {
+    // Independent of speedExpr: ordinary walking does not use the sprint speed expression.
+    var walkSpeedMultiplier: Double = 1.0
+        private set
     override val key = HorseBehaviour.KEY
     override val stats = mutableMapOf<RidingStat, IntRange>()
 
@@ -600,6 +603,7 @@ class HorseSettings : RidingBehaviourSettings {
 
     override fun encode(buffer: RegistryFriendlyByteBuf) {
         buffer.writeRidingStats(stats)
+        buffer.writeDouble(walkSpeedMultiplier)
         rideSounds.encode(buffer)
         buffer.writeNullableExpression(infiniteStamina)
         buffer.writeNullableExpression(canJump)
@@ -616,6 +620,7 @@ class HorseSettings : RidingBehaviourSettings {
 
     override fun decode(buffer: RegistryFriendlyByteBuf) {
         stats.putAll(buffer.readRidingStats())
+        walkSpeedMultiplier = buffer.readDouble()
         rideSounds = RideSoundSettingsList.decode(buffer)
         infiniteStamina = buffer.readNullableExpression()
         canJump = buffer.readNullableExpression()

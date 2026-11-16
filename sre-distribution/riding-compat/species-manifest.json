@@ -1,0 +1,552 @@
+[
+  {
+    "species": "charizard",
+    "oldKey": "Charizard",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/charizard.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0006_charizard/charizard.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "FLY"
+    ]
+  },
+  {
+    "species": "blastoise",
+    "oldKey": "Blastoise",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/blastoise.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0009_blastoise/blastoise.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "SWIM"
+    ]
+  },
+  {
+    "species": "pidgeot",
+    "oldKey": "Pidgeot",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/pidgeot.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0018_pidgeot/pidgeot.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "FLY"
+    ]
+  },
+  {
+    "species": "fearow",
+    "oldKey": "Fearow",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/fearow.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0022_fearow/fearow.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "FLY"
+    ]
+  },
+  {
+    "species": "nidoking",
+    "oldKey": "Nidoking",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/nidoking.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0034_nidoking/nidoking.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "ninetales",
+    "oldKey": "Ninetales",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/ninetales.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0038_ninetales/ninetales.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0038_ninetales/ninetales_alolan.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "arcanine",
+    "oldKey": "Arcanine",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/arcanine.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0059_arcanine/arcanine.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "tentacruel",
+    "oldKey": "Tentacruel",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/tentacruel.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0073_tentacruel/tentacruel.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "SWIM"
+    ]
+  },
+  {
+    "species": "rapidash",
+    "oldKey": "Rapidash",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/rapidash.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0078_rapidash/rapidash.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0078_rapidash/rapidash_galar.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "magnezone",
+    "oldKey": "Magnezone",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation4/magnezone.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0462_magnezone/magnezone.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "dodrio",
+    "oldKey": "Dodrio",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/dodrio.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0085_dodrio/dodrio_female.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0085_dodrio/dodrio_male.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "dewgong",
+    "oldKey": "Dewgong",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/dewgong.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0087_dewgong/dewgong.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "SWIM"
+    ]
+  },
+  {
+    "species": "exeggutor",
+    "oldKey": "Exeggutor",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/exeggutor.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0103_exeggutor/exeggutor.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0103_exeggutor/exeggutor_alolan.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "tauros",
+    "oldKey": "Tauros",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/tauros.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0128_tauros/tauros.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0128_tauros/tauros_paldean_aqua.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0128_tauros/tauros_paldean_blaze.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0128_tauros/tauros_paldean_combat.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "gyarados",
+    "oldKey": "Gyarados",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/gyarados.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0130_gyarados/gyarados_female.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0130_gyarados/gyarados_male.geo.json"
+    ],
+    "types": [
+      "SWIM"
+    ]
+  },
+  {
+    "species": "lapras",
+    "oldKey": "Lapras",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/lapras.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0131_lapras/lapras.geo.json"
+    ],
+    "types": [
+      "SWIM"
+    ]
+  },
+  {
+    "species": "aerodactyl",
+    "oldKey": "Aerodactyl",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/aerodactyl.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0142_aerodactyl/aerodactyl.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "FLY"
+    ]
+  },
+  {
+    "species": "dragonite",
+    "oldKey": "Dragonite",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation1/dragonite.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0149_dragonite/dragonite.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "FLY"
+    ]
+  },
+  {
+    "species": "meganium",
+    "oldKey": "Meganium",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation2/meganium.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0154_meganium/meganium.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "feraligatr",
+    "oldKey": "Feraligatr",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation2/feraligatr.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0160_feraligatr/feraligatr.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "SWIM"
+    ]
+  },
+  {
+    "species": "steelix",
+    "oldKey": "Steelix",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation2/steelix.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0208_steelix/steelix_female.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0208_steelix/steelix_male.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "stantler",
+    "oldKey": "Stantler",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation2/stantler.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0234_stantler/stantler.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "swampert",
+    "oldKey": "Swampert",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation3/swampert.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0260_swampert/swampert.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "SWIM"
+    ]
+  },
+  {
+    "species": "mightyena",
+    "oldKey": "Mightyena",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation3/mightyena.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0262_mightyena/mightyena.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "sharpedo",
+    "oldKey": "Sharpedo",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation3/sharpedo.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0319_sharpedo/sharpedo.geo.json"
+    ],
+    "types": [
+      "SWIM"
+    ]
+  },
+  {
+    "species": "wailmer",
+    "oldKey": "Wailmer",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation3/wailmer.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0320_wailmer/wailmer.geo.json"
+    ],
+    "types": [
+      "SWIM"
+    ]
+  },
+  {
+    "species": "camerupt",
+    "oldKey": "Camerupt",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation3/camerupt.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0323_camerupt/camerupt.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "relicanth",
+    "oldKey": "Relicanth",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation3/relicanth.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0369_relicanth/relicanth_female.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0369_relicanth/relicanth_male.geo.json"
+    ],
+    "types": [
+      "SWIM"
+    ]
+  },
+  {
+    "species": "metagross",
+    "oldKey": "Metagross",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation3/metagross.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0376_metagross/metagross.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "staraptor",
+    "oldKey": "Staraptor",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation4/staraptor.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0398_staraptor/staraptor_female.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0398_staraptor/staraptor_male.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "FLY"
+    ]
+  },
+  {
+    "species": "luxray",
+    "oldKey": "Luxray",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation4/luxray.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0405_luxray/luxray_female.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0405_luxray/luxray_male.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "garchomp",
+    "oldKey": "Garchomp",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation4/garchomp.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0445_garchomp/garchomp_female.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0445_garchomp/garchomp_male.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "yanmega",
+    "oldKey": "Yanmega",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation4/yanmega.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0469_yanmega/yanmega.geo.json"
+    ],
+    "types": [
+      "FLY"
+    ]
+  },
+  {
+    "species": "mamoswine",
+    "oldKey": "Mamoswine",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation4/mamoswine.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0473_mamoswine/mamoswine_female.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0473_mamoswine/mamoswine_male.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "samurott",
+    "oldKey": "Samurott",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation5/samurott.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0503_samurott/samurott.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0503_samurott/samurott_hisuian.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "SWIM"
+    ]
+  },
+  {
+    "species": "stoutland",
+    "oldKey": "Stoutland",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation5/stoutland.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0508_stoutland/stoutland.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "scolipede",
+    "oldKey": "Scolipede",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation5/scolipede.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0545_scolipede/scolipede.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "sawsbuck",
+    "oldKey": "Sawsbuck",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation5/sawsbuck.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0586_sawsbuck/sawsbuck_autumn.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0586_sawsbuck/sawsbuck_spring.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0586_sawsbuck/sawsbuck_summer.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0586_sawsbuck/sawsbuck_winter.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "golurk",
+    "oldKey": "Golurk",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation5/golurk.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0623_golurk/golurk.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "bouffalant",
+    "oldKey": "Bouffalant",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation5/bouffalant.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0626_bouffalant/bouffalant.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "avalugg",
+    "oldKey": "Avalugg",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation6/avalugg.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0713_avalugg/avalugg.geo.json",
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0713_avalugg/avalugg_hisuian.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "SWIM"
+    ]
+  },
+  {
+    "species": "mudsdale",
+    "oldKey": "Mudsdale",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation7/mudsdale.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0750_mudsdale/mudsdale.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "corviknight",
+    "oldKey": "Corviknight",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation8/corviknight.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0823_corviknight/corviknight.geo.json"
+    ],
+    "types": [
+      "WALK",
+      "FLY"
+    ]
+  },
+  {
+    "species": "wyrdeer",
+    "oldKey": "Wyrdeer",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation8a/wyrdeer.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0899_wyrdeer/wyrdeer.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "ursaluna",
+    "oldKey": "Ursaluna",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation8a/ursaluna.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0901_ursaluna/ursaluna.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "skeledirge",
+    "oldKey": "Skeledirge",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation9/skeledirge.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0911_skeledirge/skeledirge.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  },
+  {
+    "species": "espathra",
+    "oldKey": "Espahtla",
+    "speciesFile": "common/src/main/resources/data/cobblemon/species/generation9/espathra.json",
+    "models": [
+      "common/src/main/resources/assets/cobblemon/bedrock/pokemon/models/0956_espathra/espathra.geo.json"
+    ],
+    "types": [
+      "WALK"
+    ]
+  }
+]

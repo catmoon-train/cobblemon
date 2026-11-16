@@ -594,6 +594,23 @@
 						{"origin": [2.5, -0.25, 6.5], "size": [3, 2, 3], "inflate": 0.01, "uv": [107, 28]}
 					]
 				}
+			,
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "locator_seat_1",
+					"pivot": [
+						0,
+						24,
+						10
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							24,
+							10
+						]
+					}
+				}
 			]
 		}
 	]

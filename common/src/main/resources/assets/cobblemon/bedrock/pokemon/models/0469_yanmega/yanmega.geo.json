@@ -483,6 +483,23 @@
 						"top": [0, 14.8, 0]
 					}
 				}
+			,
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "locator_seat_1",
+					"pivot": [
+						0,
+						15.5,
+						9.75
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							15.5,
+							9.75
+						]
+					}
+				}
 			]
 		}
 	]

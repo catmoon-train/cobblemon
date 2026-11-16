@@ -1262,6 +1262,23 @@
 						{"origin": [-7.5, -3.6, 5.25], "size": [1, 1, 1], "inflate": 0.25, "uv": [116, 82]}
 					]
 				}
+			,
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "locator_seat_1",
+					"pivot": [
+						0,
+						24.5,
+						8.5
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							24.5,
+							8.5
+						]
+					}
+				}
 			]
 		}
 	]

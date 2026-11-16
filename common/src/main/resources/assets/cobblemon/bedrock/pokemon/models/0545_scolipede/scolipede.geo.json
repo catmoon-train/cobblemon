@@ -800,6 +800,23 @@
 						"foot_primary2": [-7.5, -4.1, 5.4]
 					}
 				}
+			,
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "locator_seat_1",
+					"pivot": [
+						0,
+						22,
+						17
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							22,
+							17
+						]
+					}
+				}
 			]
 		}
 	]

@@ -15,6 +15,8 @@ import com.cobblemon.mod.common.util.asExpression
 import com.cobblemon.mod.common.util.getString
 import com.cobblemon.mod.common.util.readString
 import com.cobblemon.mod.common.util.writeString
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import net.minecraft.world.phys.Vec3
 import net.minecraft.network.RegistryFriendlyByteBuf
 
 /**
@@ -25,7 +27,14 @@ data class Seat(
     val condition: Expression? = null,
     val poseAnimations: MutableList<SeatPoseAnimations>? = null,
     val handsBusy: Boolean = false,
+    // Absolute, unscaled entity-space feet offset; mutually exclusive with a model locator.
+    val offset: SeatOffset? = null,
 ) : Encodable {
+
+    fun offsetPosition(vehicle: PokemonEntity): Vec3? = offset?.let {
+        val yaw = vehicle.controllingPassenger?.yRot ?: vehicle.yRot
+        vehicle.position().add(Vec3(it.x, it.y, it.z).yRot(-yaw * (Math.PI / 180.0).toFloat()))
+    }
 
     override fun encode(buffer: RegistryFriendlyByteBuf) {
         buffer.writeNullable(locator) { _, v -> buffer.writeString(v) }
@@ -34,6 +43,11 @@ data class Seat(
             buffer.writeCollection(v) { _, animations -> animations.encode(buffer) }
         }
         buffer.writeBoolean(handsBusy)
+        buffer.writeNullable(offset) { _, value ->
+            buffer.writeDouble(value.x)
+            buffer.writeDouble(value.y)
+            buffer.writeDouble(value.z)
+        }
     }
 
     companion object {
@@ -42,11 +56,14 @@ data class Seat(
                 buffer.readNullable { buffer.readString() } ?: "",
                 buffer.readNullable { buffer.readString().asExpression() },
                 buffer.readNullable { buffer.readList { SeatPoseAnimations.decode(buffer) } },
-                buffer.readBoolean()
+                buffer.readBoolean(),
+                buffer.readNullable { SeatOffset(buffer.readDouble(), buffer.readDouble(), buffer.readDouble()) }
             )
         }
     }
 }
+
+data class SeatOffset(val x: Double, val y: Double, val z: Double)
 
 class SeatPoseAnimations {
     val poseTypes = mutableSetOf<PoseType>()

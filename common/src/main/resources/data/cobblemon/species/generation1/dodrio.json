@@ -225,26 +225,25 @@
   "preEvolution": "doduo",
   "evolutions": [],
   "riding": {
-    "stats": {
-      "SPEED": {
-        "ranges": "45-75"
-      },
-      "ACCELERATION": {
-        "ranges": "50-70"
-      },
-      "SKILL": {
-        "ranges": "25-55"
-      },
-      "JUMP": {
-        "ranges": "45-100"
-      },
-      "STAMINA": {
-        "ranges": "30-60"
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "stats": {
+          "SPEED": "45-75",
+          "ACCELERATION": "50-70",
+          "SKILL": "25-55",
+          "JUMP": "45-100",
+          "STAMINA": "30-60"
+        }
       }
     },
-    "seats": [],
-    "behaviour": {
-      "key": "cobblemon:land/horse"
-    }
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

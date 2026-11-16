@@ -1,4 +1,26 @@
 {
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "stats": {
+          "ACCELERATION": "20-60",
+          "JUMP": "20-60",
+          "SKILL": "20-60",
+          "SPEED": "20-60",
+          "STAMINA": "20-60"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  },
   "implemented": true,
   "nationalPokedexNumber": 154,
   "name": "Meganium",

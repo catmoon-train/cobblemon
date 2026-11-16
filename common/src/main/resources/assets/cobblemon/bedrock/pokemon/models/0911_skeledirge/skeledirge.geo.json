@@ -1202,6 +1202,39 @@
 						{"origin": [19.5, 14.9, -53.3], "size": [-5, 1, 8], "uv": [235, 110], "mirror": true}
 					]
 				}
+			,
+				{
+					"name": "compat_locator_seat_1",
+					"parent": "body",
+					"pivot": [
+						0,
+						20,
+						0
+					],
+					"locators": {
+						"seat_1": [
+							0,
+							20,
+							0
+						]
+					}
+				},
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "body",
+					"pivot": [
+						0,
+						20,
+						12
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							20,
+							12
+						]
+					}
+				}
 			]
 		}
 	]

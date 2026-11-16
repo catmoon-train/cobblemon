@@ -1253,6 +1253,23 @@
 						{"origin": [-3.3, 15, -14], "size": [0, 2, 1], "uv": [31, 58], "mirror": true}
 					]
 				}
+			,
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "seat_1_locator",
+					"pivot": [
+						0,
+						27,
+						16
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							27,
+							16
+						]
+					}
+				}
 			]
 		}
 	]

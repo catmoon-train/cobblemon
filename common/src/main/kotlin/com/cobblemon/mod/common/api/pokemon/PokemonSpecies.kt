@@ -152,9 +152,11 @@ object PokemonSpecies : JsonDataRegistry<Species> {
         get() = this.species.filter { it.implemented }
 
     init {
+        com.cobblemon.mod.common.api.riding.LegacyRidingConfig.initialize()
         SpeciesAdditions.observable.subscribe {
             this.species.forEach(Species::initialize)
             this.species.forEach(Species::resolveEvolutionMoves)
+            com.cobblemon.mod.common.api.riding.LegacyRidingConfig.applyToSpecies()
             Cobblemon.showdownThread.queue {
                 it.resetRegistryData("species")
                 it.sendRegistryData(allShowdownSpecies(), "species")

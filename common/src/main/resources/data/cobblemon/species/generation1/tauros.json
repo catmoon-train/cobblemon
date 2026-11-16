@@ -66,6 +66,9 @@
     "seats": [
       {
         "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
       }
     ]
   },
@@ -320,6 +323,9 @@
         "seats": [
           {
             "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
           }
         ]
       },
@@ -508,6 +514,9 @@
         "seats": [
           {
             "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
           }
         ]
       },
@@ -703,6 +712,9 @@
         "seats": [
           {
             "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
           }
         ]
       },

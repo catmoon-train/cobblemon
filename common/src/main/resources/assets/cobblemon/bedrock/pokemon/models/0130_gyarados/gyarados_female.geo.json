@@ -928,6 +928,23 @@
 						}
 					}
 				}
+			,
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "locator_seat_1",
+					"pivot": [
+						0,
+						55,
+						4
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							55,
+							4
+						]
+					}
+				}
 			]
 		}
 	]

@@ -1126,6 +1126,39 @@
 						"foot_secondary2": [-4.05, -3.15, 4.5]
 					}
 				}
+			,
+				{
+					"name": "compat_locator_seat_1",
+					"parent": "body",
+					"pivot": [
+						0,
+						24.75,
+						0
+					],
+					"locators": {
+						"seat_1": [
+							0,
+							24.75,
+							0
+						]
+					}
+				},
+				{
+					"name": "compat_locator_seat_2",
+					"parent": "body",
+					"pivot": [
+						0,
+						24.75,
+						12
+					],
+					"locators": {
+						"seat_2": [
+							0,
+							24.75,
+							12
+						]
+					}
+				}
 			]
 		}
 	]

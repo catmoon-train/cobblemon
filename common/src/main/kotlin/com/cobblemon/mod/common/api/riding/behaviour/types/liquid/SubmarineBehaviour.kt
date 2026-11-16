@@ -63,7 +63,7 @@ class SubmarineBehaviour : RidingBehaviour<SubmarineSettings, SubmarineState> {
         .with(PoseOption(PoseType.SWIM) { _, state, entity -> state.rideVelocity.get().z > 0.05 && state.onSurface.get()})
 
     override fun isActive(settings: SubmarineSettings, state: SubmarineState, vehicle: PokemonEntity): Boolean {
-        return vehicle.isInWater || !vehicle.onGround()
+        return settings.isInRideFluid(vehicle) || !vehicle.onGround()
     }
 
     override fun pose(settings: SubmarineSettings, state: SubmarineState, vehicle: PokemonEntity): PoseType {
@@ -119,7 +119,7 @@ class SubmarineBehaviour : RidingBehaviour<SubmarineSettings, SubmarineState> {
     ) {
         // determine if the vehicle is in water.
         // if it isn't then set surface flag to false and return
-        if (!vehicle.isInWater) {
+        if (!settings.isInRideFluid(vehicle)) {
             state.onSurface.set(false)
             return
         }
@@ -213,7 +213,7 @@ class SubmarineBehaviour : RidingBehaviour<SubmarineSettings, SubmarineState> {
         val terminalYVel = 2.0
         val driverYInput = if(driver.jumping) 1.0 else if (driver.isShiftKeyDown) -1.0 else 0.0
         var newYVel = when {
-            (!vehicle.isInWater) -> max(-terminalYVel, currYVel - gravity)
+            (!settings.isInRideFluid(vehicle)) -> max(-terminalYVel, currYVel - gravity)
             //(vehicle.isInWater && !vehicle.isUnderWater && currYVel > 0.001) -> lerp(currYVel, 0.0, 0.1) // Make sure that yVel is above a threshold before doing this otherwise it'll block submerging.
             //driverYInput != 0.0 && currYVel > 0.001 && driverYInput.sign != currYVel.sign -> lerp(currYVel, 0.0, 0.05)
             driverYInput > 0.0 -> min(vertTopSpeed, currYVel + strafeAccel)
@@ -494,6 +494,16 @@ class SubmarineBehaviour : RidingBehaviour<SubmarineSettings, SubmarineState> {
 }
 
 class SubmarineSettings : RidingBehaviourSettings {
+    /** null keeps native behaviour; imports restrict water/lava without granting any damage immunity. */
+    var legacyFluid: String? = null
+        private set
+
+    fun isInRideFluid(vehicle: PokemonEntity): Boolean = when (legacyFluid) {
+        "water" -> vehicle.isInWater
+        "lava" -> vehicle.isInLava
+        "both" -> vehicle.isInWater || vehicle.isInLava
+        else -> vehicle.isInWater
+    }
     override val key = SubmarineBehaviour.KEY
     override val stats = mutableMapOf<RidingStat, IntRange>()
 
@@ -522,6 +532,7 @@ class SubmarineSettings : RidingBehaviourSettings {
 
     override fun encode(buffer: RegistryFriendlyByteBuf) {
         buffer.writeRidingStats(stats)
+        buffer.writeNullable(legacyFluid) { _, value -> buffer.writeUtf(value) }
         rideSounds.encode(buffer)
         buffer.writeNullableExpression(infiniteStamina)
         buffer.writeNullableExpression(staminaRegenTime)
@@ -535,6 +546,7 @@ class SubmarineSettings : RidingBehaviourSettings {
 
     override fun decode(buffer: RegistryFriendlyByteBuf) {
         stats.putAll(buffer.readRidingStats())
+        legacyFluid = buffer.readNullable { buffer.readUtf() }
         rideSounds = RideSoundSettingsList.decode(buffer)
         infiniteStamina = buffer.readNullableExpression()
         staminaRegenTime = buffer.readNullableExpression()

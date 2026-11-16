@@ -11,6 +11,7 @@ package com.cobblemon.mod.common.api.riding.behaviour
 import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.DoubleJump
 import com.cobblemon.mod.common.api.riding.RidingStyle
+import com.cobblemon.mod.common.api.riding.behaviour.types.liquid.SubmarineSettings
 import com.cobblemon.mod.common.client.MountedCameraTypeHandler
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import net.minecraft.resources.ResourceLocation
@@ -88,6 +89,8 @@ class RidingController(
     }
 
     private fun checkForNewTransition(driver: LivingEntity?): RidingStyle? {
+        val liquid = behaviours[RidingStyle.LIQUID] as? SubmarineSettings
+        if (liquid?.legacyFluid != null && entity.isInLiquid && !liquid.isInRideFluid(entity)) return null
         when (context?.style) {
             RidingStyle.AIR -> {
                 if (canTransitionToLand()) return RidingStyle.LAND
@@ -126,6 +129,8 @@ class RidingController(
     }
 
     private fun canTransitionToLiquid(): Boolean {
+        val liquid = behaviours[RidingStyle.LIQUID] as? SubmarineSettings
+        if (liquid?.legacyFluid != null && !liquid.isInRideFluid(entity)) return false
         // If it has a liquid controller to transition to and it isn't currently an air controller then transition on
         // touching water. If not then check for eyes in water. This allows fliers to fly closely above water and
         // for walkers that don't have a liquid controller to be able to walk in not deep water
