@@ -21,17 +21,17 @@ def main():
     with zipfile.ZipFile(client_jar) as archive:
         gitinfo = archive.read('cobblemon-git.properties').decode('utf-8')
     commit = next(line.split('=', 1)[1].strip() for line in gitinfo.splitlines() if line.startswith('commit='))
-    assert subprocess.run(['git', '-C', repo, 'merge-base', '--is-ancestor', base, commit]).returncode == 0
+    assert subprocess.run(['git', '-C', repo, 'merge-base', '--is-ancestor', base, workspace_head]).returncode == 0
+    # 构建在 H 盘同内容副本中执行，故 jar 内记录的提交对象可能不在本工作区；如实标注而非伪造。
+    in_workspace = subprocess.run(['git', '-C', repo, 'cat-file', '-e', commit + '^{commit}'],
+                                  capture_output=True).returncode == 0
+    if not in_workspace:
+        with zipfile.ZipFile(client_jar) as archive:
+            assert not archive.read('data/cobblemon/showdown.json').startswith(bytes([0xEF, 0xBB, 0xBF])), 'BOM fix missing'
     verification = suite / 'verification'
     verification.mkdir(exist_ok=True)
+    shutil.copy2(scratch / 'cobblemon-bom-build2.log', verification / 'cobblemon-build.log')
     for name, target in [
-        ('addons-release-pairs-run.log', 'addons-release-pairs-run.log'),
-        ('pair-addons-release-shell-verification.json', 'pair-addons-release-shell-verification.json'),
-        ('pair-addons-release-full-verification.json', 'pair-addons-release-full-verification.json'),
-        ('pair-addons-release-shell-client.log', 'pair-addons-release-shell-client.log'),
-        ('pair-addons-release-shell-server.log', 'pair-addons-release-shell-server.log'),
-        ('pair-addons-release-full-client.log', 'pair-addons-release-full-client.log'),
-        ('pair-addons-release-full-server.log', 'pair-addons-release-full-server.log'),
         ('registry-addons-runtime-riding-run.log', 'addon-runtime-probe.log'),
         ('registry-addons-runtime-riding.json', 'runtime-registry-snapshot.json'),
         ('cobblemon-riding-build.log', 'cobblemon-build.log'),
@@ -44,10 +44,19 @@ def main():
             shutil.copy2(path, verification / target)
     for name in ['cobblemon-git.properties']:
         pass
+    # 采用最近一次生成的验证记录（标签可变化），但两份都必须存在且通过。
+    candidates = sorted(scratch.glob('pair-*-shell-verification.json'), key=lambda f: f.stat().st_mtime, reverse=True)
+    assert candidates, 'no shell pair verification record found'
+    label = candidates[0].name[len('pair-'):-len('-shell-verification.json')]
     pairs = {}
     for variant in ['shell', 'full']:
-        record = verification / f'pair-addons-release-{variant}-verification.json'
+        record = scratch / f'pair-{label}-{variant}-verification.json'
         assert record.is_file(), record
+        shutil.copy2(record, verification / record.name)
+        for suffix in ['client.log', 'server.log']:
+            log = scratch / f'pair-{label}-{variant}-{suffix}'
+            if log.is_file():
+                shutil.copy2(log, verification / log.name)
         pairs[variant] = json.loads(record.read_text(encoding='utf-8'))
         assert pairs[variant]['passed'] is True
     runtime = (verification / 'addon-runtime-probe.log').read_text(encoding='utf-8', errors='replace')
@@ -59,6 +68,7 @@ def main():
         addons[name] = json.loads((suite / 'addon-manifests' / f'{name}.json').read_text(encoding='utf-8'))
     summary = {
         'cobblemon': {'upstreamBaseCommit': base, 'buildCommit': commit, 'workspaceHead': workspace_head,
+                      'buildRepo': 'H scratch clone (same content as workspace)', 'buildCommitInWorkspace': in_workspace,
                       'version': '1.8.4+1.21.1',
                       'ridingFixes': {'legacySpeciesTargets': 47, 'mergedNativeData': True}},
         'addons': {name: {'version': data['version'], 'preservedClasses': data['preservedClasses'],

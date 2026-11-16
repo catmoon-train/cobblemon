@@ -48,6 +48,10 @@ def build(source, destination, shell, asset_reference, source_repo):
         assert old_assets - asset_names <= asset_overrides, old_assets - asset_names
         assert 'assets/cobblemon/bedrock/pokemon/animations/0025_pikachu/pikachu.animation.json' in asset_names
         assert not any(n.startswith('META-INF/') and n.upper().endswith(('.RSA','.SF','.DSA','.EC')) for n in names)
+        # Gson 用 Reader 读取数据文件时不会跳过 UTF-8 BOM；带 BOM 会让 Showdown 元数据解析失败。
+        bom = [n for n in names
+               if n.startswith('data/') and n.endswith('.json') and original.read(n).startswith(b'\xef\xbb\xbf')]
+        assert not bom, f'UTF-8 BOM in data files breaks Cobblemon JSON readers: {bom}'
         destination.mkdir(parents=True)
         packs=destination/'resourcepacks';packs.mkdir()
         filename='Cobblemon-fabric-1.8.4+1.21.1.jar'
