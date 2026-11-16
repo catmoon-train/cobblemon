@@ -1,0 +1,8 @@
+543dbcc1884400e84238a58db3c0e41b62093f41e08bef5a90d568fbcad7a981  Cobblemon-fabric-1.8.4+1.21.1-client-full-split.jar
+add9b33e19ebd35f25ba843427121116868aebc8dbe45c06a5ecca47aa458bbe  Cobblemon-fabric-1.8.4+1.21.1-server-full-split.jar
+bc68e817ec458b7b10c38ee24bad074bdf728c552e00c21cb4db4b24be42a3b3  Cobblemon-fabric-1.8.4+1.21.1-server-shell.jar
+5cb592feb1e540826f0386728f0a988d52f42eb5f5bdc20568d1a4cfa7f82f88  resourcepacks/Cobblemon-1.8.4-optional-adorncompatibility.zip
+af3dd261ad5e8918ab402f816ea334d51c2fc85134f27ab587a0d92525e1682a  resourcepacks/Cobblemon-1.8.4-optional-gyaradosjump.zip
+c0a36cf3e23acb0010e75373e411952b618b8381328c152da94e70e523d85530  resourcepacks/Cobblemon-1.8.4-optional-regionbiasforms.zip
+ed503feb85a02faa2c3e3bbeccc6f14b29329c01805063633fead5913db1edaf  resourcepacks/Cobblemon-1.8.4-optional-uniqueshinyforms.zip
+ac42c3cecba10a4ccf8fee28cc652660d3a5fdd287705d1a0d6b09001bb6d909  resourcepacks/Cobblemon-1.8.4-resources.zip
