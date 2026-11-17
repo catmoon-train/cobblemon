@@ -74,8 +74,8 @@ object BedrockAnimationRepository {
     }
 
     fun getAnimation(fileName: String, animationName: String): BedrockAnimation {
-        val animationGroup = animationGroups[fileName]
-            ?: throw IllegalArgumentException("Unknown animation group: $fileName")
+        // 资源包未安装/被裁剪时整组都可能缺失；缺动画只降级，不让游戏崩溃。
+        val animationGroup = animationGroups[fileName] ?: return missingAnimation(fileName, animationName)
 
         return animationGroup.animations[animationName]
             ?: missingAnimation(fileName, animationName)
