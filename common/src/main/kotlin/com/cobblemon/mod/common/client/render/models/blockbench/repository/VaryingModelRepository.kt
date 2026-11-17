@@ -558,12 +558,17 @@ object VaryingModelRepository {
                 }
         }
 
+        // 先在局部表里建好并初始化，最后一次替换对外可见的映射。
+        // 否则重载期间渲染线程可能读到已加入、但 repository 尚未赋值的解析器（lateinit 崩溃）。
+        val built = mutableMapOf<ResourceLocation, VaryingRenderableResolver>()
         for ((species, speciesVariationSets) in nameToModelVariationSets) {
             val variations = speciesVariationSets.sortedBy { it.order }.flatMap { it.variations }.toMutableList()
-            this.variations[species] = VaryingRenderableResolver(species, variations)
+            built[species] = VaryingRenderableResolver(species, variations)
         }
 
-        variations.values.forEach { it.initialize(this) }
+        built.values.forEach { it.initialize(this) }
+        this.variations.clear()
+        this.variations.putAll(built)
 
         Cobblemon.LOGGER.info("Loaded $variationCount variations.")
     }
@@ -587,8 +592,7 @@ object VaryingModelRepository {
 
     fun reload(resourceManager: ResourceManager) {
         Cobblemon.LOGGER.info("Loading varying Bedrock assets...")
-        this.variations.clear()
-        this.posers.clear()
+        // 不在这里清空 variations：重载期间渲染线程仍需要一个完整可用的旧集合。
         registerModels(resourceManager)
         registerPosers(resourceManager)
         registerVariations(resourceManager)
