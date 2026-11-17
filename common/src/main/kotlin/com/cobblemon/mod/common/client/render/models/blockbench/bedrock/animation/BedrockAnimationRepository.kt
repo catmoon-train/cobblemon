@@ -78,27 +78,7 @@ object BedrockAnimationRepository {
             ?: throw IllegalArgumentException("Unknown animation group: $fileName")
 
         return animationGroup.animations[animationName]
-            ?: missingAnimation(fileName, animationName)
-    }
-
-    /** 三层资源包（尤其是被裁剪过的第三方包）可能缺少某条动画；缺一条不应崩整个游戏。 */
-    private val missingAnimations = java.util.concurrent.ConcurrentHashMap<String, BedrockAnimation>()
-
-    private fun missingAnimation(fileName: String, animationName: String): BedrockAnimation {
-        val key = "$fileName/$animationName"
-        if (missingAnimations.containsKey(key)) return missingAnimations[key]!!
-        LOGGER.warn(
-            "Animation {} is referenced by a poser but missing from animation group {}. " +
-                "A no-op animation is used instead; check that the Cobblemon resource pack is installed and enabled.",
-            animationName, fileName
-        )
-        val empty = gson.fromJson<BedrockAnimation>(
-            """{"loop": false, "animation_length": 0, "bones": {}}""",
-            BedrockAnimation::class.java
-        )
-        empty.name = animationName
-        missingAnimations[key] = empty
-        return empty
+            ?: throw IllegalArgumentException("Animation $animationName not found in animation group $fileName")
     }
 
     fun getAnimationOrNull(fileName: String, animationName: String): BedrockAnimation? {
