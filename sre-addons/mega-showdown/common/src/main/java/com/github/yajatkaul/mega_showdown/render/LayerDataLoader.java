@@ -5,6 +5,7 @@ import com.github.yajatkaul.mega_showdown.MegaShowdown;
 import com.github.yajatkaul.mega_showdown.api.codec.sizer.LayerCodec;
 import com.google.gson.JsonParser;
 import com.mojang.serialization.JsonOps;
+import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -19,7 +20,8 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
-public class LayerDataLoader implements ResourceManagerReloadListener {
+public class LayerDataLoader implements ResourceManagerReloadListener, IdentifiableResourceReloadListener {
+    private static final ResourceLocation FABRIC_ID = ResourceLocation.fromNamespaceAndPath(MegaShowdown.MOD_ID, "layer_data_loader");
     public static final HashMap<String, SizerRegStruct> LAYER_REGISTRY = new HashMap<>();
     private static final String DIRECTORY = "msd_sizer";
 
@@ -73,6 +75,11 @@ public class LayerDataLoader implements ResourceManagerReloadListener {
     @Override
     public void onResourceManagerReload(ResourceManager resourceManager) {
 
+    }
+
+    @Override
+    public @NotNull ResourceLocation getFabricId() {
+        return FABRIC_ID;
     }
 
     @Override

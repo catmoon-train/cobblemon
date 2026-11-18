@@ -861,5 +861,39 @@
         }
       ]
     }
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "61-91",
+          "JUMP": "50-75",
+          "SKILL": "61-91",
+          "SPEED": "58-95",
+          "STAMINA": "53-83"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "61-91",
+          "JUMP": "60-85",
+          "SKILL": "61-91",
+          "SPEED": "58-95",
+          "STAMINA": "53-83"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

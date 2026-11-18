@@ -209,5 +209,25 @@
         }
       ]
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "29-59",
+          "JUMP": "28-53",
+          "SKILL": "37-67",
+          "SPEED": "20-47",
+          "STAMINA": "47-77"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

@@ -7,8 +7,8 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.github.yajatkaul.mega_showdown.MegaShowdown;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import dev.architectury.networking.NetworkManager;
 import io.netty.buffer.ByteBuf;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket;
@@ -90,7 +90,7 @@ public record BattleStatePacketS2C(List<String> fieldEffects,
     }
 
     public void sendTo(ServerPlayer player) {
-        NetworkManager.sendToPlayer(player, this);
+        ServerPlayNetworking.send(player, this);
     }
 
     public ClientboundCustomPayloadPacket toPacket() {

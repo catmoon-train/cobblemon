@@ -16,7 +16,6 @@ import com.github.yajatkaul.mega_showdown.screen.MegaShowdownMenuTypes;
 import com.github.yajatkaul.mega_showdown.screen.custom.screen.TeraPouchScreen;
 import com.github.yajatkaul.mega_showdown.screen.custom.screen.ZygardeCubeScreen;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
-import dev.architectury.registry.ReloadListenerRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -32,9 +31,9 @@ import net.minecraft.server.packs.PackType;
 public final class MegaShowdownFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, new ItemRenderingLoader());
-        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, new LayerDataLoader());
-        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, new TeraMapLoader());
+        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(new ItemRenderingLoader());
+        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(new LayerDataLoader());
+        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(new TeraMapLoader());
 
         MenuScreens.register(MegaShowdownMenuTypes.ZYGARDE_CUBE_MENU.get(), ZygardeCubeScreen::new);
         MenuScreens.register(MegaShowdownMenuTypes.TERA_POUCH_MENU.get(), TeraPouchScreen::new);

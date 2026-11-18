@@ -208,5 +208,39 @@
     "tutor:zenheadbutt"
   ],
   "preEvolution": "wooper paldean",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "29-59",
+          "JUMP": "29-54",
+          "SKILL": "40-70",
+          "SPEED": "20-47",
+          "STAMINA": "68-98"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "29-59",
+          "JUMP": "29-54",
+          "SKILL": "40-70",
+          "SPEED": "20-47",
+          "STAMINA": "68-98"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

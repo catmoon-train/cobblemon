@@ -50,7 +50,9 @@
   },
   "behaviour": {
     "resting": {
-      "times": ["any"],
+      "times": [
+        "any"
+      ],
       "drowsyChance": 0.0014,
       "rouseChance": 0.0042
     },
@@ -878,5 +880,25 @@
       "evolutions": [],
       "battleOnly": false
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "48-73",
+          "SKILL": "44-74",
+          "SPEED": "37-71",
+          "STAMINA": "41-71"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

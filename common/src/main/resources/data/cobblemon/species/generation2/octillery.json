@@ -221,5 +221,25 @@
     "legacy:toxic"
   ],
   "preEvolution": "remoraid",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "34-64",
+          "JUMP": "35-60",
+          "SKILL": "46-76",
+          "SPEED": "26-55",
+          "STAMINA": "50-80"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

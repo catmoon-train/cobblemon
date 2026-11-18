@@ -228,5 +228,37 @@
       "willDefendOwner": true
     },
     "fireImmune": true
+  },
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "37-67",
+          "JUMP": "40-65",
+          "SKILL": "37-67",
+          "SPEED": "29-59",
+          "STAMINA": "46-76"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "37-67",
+          "JUMP": "30-55",
+          "SKILL": "37-67",
+          "SPEED": "29-59",
+          "STAMINA": "46-76"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

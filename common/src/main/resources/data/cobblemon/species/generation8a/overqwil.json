@@ -210,5 +210,28 @@
     "tutor:waterpulse"
   ],
   "preEvolution": "qwilfish hisuian",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "44-74",
+          "JUMP": "40-65",
+          "SKILL": "50-80",
+          "SPEED": "38-71",
+          "STAMINA": "58-88"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

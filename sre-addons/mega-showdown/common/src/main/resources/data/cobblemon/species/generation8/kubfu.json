@@ -147,5 +147,25 @@
       "requirements": [],
       "requiredContext": "cobblemon:scroll_of_waters"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "45-75",
+          "JUMP": "36-61",
+          "SKILL": "49-79",
+          "SPEED": "39-71",
+          "STAMINA": "57-87"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

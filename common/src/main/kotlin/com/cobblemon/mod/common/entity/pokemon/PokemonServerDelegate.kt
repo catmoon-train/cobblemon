@@ -484,16 +484,23 @@ class PokemonServerDelegate : PokemonSideDelegate {
         passenger: Entity,
         positionUpdater: Entity.MoveFunction
     ) {
-        entity.occupiedSeats.entries.firstOrNull { it.value == passenger }?.key?.offsetPosition(entity)?.let {
+        val seat = entity.occupiedSeats.entries.firstOrNull { it.value == passenger }?.key
+        seat?.offsetPosition(entity)?.let {
             positionUpdater.accept(passenger, it.x, it.y, it.z)
             return
         }
-        val offset = passengerOffsets[passenger.id] ?: Vec3.ZERO
-        positionUpdater.accept(
-            passenger,
-            entity.x + offset.x,
-            entity.y + offset.y,
-            entity.z + offset.z
-        )
+        val offset = passengerOffsets[passenger.id]
+        if (offset != null) {
+            positionUpdater.accept(
+                passenger,
+                entity.x + offset.x,
+                entity.y + offset.y,
+                entity.z + offset.z
+            )
+            return
+        }
+        val seatIndex = if (seat != null) entity.seats.indexOf(seat).coerceAtLeast(0) else 0
+        val fallback = (seat ?: com.cobblemon.mod.common.api.riding.Seat()).fallbackPosition(entity, seatIndex)
+        positionUpdater.accept(passenger, fallback.x, fallback.y, fallback.z)
     }
 }

@@ -293,7 +293,53 @@
           "willDefendOwner": true,
           "willFlee": false
         }
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "51-81",
+              "JUMP": "52-77",
+              "SKILL": "55-85",
+              "SPEED": "46-81",
+              "STAMINA": "63-93"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       }
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "41-71",
+          "JUMP": "46-71",
+          "SKILL": "41-71",
+          "SPEED": "35-68",
+          "STAMINA": "51-81"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

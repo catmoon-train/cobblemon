@@ -170,5 +170,25 @@
     "legacy:snore"
   ],
   "preEvolution": "yamper",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "51-81",
+          "JUMP": "41-66",
+          "SKILL": "45-75",
+          "SPEED": "47-84",
+          "STAMINA": "53-83"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

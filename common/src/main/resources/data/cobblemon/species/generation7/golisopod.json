@@ -235,5 +235,39 @@
     "legacy:toxic"
   ],
   "preEvolution": "wimpod",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "35-65",
+          "JUMP": "36-61",
+          "SKILL": "52-82",
+          "SPEED": "27-56",
+          "STAMINA": "55-85"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "35-65",
+          "JUMP": "36-61",
+          "SKILL": "52-82",
+          "SPEED": "27-56",
+          "STAMINA": "55-85"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

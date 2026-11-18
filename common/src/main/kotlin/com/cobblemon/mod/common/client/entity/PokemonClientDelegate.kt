@@ -533,7 +533,14 @@ class PokemonClientDelegate : PosableState(), PokemonSideDelegate {
             return
         }
         val locatorName = seat.locator
-        val locator = this.locatorStates[locatorName] ?: return
+        val locator = this.locatorStates[locatorName]
+        if (locator == null) {
+            val entity = getEntity()
+            val seatIndex = entity.seats.indexOf(seat).coerceAtLeast(0)
+            val fallback = seat.fallbackPosition(entity, seatIndex)
+            positionUpdater.accept(passenger, fallback.x, fallback.y, fallback.z)
+            return
+        }
 
         val locatorOffset = locator.matrix.getTranslation(Vector3f())
 

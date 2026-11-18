@@ -282,5 +282,25 @@
     "legacy:whirlpool"
   ],
   "preEvolution": "sneasel",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "52-82",
+          "JUMP": "44-69",
+          "SKILL": "51-81",
+          "SPEED": "48-85",
+          "STAMINA": "53-83"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

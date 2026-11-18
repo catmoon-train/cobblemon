@@ -261,5 +261,28 @@
     "legacy:uproar"
   ],
   "preEvolution": "krokorok",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "45-75",
+          "JUMP": "40-65",
+          "SKILL": "50-80",
+          "SPEED": "40-74",
+          "STAMINA": "61-91"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

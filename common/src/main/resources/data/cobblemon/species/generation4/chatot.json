@@ -186,5 +186,36 @@
     "legacy:swift",
     "legacy:toxic"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "38-63",
+          "SKILL": "43-73",
+          "SPEED": "37-71",
+          "STAMINA": "50-80"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "48-73",
+          "SKILL": "43-73",
+          "SPEED": "37-71",
+          "STAMINA": "50-80"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

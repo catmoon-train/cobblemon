@@ -249,5 +249,25 @@
   "lightingData": {
     "lightLevel": 7,
     "liquidGlowMode": "BOTH"
+  },
+  "riding": {
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "31-56",
+          "SKILL": "34-64",
+          "SPEED": "31-62",
+          "STAMINA": "41-71"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

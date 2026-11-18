@@ -232,5 +232,48 @@
       "evolutions": [],
       "battleOnly": false
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "39-64",
+          "SKILL": "44-74",
+          "SPEED": "38-72",
+          "STAMINA": "50-80"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "49-74",
+          "SKILL": "44-74",
+          "SPEED": "38-72",
+          "STAMINA": "50-80"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "39-64",
+          "SKILL": "44-74",
+          "SPEED": "38-72",
+          "STAMINA": "50-80"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

@@ -1,15 +1,28 @@
 {
   "target": "cobblemon:clefable",
-  "features": ["mega_evolution"],
+  "features": [
+    "mega_evolution"
+  ],
   "forms": [
     {
       "name": "Mega",
       "primaryType": "fairy",
       "secondaryType": "flying",
-      "pokedex": ["cobblemon.species.clefable-mega.desc"],
-      "abilities": ["magicbounce", "magicbounce", "h:magicbounce"],
-      "labels": ["gen1", "mega"],
-      "aspects": ["mega"],
+      "pokedex": [
+        "cobblemon.species.clefable-mega.desc"
+      ],
+      "abilities": [
+        "magicbounce",
+        "magicbounce",
+        "h:magicbounce"
+      ],
+      "labels": [
+        "gen1",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
       "battleOnly": true,
       "dynamaxBlocked": true,
       "baseStats": {
@@ -38,7 +51,41 @@
         "fixed": false
       },
       "height": 17,
-      "weight": 423
+      "weight": 423,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "45-75",
+              "JUMP": "40-65",
+              "SKILL": "58-88",
+              "SPEED": "38-70",
+              "STAMINA": "68-98"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "45-75",
+              "JUMP": "50-75",
+              "SKILL": "58-88",
+              "SPEED": "38-70",
+              "STAMINA": "68-98"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }

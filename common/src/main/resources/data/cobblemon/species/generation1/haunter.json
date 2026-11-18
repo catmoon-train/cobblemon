@@ -265,5 +265,28 @@
       ],
       "requirements": []
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "44-74",
+          "JUMP": "51-76",
+          "SKILL": "48-78",
+          "SPEED": "38-72",
+          "STAMINA": "40-70"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

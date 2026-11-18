@@ -385,6 +385,40 @@
             "quantityRange": "2-3"
           }
         ]
+      },
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "50-80",
+              "JUMP": "46-71",
+              "SKILL": "65-95",
+              "SPEED": "44-78",
+              "STAMINA": "78-100"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "50-80",
+              "JUMP": "56-81",
+              "SKILL": "65-95",
+              "SPEED": "44-78",
+              "STAMINA": "78-100"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       }
     },
     {
@@ -592,6 +626,40 @@
             "quantityRange": "2-3"
           }
         ]
+      },
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "50-80",
+              "JUMP": "46-71",
+              "SKILL": "65-95",
+              "SPEED": "44-78",
+              "STAMINA": "78-100"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "50-80",
+              "JUMP": "56-81",
+              "SKILL": "65-95",
+              "SPEED": "44-78",
+              "STAMINA": "78-100"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       }
     }
   ],
@@ -623,6 +691,40 @@
       {
         "item": "minecraft:dragon_breath",
         "quantityRange": "2-3"
+      }
+    ]
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-80",
+          "JUMP": "42-67",
+          "SKILL": "57-87",
+          "SPEED": "44-78",
+          "STAMINA": "78-100"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-80",
+          "JUMP": "52-77",
+          "SKILL": "57-87",
+          "SPEED": "44-78",
+          "STAMINA": "78-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
       }
     ]
   }

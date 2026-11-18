@@ -196,5 +196,28 @@
     "tutor:zenheadbutt"
   ],
   "preEvolution": "naclstack",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "34-64",
+          "JUMP": "33-58",
+          "SKILL": "47-77",
+          "SPEED": "25-53",
+          "STAMINA": "63-93"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

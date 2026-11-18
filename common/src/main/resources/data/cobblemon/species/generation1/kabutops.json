@@ -252,5 +252,39 @@
     "legacy:watergun"
   ],
   "preEvolution": "kabuto",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "39-64",
+          "SKILL": "50-80",
+          "SPEED": "37-70",
+          "STAMINA": "50-80"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "39-64",
+          "SKILL": "50-80",
+          "SPEED": "37-70",
+          "STAMINA": "50-80"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

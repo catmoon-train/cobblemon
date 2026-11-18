@@ -246,5 +246,36 @@
     "legacy:swagger"
   ],
   "preEvolution": "wooper",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "32-62",
+          "JUMP": "32-57",
+          "SKILL": "42-72",
+          "SPEED": "23-51",
+          "STAMINA": "56-86"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "32-62",
+          "JUMP": "32-57",
+          "SKILL": "42-72",
+          "SPEED": "23-51",
+          "STAMINA": "56-86"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

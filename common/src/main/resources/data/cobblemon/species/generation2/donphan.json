@@ -257,5 +257,28 @@
     "legacy:watergun"
   ],
   "preEvolution": "phanpy",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "37-67",
+          "JUMP": "37-62",
+          "SKILL": "51-81",
+          "SPEED": "29-59",
+          "STAMINA": "60-90"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

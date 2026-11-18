@@ -212,5 +212,40 @@
     "legacy:swagger",
     "legacy:toxic"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "37-62",
+          "SKILL": "46-76",
+          "SPEED": "31-62",
+          "STAMINA": "53-83"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "37-62",
+          "SKILL": "46-76",
+          "SPEED": "31-62",
+          "STAMINA": "53-83"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

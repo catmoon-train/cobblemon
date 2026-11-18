@@ -233,5 +233,25 @@
         ]
       }
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "29-59",
+          "JUMP": "30-55",
+          "SKILL": "40-70",
+          "SPEED": "20-47",
+          "STAMINA": "43-73"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

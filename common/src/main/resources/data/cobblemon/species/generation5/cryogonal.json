@@ -197,5 +197,28 @@
   "lightingData": {
     "lightLevel": 7,
     "liquidGlowMode": "BOTH"
+  },
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "48-78",
+          "JUMP": "50-75",
+          "SKILL": "46-76",
+          "SPEED": "43-78",
+          "STAMINA": "56-86"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

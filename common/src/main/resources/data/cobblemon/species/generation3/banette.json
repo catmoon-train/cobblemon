@@ -275,6 +275,37 @@
           "willDefendOwner": true,
           "willFlee": false
         }
+      },
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "46-76",
+              "JUMP": "44-69",
+              "SKILL": "64-94",
+              "SPEED": "39-71",
+              "STAMINA": "58-88"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "46-76",
+              "JUMP": "54-79",
+              "SKILL": "64-94",
+              "SPEED": "39-71",
+              "STAMINA": "58-88"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          }
+        ]
       }
     }
   ],
@@ -308,5 +339,36 @@
       "willDefendOwner": true,
       "willFlee": false
     }
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "38-63",
+          "SKILL": "48-78",
+          "SPEED": "31-62",
+          "STAMINA": "46-76"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "48-73",
+          "SKILL": "48-78",
+          "SPEED": "31-62",
+          "STAMINA": "46-76"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

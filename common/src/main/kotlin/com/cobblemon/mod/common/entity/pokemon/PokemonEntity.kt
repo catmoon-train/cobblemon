@@ -340,8 +340,11 @@ open class PokemonEntity(
 
     fun refreshRiding() {
         pokemon.entity?.ejectPassengers()
-        if (pokemon.form.riding.behaviours != null) {
-            ridingController = RidingController(this, pokemon.form.riding.behaviours!!)
+        val behaviours = pokemon.form.riding.behaviours
+        ridingController = if (behaviours != null && behaviours.isNotEmpty()) {
+            RidingController(this, behaviours)
+        } else {
+            null
         }
         occupiedSeats.clear()
     }

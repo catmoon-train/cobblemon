@@ -215,5 +215,39 @@
     "legacy:toxic"
   ],
   "preEvolution": "bidoof",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "39-69",
+          "JUMP": "35-60",
+          "SKILL": "42-72",
+          "SPEED": "32-64",
+          "STAMINA": "51-81"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "39-69",
+          "JUMP": "35-60",
+          "SKILL": "42-72",
+          "SPEED": "32-64",
+          "STAMINA": "51-81"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

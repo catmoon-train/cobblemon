@@ -194,5 +194,39 @@
     "tutor:waterpulse"
   ],
   "preEvolution": "quaxwell",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "44-74",
+          "JUMP": "40-65",
+          "SKILL": "51-81",
+          "SPEED": "38-71",
+          "STAMINA": "58-88"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "44-74",
+          "JUMP": "40-65",
+          "SKILL": "51-81",
+          "SPEED": "38-71",
+          "STAMINA": "58-88"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

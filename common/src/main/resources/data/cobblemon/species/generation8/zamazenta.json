@@ -262,5 +262,28 @@
         "item": "cobblemon:ability_shield"
       }
     ]
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "58-88",
+          "JUMP": "45-70",
+          "SKILL": "55-85",
+          "SPEED": "55-93",
+          "STAMINA": "67-97"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

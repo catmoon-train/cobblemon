@@ -206,6 +206,37 @@
       "lightingData": {
         "lightLevel": 10,
         "liquidGlowMode": "BOTH"
+      },
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "48-78",
+              "JUMP": "39-64",
+              "SKILL": "52-82",
+              "SPEED": "42-75",
+              "STAMINA": "68-98"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "48-78",
+              "JUMP": "49-74",
+              "SKILL": "52-82",
+              "SPEED": "42-75",
+              "STAMINA": "68-98"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          }
+        ]
       }
     },
     {
@@ -274,5 +305,25 @@
   "lightingData": {
     "lightLevel": 7,
     "liquidGlowMode": "BOTH"
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "32-57",
+          "SKILL": "44-74",
+          "SPEED": "36-67",
+          "STAMINA": "67-97"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

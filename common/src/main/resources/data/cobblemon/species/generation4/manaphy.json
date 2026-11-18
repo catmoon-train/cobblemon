@@ -199,5 +199,25 @@
     "legacy:toxic",
     "legacy:uproar"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "51-81",
+          "JUMP": "40-65",
+          "SKILL": "51-81",
+          "SPEED": "46-81",
+          "STAMINA": "70-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

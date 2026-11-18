@@ -213,5 +213,25 @@
     "legacy:toxic"
   ],
   "preEvolution": "drilbur",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "44-74",
+          "JUMP": "42-67",
+          "SKILL": "54-84",
+          "SPEED": "39-72",
+          "STAMINA": "66-96"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

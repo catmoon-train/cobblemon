@@ -1,13 +1,26 @@
 {
   "target": "cobblemon:skarmory",
-  "features": ["mega_evolution"],
+  "features": [
+    "mega_evolution"
+  ],
   "forms": [
     {
       "name": "Mega",
-      "pokedex": ["cobblemon.species.skarmory-mega.desc"],
-      "abilities": ["stalwart", "stalwart", "h:stalwart"],
-      "labels": ["gen2", "mega"],
-      "aspects": ["mega"],
+      "pokedex": [
+        "cobblemon.species.skarmory-mega.desc"
+      ],
+      "abilities": [
+        "stalwart",
+        "stalwart",
+        "h:stalwart"
+      ],
+      "labels": [
+        "gen2",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
       "battleOnly": true,
       "dynamaxBlocked": true,
       "baseStats": {
@@ -25,7 +38,41 @@
         "fixed": false
       },
       "height": 17,
-      "weight": 404
+      "weight": 404,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "53-83",
+              "JUMP": "45-70",
+              "SKILL": "59-89",
+              "SPEED": "48-84",
+              "STAMINA": "58-88"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "53-83",
+              "JUMP": "55-80",
+              "SKILL": "59-89",
+              "SPEED": "48-84",
+              "STAMINA": "58-88"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }

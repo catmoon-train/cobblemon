@@ -243,5 +243,28 @@
     "special:refresh"
   ],
   "preEvolution": "ekans",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "41-71",
+          "JUMP": "37-62",
+          "SKILL": "44-74",
+          "SPEED": "35-68",
+          "STAMINA": "45-75"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

@@ -205,5 +205,25 @@
       "requirements": [],
       "requiredContext": "cobblemon:water_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "30-55",
+          "SKILL": "38-68",
+          "SPEED": "25-54",
+          "STAMINA": "35-65"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

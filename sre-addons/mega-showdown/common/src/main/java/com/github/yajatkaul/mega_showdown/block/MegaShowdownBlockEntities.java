@@ -5,13 +5,13 @@ import com.github.yajatkaul.mega_showdown.block.block_entity.MegaStoneStandEntit
 import com.github.yajatkaul.mega_showdown.block.block_entity.PedestalBlockEntity;
 import com.github.yajatkaul.mega_showdown.block.block_entity.ReassemblyUnitBlockEntity;
 import com.github.yajatkaul.mega_showdown.block.block_entity.WishingStarEntity;
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.github.yajatkaul.mega_showdown.registry.FabricDeferredRegister;
+import com.github.yajatkaul.mega_showdown.registry.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class MegaShowdownBlockEntities {
-    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(MegaShowdown.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
+    private static final FabricDeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = FabricDeferredRegister.create(MegaShowdown.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
 
     public static void register() {
         BLOCK_ENTITIES.register();

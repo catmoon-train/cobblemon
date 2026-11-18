@@ -229,5 +229,28 @@
     "special:morningsun"
   ],
   "preEvolution": "scyther",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "44-74",
+          "JUMP": "42-67",
+          "SKILL": "54-84",
+          "SPEED": "38-71",
+          "STAMINA": "53-83"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

@@ -237,6 +237,29 @@
         "herd": {
           "maxSize": 4
         }
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "51-81",
+              "JUMP": "54-79",
+              "SKILL": "60-90",
+              "SPEED": "46-81",
+              "STAMINA": "63-93"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       }
     }
   ],
@@ -264,5 +287,25 @@
     "herd": {
       "maxSize": 3
     }
+  },
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "53-83",
+          "JUMP": "53-78",
+          "SKILL": "56-86",
+          "SPEED": "48-84",
+          "STAMINA": "63-93"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

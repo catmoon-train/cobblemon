@@ -475,5 +475,40 @@
         "fireImmune": true
       }
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "40-65",
+          "SKILL": "48-78",
+          "SPEED": "42-77",
+          "STAMINA": "56-86"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "40-65",
+          "SKILL": "48-78",
+          "SPEED": "42-77",
+          "STAMINA": "56-86"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

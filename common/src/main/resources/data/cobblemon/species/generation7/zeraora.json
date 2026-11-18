@@ -198,5 +198,25 @@
     "legacy:snore",
     "legacy:toxic"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "59-89",
+          "JUMP": "45-70",
+          "SKILL": "53-83",
+          "SPEED": "56-95",
+          "STAMINA": "66-96"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

@@ -394,6 +394,40 @@
           "drowsyChance": 0.0333,
           "rouseChance": 0.0042
         }
+      },
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "47-77",
+              "JUMP": "45-70",
+              "SKILL": "65-95",
+              "SPEED": "41-74",
+              "STAMINA": "63-93"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "47-77",
+              "JUMP": "55-80",
+              "SKILL": "65-95",
+              "SPEED": "41-74",
+              "STAMINA": "63-93"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       }
     }
   ],
@@ -426,5 +460,25 @@
     "combat": {
       "willDefendOwner": true
     }
+  },
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "45-75",
+          "JUMP": "52-77",
+          "SKILL": "61-91",
+          "SPEED": "38-70",
+          "STAMINA": "63-93"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

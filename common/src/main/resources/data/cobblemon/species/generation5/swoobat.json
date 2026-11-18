@@ -246,5 +246,39 @@
     "legacy:toxic"
   ],
   "preEvolution": "woobat",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "39-64",
+          "SKILL": "40-70",
+          "SPEED": "43-79",
+          "STAMINA": "47-77"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "49-74",
+          "SKILL": "40-70",
+          "SPEED": "43-79",
+          "STAMINA": "47-77"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

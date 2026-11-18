@@ -205,5 +205,28 @@
     "legacy:swagger"
   ],
   "preEvolution": "mareanie",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "34-64",
+          "JUMP": "29-54",
+          "SKILL": "39-69",
+          "SPEED": "25-53",
+          "STAMINA": "46-76"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

@@ -12,8 +12,8 @@ import com.github.yajatkaul.mega_showdown.networking.server.packet.CrownPacket;
 import com.github.yajatkaul.mega_showdown.networking.server.packet.MegaEvoPacket;
 import com.github.yajatkaul.mega_showdown.networking.server.packet.PrimalEvoPacket;
 import com.github.yajatkaul.mega_showdown.networking.server.packet.UltraBurstPacket;
-import dev.architectury.networking.NetworkManager;
 import kotlin.Unit;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Vector3f;
@@ -43,7 +43,7 @@ public class CobbleClientEvents {
                     () -> new Vector3f(1),
                     () -> {
                         if (WheelDataClient.canMega) {
-                            NetworkManager.sendToServer(new MegaEvoPacket(event.getPokemonID()));
+                            ClientPlayNetworking.send(new MegaEvoPacket(event.getPokemonID()));
                             closeGUI();
                         }
                         return Unit.INSTANCE;
@@ -59,7 +59,7 @@ public class CobbleClientEvents {
                     () -> new Vector3f(1),
                     () -> {
                         if (WheelDataClient.canUltra) {
-                            NetworkManager.sendToServer(new UltraBurstPacket(event.getPokemonID()));
+                            ClientPlayNetworking.send(new UltraBurstPacket(event.getPokemonID()));
                             closeGUI();
                         }
                         return Unit.INSTANCE;
@@ -75,7 +75,7 @@ public class CobbleClientEvents {
                     () -> new Vector3f(1),
                     () -> {
                         if (WheelDataClient.canPrimal) {
-                            NetworkManager.sendToServer(new PrimalEvoPacket(event.getPokemonID()));
+                            ClientPlayNetworking.send(new PrimalEvoPacket(event.getPokemonID()));
                             closeGUI();
                         }
                         return Unit.INSTANCE;
@@ -91,7 +91,7 @@ public class CobbleClientEvents {
                     () -> new Vector3f(1),
                     () -> {
                         if (WheelDataClient.canCrown) {
-                            NetworkManager.sendToServer(new CrownPacket(event.getPokemonID()));
+                            ClientPlayNetworking.send(new CrownPacket(event.getPokemonID()));
                             closeGUI();
                         }
                         return Unit.INSTANCE;

@@ -208,5 +208,28 @@
     "legacy:toxic"
   ],
   "preEvolution": "clamperl",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "35-65",
+          "JUMP": "36-61",
+          "SKILL": "47-77",
+          "SPEED": "28-58",
+          "STAMINA": "43-73"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

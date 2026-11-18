@@ -3,16 +3,16 @@ package com.github.yajatkaul.mega_showdown.screen;
 import com.github.yajatkaul.mega_showdown.MegaShowdown;
 import com.github.yajatkaul.mega_showdown.screen.custom.handler.TeraPouchScreenHandler;
 import com.github.yajatkaul.mega_showdown.screen.custom.handler.ZygardeCubesScreenHandler;
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.github.yajatkaul.mega_showdown.registry.FabricDeferredRegister;
+import com.github.yajatkaul.mega_showdown.registry.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 
 public class MegaShowdownMenuTypes {
-    public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(MegaShowdown.MOD_ID, Registries.MENU);
+    public static final FabricDeferredRegister<MenuType<?>> MENUS =
+            FabricDeferredRegister.create(MegaShowdown.MOD_ID, Registries.MENU);
 
     private static <T extends AbstractContainerMenu> RegistrySupplier<MenuType<T>> registerMenuType(
             String name,

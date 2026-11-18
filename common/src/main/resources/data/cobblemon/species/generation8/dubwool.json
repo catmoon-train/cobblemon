@@ -160,5 +160,25 @@
     "legacy:snore"
   ],
   "preEvolution": "wooloo",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "44-74",
+          "JUMP": "36-61",
+          "SKILL": "43-73",
+          "SPEED": "39-72",
+          "STAMINA": "54-84"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

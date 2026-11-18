@@ -10,7 +10,7 @@ import com.github.yajatkaul.mega_showdown.item.MegaShowdownItems;
 import com.github.yajatkaul.mega_showdown.networking.server.MegaShowdownNetworkHandlerServer;
 import com.github.yajatkaul.mega_showdown.screen.MegaShowdownMenuTypes;
 import com.github.yajatkaul.mega_showdown.sound.MegaShowdownSounds;
-import dev.architectury.event.events.common.CommandRegistrationEvent;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +25,8 @@ public final class MegaShowdown {
         MegaShowdownBlockEntities.register();
         MegaShowdownItems.register();
         MegaShowdownSounds.register();
-        CommandRegistrationEvent.EVENT.register(MegaShowdownCommands::registerCommands);
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, selection) ->
+                MegaShowdownCommands.registerCommands(dispatcher, registryAccess, selection));
 
         MegaShowdownTabs.register();
 

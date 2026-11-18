@@ -345,7 +345,41 @@
         }
       },
       "evolutions": [],
-      "battleOnly": true
+      "battleOnly": true,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "37-67",
+              "JUMP": "36-61",
+              "SKILL": "57-87",
+              "SPEED": "28-56",
+              "STAMINA": "68-98"
+            }
+          },
+          "LIQUID": {
+            "key": "cobblemon:liquid/submarine",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "37-67",
+              "JUMP": "36-61",
+              "SKILL": "57-87",
+              "SPEED": "28-56",
+              "STAMINA": "68-98"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     },
     {
       "name": "Galar",
@@ -597,5 +631,39 @@
         ]
       }
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "33-58",
+          "SKILL": "47-77",
+          "SPEED": "24-52",
+          "STAMINA": "61-91"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "33-58",
+          "SKILL": "47-77",
+          "SPEED": "24-52",
+          "STAMINA": "61-91"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

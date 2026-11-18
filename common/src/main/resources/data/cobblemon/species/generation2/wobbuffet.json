@@ -107,5 +107,25 @@
     "special:tickle"
   ],
   "preEvolution": "wynaut",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "31-61",
+          "JUMP": "26-51",
+          "SKILL": "31-61",
+          "SPEED": "23-51",
+          "STAMINA": "88-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

@@ -206,5 +206,25 @@
     "legacy:toxic"
   ],
   "preEvolution": "glameow",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "39-64",
+          "SKILL": "41-71",
+          "SPEED": "43-79",
+          "STAMINA": "48-78"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

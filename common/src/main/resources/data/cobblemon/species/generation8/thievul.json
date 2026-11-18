@@ -177,5 +177,28 @@
     "legacy:snore"
   ],
   "preEvolution": "nickit",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "37-62",
+          "SKILL": "42-72",
+          "SPEED": "37-71",
+          "STAMINA": "48-78"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

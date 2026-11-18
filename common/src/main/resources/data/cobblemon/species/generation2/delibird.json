@@ -227,5 +227,36 @@
     "legacy:toxic",
     "special:happyhour"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "34-59",
+          "SKILL": "38-68",
+          "SPEED": "33-65",
+          "STAMINA": "40-70"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "44-69",
+          "SKILL": "38-68",
+          "SPEED": "33-65",
+          "STAMINA": "40-70"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

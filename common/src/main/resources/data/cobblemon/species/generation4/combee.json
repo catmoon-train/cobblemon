@@ -186,5 +186,25 @@
         ]
       }
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "39-69",
+          "JUMP": "40-65",
+          "SKILL": "31-61",
+          "SPEED": "32-64",
+          "STAMINA": "35-65"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

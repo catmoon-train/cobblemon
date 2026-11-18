@@ -141,5 +141,28 @@
     "herd": {
       "maxSize": 6
     }
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "35-60",
+          "SKILL": "53-83",
+          "SPEED": "32-61",
+          "STAMINA": "88-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

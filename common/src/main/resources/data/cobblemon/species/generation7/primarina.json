@@ -228,5 +228,39 @@
     "legacy:toxic"
   ],
   "preEvolution": "brionne",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "39-69",
+          "JUMP": "38-63",
+          "SKILL": "52-82",
+          "SPEED": "32-63",
+          "STAMINA": "56-86"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "39-69",
+          "JUMP": "38-63",
+          "SKILL": "52-82",
+          "SPEED": "32-63",
+          "STAMINA": "56-86"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

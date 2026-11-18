@@ -205,5 +205,28 @@
       "drowsyChance": 0.0333,
       "rouseChance": 0.0042
     }
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-80",
+          "JUMP": "43-68",
+          "SKILL": "57-87",
+          "SPEED": "45-79",
+          "STAMINA": "79-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

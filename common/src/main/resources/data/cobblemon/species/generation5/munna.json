@@ -220,5 +220,25 @@
       "requirements": [],
       "requiredContext": "cobblemon:moon_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "29-59",
+          "JUMP": "39-64",
+          "SKILL": "38-68",
+          "SPEED": "21-48",
+          "STAMINA": "50-80"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

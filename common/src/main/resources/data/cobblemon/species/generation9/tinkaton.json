@@ -176,5 +176,25 @@
     "tutor:stoneedge"
   ],
   "preEvolution": "tinkatuff",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "45-75",
+          "JUMP": "36-61",
+          "SKILL": "42-72",
+          "SPEED": "40-74",
+          "STAMINA": "58-88"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

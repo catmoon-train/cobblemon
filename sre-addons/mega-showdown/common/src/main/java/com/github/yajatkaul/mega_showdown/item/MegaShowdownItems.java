@@ -27,9 +27,8 @@ import com.github.yajatkaul.mega_showdown.item.custom.tera.TeraShard;
 import com.github.yajatkaul.mega_showdown.item.custom.z.ElementalZCrystal;
 import com.github.yajatkaul.mega_showdown.item.custom.z.SpecialZCrystal;
 import com.github.yajatkaul.mega_showdown.utils.RegistryLocator;
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.DeferredSupplier;
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.github.yajatkaul.mega_showdown.registry.FabricDeferredRegister;
+import com.github.yajatkaul.mega_showdown.registry.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -46,7 +45,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class MegaShowdownItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MegaShowdown.MOD_ID, Registries.ITEM);
+    public static final FabricDeferredRegister<Item> ITEMS = FabricDeferredRegister.create(MegaShowdown.MOD_ID, Registries.ITEM);
 
     public static final RegistrySupplier<Item> KEYSTONE = registerTooltipItem("keystone", MegaShowdownTabs.MEGA_TAB);
     public static final RegistrySupplier<Item> MEGA_STONE = registerTooltipItem("mega_stone", MegaShowdownTabs.MEGA_TAB);
@@ -188,9 +187,9 @@ public class MegaShowdownItems {
     public static final RegistrySupplier<Item> FAIRY_TERA_SHARD = registerTeraShards("fairy_tera_shard", TeraTypes.getFAIRY());
     public static final RegistrySupplier<Item> STELLAR_TERA_SHARD = registerTeraShards("stellar_tera_shard", TeraTypes.getSTELLAR());
 
-    public static final RegistrySupplier<Item> SPARKLING_STONE_LIGHT = registerItem("sparkling_stone_light", () -> new ToolTipItem(new Item.Properties().arch$tab(MegaShowdownTabs.Z_TAB)));
-    public static final RegistrySupplier<Item> SPARKLING_STONE_DARK = registerItem("sparkling_stone_dark", () -> new ToolTipItem(new Item.Properties().arch$tab(MegaShowdownTabs.Z_TAB)));
-    public static final RegistrySupplier<Item> BLANK_Z = registerItem("blank_z", () -> new ToolTipItem(new Item.Properties().arch$tab(MegaShowdownTabs.Z_TAB)));
+    public static final RegistrySupplier<Item> SPARKLING_STONE_LIGHT = registerItem("sparkling_stone_light", () -> new ToolTipItem(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.Z_TAB)));
+    public static final RegistrySupplier<Item> SPARKLING_STONE_DARK = registerItem("sparkling_stone_dark", () -> new ToolTipItem(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.Z_TAB)));
+    public static final RegistrySupplier<Item> BLANK_Z = registerItem("blank_z", () -> new ToolTipItem(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.Z_TAB)));
     // Elemental Z-Crystals
     public static final RegistrySupplier<Item> NORMALIUM_Z = registerZElementalCrystals("normalium_z", ElementalTypes.NORMAL);
     public static final RegistrySupplier<Item> BUGINIUM_Z = registerZElementalCrystals("buginium_z", ElementalTypes.BUG);
@@ -326,21 +325,21 @@ public class MegaShowdownItems {
 
     public static final RegistrySupplier<Item> OMNI_RING = registerOmniRing("omni_ring");
 
-    public static final RegistrySupplier<Item> DYNAMAX_CANDY = registerItem("dynamax_candy", () -> new DynamaxCandy(new Item.Properties().arch$tab(MegaShowdownTabs.DYNAMAX_TAB)));
-    public static final RegistrySupplier<Item> MAX_HONEY = registerItem("max_honey", () -> new MaxHoney(new Item.Properties().arch$tab(MegaShowdownTabs.DYNAMAX_TAB)));
-    public static final RegistrySupplier<Item> MAX_SOUP = registerItem("max_soup", () -> new MaxSoup(new Item.Properties().arch$tab(MegaShowdownTabs.DYNAMAX_TAB)));
-    public static final RegistrySupplier<Item> SWEET_MAX_SOUP = registerItem("sweet_max_soup", () -> new SweetMaxSoup(new Item.Properties().arch$tab(MegaShowdownTabs.DYNAMAX_TAB)));
+    public static final RegistrySupplier<Item> DYNAMAX_CANDY = registerItem("dynamax_candy", () -> new DynamaxCandy(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.DYNAMAX_TAB)));
+    public static final RegistrySupplier<Item> MAX_HONEY = registerItem("max_honey", () -> new MaxHoney(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.DYNAMAX_TAB)));
+    public static final RegistrySupplier<Item> MAX_SOUP = registerItem("max_soup", () -> new MaxSoup(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.DYNAMAX_TAB)));
+    public static final RegistrySupplier<Item> SWEET_MAX_SOUP = registerItem("sweet_max_soup", () -> new SweetMaxSoup(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.DYNAMAX_TAB)));
     public static final RegistrySupplier<Item> WISHING_STAR = registerTooltipBlockItem("wishing_star", () -> MegaShowdownBlocks.WISHING_STAR_CRYSTAL.get(), MegaShowdownTabs.DYNAMAX_TAB);
 
-    public static final RegistrySupplier<Item> ZYGARDE_CUBE = registerItem("zygarde_cube", () -> new ZygardeCube(new Item.Properties().stacksTo(1).arch$tab(MegaShowdownTabs.FORM_TAB)));
-    public static final RegistrySupplier<Item> ZYGARDE_CELL = registerItem("zygarde_cell", () -> new ToolTipItem(new Item.Properties().stacksTo(95).arch$tab(MegaShowdownTabs.FORM_TAB)));
-    public static final RegistrySupplier<Item> ZYGARDE_CORE = registerItem("zygarde_core", () -> new ToolTipItem(new Item.Properties().stacksTo(5).arch$tab(MegaShowdownTabs.FORM_TAB)));
+    public static final RegistrySupplier<Item> ZYGARDE_CUBE = registerItem("zygarde_cube", () -> new ZygardeCube(MegaShowdownTabs.tab(new Item.Properties().stacksTo(1), MegaShowdownTabs.FORM_TAB)));
+    public static final RegistrySupplier<Item> ZYGARDE_CELL = registerItem("zygarde_cell", () -> new ToolTipItem(MegaShowdownTabs.tab(new Item.Properties().stacksTo(95), MegaShowdownTabs.FORM_TAB)));
+    public static final RegistrySupplier<Item> ZYGARDE_CORE = registerItem("zygarde_core", () -> new ToolTipItem(MegaShowdownTabs.tab(new Item.Properties().stacksTo(5), MegaShowdownTabs.FORM_TAB)));
 
     public static final RegistrySupplier<Item> LIKOS_PENDANT = registerItem("likos_pendant",
-            () -> new LikosPendant(new Item.Properties().stacksTo(1)
+            () -> new LikosPendant(MegaShowdownTabs.tab(new Item.Properties().stacksTo(1)
                     .stacksTo(1)
                     .component(MegaShowdownDataComponents.LIKO_PENDANT_TICK_COMPONENT.get(), MegaShowdownConfig.likoPendentDuration)
-                    .arch$tab(MegaShowdownTabs.TERA_TAB))
+                    , MegaShowdownTabs.TERA_TAB))
     );
 
     public static final RegistrySupplier<Item> PINK_NECTAR = registerFormChangeInteractItem(
@@ -441,7 +440,7 @@ public class MegaShowdownItems {
             true
     );
 
-    public static final RegistrySupplier<Item> ASH_CAP = registerItem("ash_cap", () -> new AshCap(new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB)));
+    public static final RegistrySupplier<Item> ASH_CAP = registerItem("ash_cap", () -> new AshCap(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB)));
 
     public static final RegistrySupplier<Item> ADAMANT_CRYSTAL = registerFormChangeHeldItems(
             "adamant_crystal",
@@ -881,7 +880,7 @@ public class MegaShowdownItems {
     );
 
     public static final RegistrySupplier<Item> ROTOM_CATALOGUE = registerItem(
-            "rotom_catalogue", () -> new RotomCatalogue(new Item.Properties().stacksTo(1).arch$tab(MegaShowdownTabs.FORM_TAB))
+            "rotom_catalogue", () -> new RotomCatalogue(MegaShowdownTabs.tab(new Item.Properties().stacksTo(1), MegaShowdownTabs.FORM_TAB))
     );
 
     public static final RegistrySupplier<Item> REVEAL_GLASS = registerFormChangeInteractItem(
@@ -922,7 +921,7 @@ public class MegaShowdownItems {
 
     private static RegistrySupplier<Item> registerTeraPouch(String name) {
         return registerItem(name, () -> new TeraPouch(
-                new Item.Properties().stacksTo(1).arch$tab(MegaShowdownTabs.TERA_TAB)
+                MegaShowdownTabs.tab(new Item.Properties().stacksTo(1), MegaShowdownTabs.TERA_TAB)
         ));
     }
 
@@ -936,7 +935,7 @@ public class MegaShowdownItems {
                                                                          String form_aspect_revert
     ) {
         return ITEMS.register(name, () -> new FormChangeInteractItemMSD(
-                new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB),
+                MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB),
                 form_name,
                 form_apply,
                 pokemons,
@@ -955,7 +954,7 @@ public class MegaShowdownItems {
                                                                                int consume
     ) {
         return ITEMS.register(name, () -> new FormChangeInteractToggleItemMSD(
-                new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB),
+                MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB),
                 form_apply_order,
                 form_aspect_apply_order,
                 pokemons,
@@ -966,53 +965,53 @@ public class MegaShowdownItems {
 
     private static RegistrySupplier<Item> registerMegaStone(String name) {
         return ITEMS.register(name, () -> new MegaStone(
-                        new Item.Properties()
+                        MegaShowdownTabs.tab(new Item.Properties()
                                 .component(MegaShowdownDataComponents.REGISTRY_TYPE_COMPONENT.get(), RegistryLocator.MEGA)
                                 .component(MegaShowdownDataComponents.RESOURCE_LOCATION_COMPONENT.get(), ResourceLocation.fromNamespaceAndPath(MegaShowdown.MOD_ID, name))
-                                .arch$tab(MegaShowdownTabs.MEGA_TAB)
+                                , MegaShowdownTabs.MEGA_TAB)
                 )
         );
     }
 
     private static RegistrySupplier<Item> registerMegaBracelet(String name) {
         return ITEMS.register(name, () -> new MegaBracelet(
-                new Item.Properties()
+                MegaShowdownTabs.tab(new Item.Properties()
                         .stacksTo(1)
-                        .arch$tab(MegaShowdownTabs.MEGA_TAB))
+                        , MegaShowdownTabs.MEGA_TAB))
         );
     }
 
     private static RegistrySupplier<Item> registerOmniRing(String name) {
         return ITEMS.register(name, () -> new OmniRing(
-                new Item.Properties()
+                MegaShowdownTabs.tab(new Item.Properties()
                         .stacksTo(1)
                         .fireResistant()
-                        .arch$tab(MegaShowdownTabs.KEY_TAB))
+                        , MegaShowdownTabs.KEY_TAB))
         );
     }
 
     private static RegistrySupplier<Item> registerTeraOrb(String name) {
         return ITEMS.register(name, () -> new TeraOrb(
-                new Item.Properties()
+                MegaShowdownTabs.tab(new Item.Properties()
                         .stacksTo(1)
                         .durability(100)
-                        .arch$tab(MegaShowdownTabs.TERA_TAB))
+                        , MegaShowdownTabs.TERA_TAB))
         );
     }
 
     private static RegistrySupplier<Item> registerDynamaxBand(String name) {
         return ITEMS.register(name, () -> new DynamaxBand(
-                new Item.Properties()
+                MegaShowdownTabs.tab(new Item.Properties()
                         .stacksTo(1)
-                        .arch$tab(MegaShowdownTabs.DYNAMAX_TAB))
+                        , MegaShowdownTabs.DYNAMAX_TAB))
         );
     }
 
     private static RegistrySupplier<Item> registerZRing(String name) {
         return ITEMS.register(name, () -> new ZRing(
-                new Item.Properties()
+                MegaShowdownTabs.tab(new Item.Properties()
                         .stacksTo(1)
-                        .arch$tab(MegaShowdownTabs.Z_TAB))
+                        , MegaShowdownTabs.Z_TAB))
         );
     }
 
@@ -1030,8 +1029,8 @@ public class MegaShowdownItems {
                                                            String effect2
     ) {
         return ITEMS.register(name, () -> new DuFusion(
-                new Item.Properties()
-                        .arch$tab(MegaShowdownTabs.FORM_TAB)
+                MegaShowdownTabs.tab(new Item.Properties()
+                        , MegaShowdownTabs.FORM_TAB)
                         .stacksTo(1),
                 fusion1,
                 fusion2,
@@ -1057,8 +1056,8 @@ public class MegaShowdownItems {
                                                              List<String> revertAspect
     ) {
         return ITEMS.register(name, () -> new SoloFusion(
-                new Item.Properties()
-                        .arch$tab(MegaShowdownTabs.FORM_TAB)
+                MegaShowdownTabs.tab(new Item.Properties()
+                        , MegaShowdownTabs.FORM_TAB)
                         .stacksTo(1),
                 fusions,
                 pokemon,
@@ -1071,16 +1070,16 @@ public class MegaShowdownItems {
     }
 
     private static RegistrySupplier<Item> registerTeraShards(String name, TeraType teraType) {
-        return ITEMS.register(name, () -> new TeraShard(new Item.Properties().arch$tab(MegaShowdownTabs.TERA_TAB), teraType));
+        return ITEMS.register(name, () -> new TeraShard(MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.TERA_TAB), teraType));
     }
 
     private static RegistrySupplier<Item> registerZElementalCrystals(String name, ElementalType type) {
         return ITEMS.register(name, () -> new ElementalZCrystal(
-                new Item.Properties()
+                MegaShowdownTabs.tab(new Item.Properties()
                         .component(MegaShowdownDataComponents.REGISTRY_TYPE_COMPONENT.get(), RegistryLocator.Z_CRYSTAL_ITEM)
                         .component(MegaShowdownDataComponents.RESOURCE_LOCATION_COMPONENT.get(),
                                 ResourceLocation.fromNamespaceAndPath(MegaShowdown.MOD_ID, name))
-                        .arch$tab(MegaShowdownTabs.Z_TAB),
+                        , MegaShowdownTabs.Z_TAB),
                 List.of("Arceus"),
                 true,
                 type
@@ -1088,17 +1087,17 @@ public class MegaShowdownItems {
     }
 
     private static RegistrySupplier<Item> registerZSpecialCrystals(String name, ElementalType type) {
-        return ITEMS.register(name, () -> new SpecialZCrystal(new Item.Properties()
+        return ITEMS.register(name, () -> new SpecialZCrystal(MegaShowdownTabs.tab(new Item.Properties()
                 .component(MegaShowdownDataComponents.REGISTRY_TYPE_COMPONENT.get(), RegistryLocator.Z_CRYSTAL_ITEM)
                 .component(MegaShowdownDataComponents.RESOURCE_LOCATION_COMPONENT.get(),
                         ResourceLocation.fromNamespaceAndPath(MegaShowdown.MOD_ID, name))
-                .arch$tab(MegaShowdownTabs.Z_TAB), type));
+                , MegaShowdownTabs.Z_TAB), type));
     }
 
     private static RegistrySupplier<Item> registerFormChangeHeldItems(String name, String revertAspect, String applyAspect, List<String> pokemons, String effectId, boolean tradable) {
         return ITEMS.register(name,
                 () -> new FormChangeHeldItem(
-                        new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB),
+                        MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB),
                         revertAspect,
                         applyAspect,
                         pokemons,
@@ -1112,7 +1111,7 @@ public class MegaShowdownItems {
     private static RegistrySupplier<Item> registerFormChangeHeldItems(String name, String revertAspect, String applyAspect, List<String> pokemons, String effectId, boolean tradable, Consumer<Pokemon> callBack) {
         return ITEMS.register(name,
                 () -> new FormChangeHeldItem(
-                        new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB),
+                        MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB),
                         revertAspect,
                         applyAspect,
                         pokemons,
@@ -1126,7 +1125,7 @@ public class MegaShowdownItems {
     private static RegistrySupplier<Item> registerFormChangeHeldHiddenItems(String name, String revertAspect, String applyAspect, List<String> pokemons, String effectId, boolean tradable, Consumer<Pokemon> callBack) {
         return ITEMS.register(name,
                 () -> new FormChangeHeldItemHidden(
-                        new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB),
+                        MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB),
                         revertAspect,
                         applyAspect,
                         pokemons,
@@ -1140,7 +1139,7 @@ public class MegaShowdownItems {
     private static RegistrySupplier<Item> registerFormChangeHeldItems(String name, String revertAspect, String applyAspect, List<String> pokemons, String effectId, boolean tradable, Consumer<Pokemon> callBackApply, Consumer<Pokemon> callBackRevert) {
         return ITEMS.register(name,
                 () -> new FormChangeHeldItem(
-                        new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB),
+                        MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB),
                         revertAspect,
                         applyAspect,
                         pokemons,
@@ -1151,16 +1150,16 @@ public class MegaShowdownItems {
                 ));
     }
 
-    private static RegistrySupplier<Item> registerTooltipItem(String name, DeferredSupplier<CreativeModeTab> tab) {
+    private static RegistrySupplier<Item> registerTooltipItem(String name, Supplier<CreativeModeTab> tab) {
         return ITEMS.register(name, () -> new ToolTipItem(
-                new Item.Properties().arch$tab(tab))
+                MegaShowdownTabs.tab(new Item.Properties(), tab))
         );
     }
 
-    private static RegistrySupplier<Item> registerTooltipBlockItem(String name, Supplier<Block> block, DeferredSupplier<CreativeModeTab> tab) {
+    private static RegistrySupplier<Item> registerTooltipBlockItem(String name, Supplier<Block> block, Supplier<CreativeModeTab> tab) {
         return ITEMS.register(name, () -> new BlockItem(
                 block.get(),
-                new Item.Properties().arch$tab(tab)
+                MegaShowdownTabs.tab(new Item.Properties(), tab)
         ));
     }
 

@@ -204,5 +204,28 @@
       "requirements": [],
       "requiredContext": "cobblemon:dusk_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "32-62",
+          "JUMP": "44-69",
+          "SKILL": "47-77",
+          "SPEED": "23-51",
+          "STAMINA": "44-74"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

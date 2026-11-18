@@ -1,15 +1,27 @@
 {
   "target": "cobblemon:hawlucha",
-  "features": ["mega_evolution"],
+  "features": [
+    "mega_evolution"
+  ],
   "forms": [
     {
       "name": "Mega",
       "primaryType": "fighting",
       "secondaryType": "flying",
-      "pokedex": ["cobblemon.species.hawlucha-mega.desc"],
-      "labels": ["gen6", "mega"],
-      "aspects": ["mega"],
-      "abilities": ["noguard", "h:noguard"],
+      "pokedex": [
+        "cobblemon.species.hawlucha-mega.desc"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "abilities": [
+        "noguard",
+        "h:noguard"
+      ],
       "baseStats": {
         "hp": 78,
         "attack": 137,
@@ -26,7 +38,41 @@
       "battleOnly": true,
       "dynamaxBlocked": true,
       "height": 10,
-      "weight": 250
+      "weight": 250,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "54-84",
+              "JUMP": "45-70",
+              "SKILL": "58-88",
+              "SPEED": "50-86",
+              "STAMINA": "63-93"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "54-84",
+              "JUMP": "55-80",
+              "SKILL": "58-88",
+              "SPEED": "50-86",
+              "STAMINA": "63-93"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }

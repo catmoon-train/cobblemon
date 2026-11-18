@@ -352,7 +352,14 @@
             }
           }
         },
-        "seats": []
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       },
       "behaviour": {
         "combat": {

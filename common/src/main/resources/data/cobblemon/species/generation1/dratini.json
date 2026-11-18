@@ -262,24 +262,37 @@
     }
   ],
   "riding": {
-    "stats": {
-      "SPEED": {
-        "ranges": "20-40"
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-100",
+          "JUMP": "10-10",
+          "SKILL": "10-10",
+          "SPEED": "20-40",
+          "STAMINA": "25-50"
+        }
       },
-      "ACCELERATION": {
-        "ranges": "50-100"
-      },
-      "SKILL": {
-        "ranges": "5-10"
-      },
-      "JUMP": {
-        "ranges": "5-10"
-      },
-      "STAMINA": {
-        "ranges": "25-50"
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-100",
+          "JUMP": "10-10",
+          "SKILL": "10-10",
+          "SPEED": "20-40",
+          "STAMINA": "25-50"
+        }
       }
     },
-    "seats": [],
-    "behaviour": null
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

@@ -435,28 +435,53 @@
             }
           ]
         }
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "39-69",
+              "JUMP": "45-70",
+              "SKILL": "45-75",
+              "SPEED": "32-63",
+              "STAMINA": "51-81"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       }
     }
   ],
   "riding": {
-    "stats": {
-      "SPEED": {
-        "ranges": "5-10"
-      },
-      "ACCELERATION": {
-        "ranges": "50-100"
-      },
-      "SKILL": {
-        "ranges": "30-60"
-      },
-      "JUMP": {
-        "ranges": "10-20"
-      },
-      "STAMINA": {
-        "ranges": "20-40"
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-100",
+          "JUMP": "10-20",
+          "SKILL": "30-60",
+          "SPEED": "10-10",
+          "STAMINA": "20-40"
+        }
       }
     },
-    "seats": [],
-    "behaviour": null
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

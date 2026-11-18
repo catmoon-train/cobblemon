@@ -6,43 +6,33 @@ import com.github.yajatkaul.mega_showdown.networking.client.packet.Effectiveness
 import com.github.yajatkaul.mega_showdown.networking.client.packet.InteractionWheelPacket;
 import com.github.yajatkaul.mega_showdown.networking.server.handler.*;
 import com.github.yajatkaul.mega_showdown.networking.server.packet.*;
-import dev.architectury.networking.NetworkManager;
-import dev.architectury.platform.Platform;
-import net.fabricmc.api.EnvType;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 
 public class MegaShowdownNetworkHandlerServer {
     public static void register() {
-        if (Platform.getEnv() == EnvType.SERVER) {
-            registerServerOnly();
-        }
-
+        registerPayloads();
         registerCommon();
     }
 
-    public static void registerServerOnly() {
-        NetworkManager.registerS2CPayloadType(
-                InteractionWheelPacket.TYPE,
-                InteractionWheelPacket.STREAM_CODEC
-        );
-        NetworkManager.registerS2CPayloadType(
-                ConfigSyncPacket.TYPE,
-                ConfigSyncPacket.STREAM_CODEC
-        );
-        NetworkManager.registerS2CPayloadType(
-                BattleStatePacketS2C.ID,
-                BattleStatePacketS2C.PACKET_CODEC
-        );
-        NetworkManager.registerS2CPayloadType(
-                EffectivenessSyncPacket.TYPE,
-                EffectivenessSyncPacket.STREAM_CODEC
-        );
+    public static void registerPayloads() {
+        PayloadTypeRegistry.playS2C().register(InteractionWheelPacket.TYPE, InteractionWheelPacket.STREAM_CODEC);
+        PayloadTypeRegistry.playS2C().register(ConfigSyncPacket.TYPE, ConfigSyncPacket.STREAM_CODEC);
+        PayloadTypeRegistry.playS2C().register(BattleStatePacketS2C.ID, BattleStatePacketS2C.PACKET_CODEC);
+        PayloadTypeRegistry.playS2C().register(EffectivenessSyncPacket.TYPE, EffectivenessSyncPacket.STREAM_CODEC);
+
+        PayloadTypeRegistry.playC2S().register(MegaEvoPacket.TYPE, MegaEvoPacket.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(PrimalEvoPacket.TYPE, PrimalEvoPacket.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(CrownPacket.TYPE, CrownPacket.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(UltraBurstPacket.TYPE, UltraBurstPacket.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(SecretSwordMoveSwapPacket.TYPE, SecretSwordMoveSwapPacket.STREAM_CODEC);
     }
 
     public static void registerCommon() {
-        NetworkManager.registerReceiver(NetworkManager.Side.C2S, MegaEvoPacket.TYPE, MegaEvoPacket.STREAM_CODEC, MegaEvoHandler::handle);
-        NetworkManager.registerReceiver(NetworkManager.Side.C2S, PrimalEvoPacket.TYPE, PrimalEvoPacket.STREAM_CODEC, PrimalEvoHandler::handle);
-        NetworkManager.registerReceiver(NetworkManager.Side.C2S, CrownPacket.TYPE, CrownPacket.STREAM_CODEC, CrownHandler::handle);
-        NetworkManager.registerReceiver(NetworkManager.Side.C2S, UltraBurstPacket.TYPE, UltraBurstPacket.STREAM_CODEC, UltraBurstHandler::handle);
-        NetworkManager.registerReceiver(NetworkManager.Side.C2S, SecretSwordMoveSwapPacket.TYPE, SecretSwordMoveSwapPacket.STREAM_CODEC, SecretSwordMoveSwapHandler::handle);
+        ServerPlayNetworking.registerGlobalReceiver(MegaEvoPacket.TYPE, (packet, context) -> MegaEvoHandler.handle(packet, context.player()));
+        ServerPlayNetworking.registerGlobalReceiver(PrimalEvoPacket.TYPE, (packet, context) -> PrimalEvoHandler.handle(packet, context.player()));
+        ServerPlayNetworking.registerGlobalReceiver(CrownPacket.TYPE, (packet, context) -> CrownHandler.handle(packet, context.player()));
+        ServerPlayNetworking.registerGlobalReceiver(UltraBurstPacket.TYPE, (packet, context) -> UltraBurstHandler.handle(packet, context.player()));
+        ServerPlayNetworking.registerGlobalReceiver(SecretSwordMoveSwapPacket.TYPE, (packet, context) -> SecretSwordMoveSwapHandler.handle(packet, context.player()));
     }
 }

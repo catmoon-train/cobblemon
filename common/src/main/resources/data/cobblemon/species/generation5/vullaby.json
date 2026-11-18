@@ -221,5 +221,36 @@
     "combat": {
       "willDefendOwner": true
     }
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "37-67",
+          "JUMP": "31-56",
+          "SKILL": "36-66",
+          "SPEED": "30-61",
+          "STAMINA": "48-78"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "37-67",
+          "JUMP": "41-66",
+          "SKILL": "36-66",
+          "SPEED": "30-61",
+          "STAMINA": "48-78"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

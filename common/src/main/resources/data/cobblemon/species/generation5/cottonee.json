@@ -216,5 +216,25 @@
       "requirements": [],
       "requiredContext": "cobblemon:sun_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "40-65",
+          "SKILL": "32-62",
+          "SPEED": "31-62",
+          "STAMINA": "38-68"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

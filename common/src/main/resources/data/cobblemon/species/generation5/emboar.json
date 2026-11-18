@@ -256,5 +256,40 @@
   "lightingData": {
     "lightLevel": 15,
     "liquidGlowMode": "LAND"
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "38-63",
+          "SKILL": "51-81",
+          "SPEED": "33-64",
+          "STAMINA": "66-96"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "38-63",
+          "SKILL": "51-81",
+          "SPEED": "33-64",
+          "STAMINA": "66-96"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

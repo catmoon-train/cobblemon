@@ -205,5 +205,47 @@
       "requirements": [],
       "requiredContext": "cobblemon:thunder_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "32-57",
+          "SKILL": "42-72",
+          "SPEED": "25-54",
+          "STAMINA": "46-76"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "42-67",
+          "SKILL": "42-72",
+          "SPEED": "25-54",
+          "STAMINA": "46-76"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "32-57",
+          "SKILL": "42-72",
+          "SPEED": "25-54",
+          "STAMINA": "46-76"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

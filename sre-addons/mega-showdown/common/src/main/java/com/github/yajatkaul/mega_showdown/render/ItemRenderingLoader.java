@@ -4,6 +4,7 @@ import com.github.yajatkaul.mega_showdown.MegaShowdown;
 import com.github.yajatkaul.mega_showdown.api.codec.item.ItemRenderingCodec;
 import com.google.gson.JsonParser;
 import com.mojang.serialization.JsonOps;
+import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
@@ -17,7 +18,8 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
-public class ItemRenderingLoader implements ResourceManagerReloadListener {
+public class ItemRenderingLoader implements ResourceManagerReloadListener, IdentifiableResourceReloadListener {
+    private static final ResourceLocation FABRIC_ID = ResourceLocation.fromNamespaceAndPath(MegaShowdown.MOD_ID, "item_rendering_loader");
     private static volatile Map<ResourceLocation, ItemRenderingCodec> registry = Map.of();
     private static final String DIRECTORY = "item_rendering";
 
@@ -60,6 +62,11 @@ public class ItemRenderingLoader implements ResourceManagerReloadListener {
     @Override
     public void onResourceManagerReload(ResourceManager resourceManager) {
 
+    }
+
+    @Override
+    public @NotNull ResourceLocation getFabricId() {
+        return FABRIC_ID;
     }
 
     @Override

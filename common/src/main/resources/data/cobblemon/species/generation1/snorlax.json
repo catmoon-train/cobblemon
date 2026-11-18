@@ -334,26 +334,26 @@
     }
   ],
   "riding": {
-    "stats": {
-      "SPEED": {
-        "ranges": "5-10"
-      },
-      "ACCELERATION": {
-        "ranges": "80-100"
-      },
-      "SKILL": {
-        "ranges": "10-20"
-      },
-      "JUMP": {
-        "ranges": "5-10"
-      },
-      "STAMINA": {
-        "ranges": "10-20"
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "80-100",
+          "JUMP": "10-10",
+          "SKILL": "10-20",
+          "SPEED": "10-10",
+          "STAMINA": "10-20"
+        }
       }
     },
-    "seats": [],
-    "behaviour": {
-      "key": "cobblemon:land/horse"
-    }
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

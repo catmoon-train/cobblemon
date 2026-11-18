@@ -219,5 +219,39 @@
     "legacy:toxic"
   ],
   "preEvolution": "anorith",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "36-66",
+          "JUMP": "37-62",
+          "SKILL": "52-82",
+          "SPEED": "28-57",
+          "STAMINA": "55-85"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "36-66",
+          "JUMP": "37-62",
+          "SKILL": "52-82",
+          "SPEED": "28-57",
+          "STAMINA": "55-85"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

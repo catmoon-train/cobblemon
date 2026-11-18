@@ -1,15 +1,15 @@
 package com.github.yajatkaul.mega_showdown.sound;
 
 import com.github.yajatkaul.mega_showdown.MegaShowdown;
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.github.yajatkaul.mega_showdown.registry.FabricDeferredRegister;
+import com.github.yajatkaul.mega_showdown.registry.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
 public class MegaShowdownSounds {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
-            DeferredRegister.create(MegaShowdown.MOD_ID, Registries.SOUND_EVENT);
+    public static final FabricDeferredRegister<SoundEvent> SOUND_EVENTS =
+            FabricDeferredRegister.create(MegaShowdown.MOD_ID, Registries.SOUND_EVENT);
 
     public static final RegistrySupplier<SoundEvent> DYNAMAX = registerSoundEvent("dynamaxing");
     public static final RegistrySupplier<SoundEvent> TERASTALLIZATION = registerSoundEvent("terastallization");

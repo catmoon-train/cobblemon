@@ -156,5 +156,39 @@
     "tutor:wildcharge",
     "tutor:zenheadbutt"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "41-66",
+          "SKILL": "58-88",
+          "SPEED": "41-74",
+          "STAMINA": "65-95"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "51-76",
+          "SKILL": "58-88",
+          "SPEED": "41-74",
+          "STAMINA": "65-95"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

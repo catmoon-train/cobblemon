@@ -216,5 +216,40 @@
     "legacy:toxic"
   ],
   "preEvolution": "litleo",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "48-78",
+          "JUMP": "41-66",
+          "SKILL": "48-78",
+          "SPEED": "43-78",
+          "STAMINA": "58-88"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "48-78",
+          "JUMP": "41-66",
+          "SKILL": "48-78",
+          "SPEED": "43-78",
+          "STAMINA": "58-88"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

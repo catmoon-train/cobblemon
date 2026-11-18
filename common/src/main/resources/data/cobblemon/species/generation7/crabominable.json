@@ -216,5 +216,28 @@
     "legacy:toxic"
   ],
   "preEvolution": "crabrawler",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "37-62",
+          "SKILL": "51-81",
+          "SPEED": "25-54",
+          "STAMINA": "57-87"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

@@ -16,7 +16,7 @@ import com.github.yajatkaul.mega_showdown.api.lilycobble.networking.battle.Battl
 import com.github.yajatkaul.mega_showdown.api.lilycobble.networking.battle.BattleStatePacketS2C;
 import com.github.yajatkaul.mega_showdown.client.battle.storage.BattlePokemonMemory;
 import com.github.yajatkaul.mega_showdown.config.MegaShowdownConfig;
-import dev.architectury.networking.NetworkManager;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -57,7 +57,7 @@ public class BattleHUD {
             "cobblemon.battle.damage.item"
     );
 
-    public static void receivePacket(BattleStatePacketS2C packet, NetworkManager.PacketContext context) {
+    public static void receivePacket(BattleStatePacketS2C packet, ClientPlayNetworking.Context context) {
         ClientBattle battle = CobblemonClient.INSTANCE.getBattle();
         if (CobblemonClient.INSTANCE.getBattle() == null || Minecraft.getInstance().player == null) return;
 

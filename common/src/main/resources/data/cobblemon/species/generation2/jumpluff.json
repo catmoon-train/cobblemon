@@ -217,5 +217,36 @@
     "special:falseswipe"
   ],
   "preEvolution": "skiploom",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "36-61",
+          "SKILL": "36-66",
+          "SPEED": "42-78",
+          "STAMINA": "50-80"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "46-71",
+          "SKILL": "36-66",
+          "SPEED": "42-78",
+          "STAMINA": "50-80"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

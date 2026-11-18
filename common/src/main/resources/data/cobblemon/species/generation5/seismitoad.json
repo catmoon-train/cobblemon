@@ -220,5 +220,39 @@
     "legacy:swagger"
   ],
   "preEvolution": "palpitoad",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "41-71",
+          "JUMP": "36-61",
+          "SKILL": "46-76",
+          "SPEED": "35-67",
+          "STAMINA": "65-95"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "41-71",
+          "JUMP": "36-61",
+          "SKILL": "46-76",
+          "SPEED": "35-67",
+          "STAMINA": "65-95"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

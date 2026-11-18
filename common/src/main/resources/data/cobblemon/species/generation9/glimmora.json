@@ -188,5 +188,25 @@
     "tutor:stoneedge"
   ],
   "preEvolution": "glimmet",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "44-74",
+          "JUMP": "51-76",
+          "SKILL": "53-83",
+          "SPEED": "38-71",
+          "STAMINA": "57-87"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

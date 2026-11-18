@@ -237,5 +237,40 @@
     "legacy:whirlpool"
   ],
   "preEvolution": "cranidos",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "42-67",
+          "SKILL": "60-90",
+          "SPEED": "31-61",
+          "STAMINA": "62-92"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "42-67",
+          "SKILL": "60-90",
+          "SPEED": "31-61",
+          "STAMINA": "62-92"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

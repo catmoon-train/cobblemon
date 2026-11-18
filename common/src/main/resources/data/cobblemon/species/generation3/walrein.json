@@ -222,5 +222,39 @@
     "special:charm"
   ],
   "preEvolution": "sealeo",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "36-61",
+          "SKILL": "46-76",
+          "SPEED": "33-64",
+          "STAMINA": "66-96"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "36-61",
+          "SKILL": "46-76",
+          "SPEED": "33-64",
+          "STAMINA": "66-96"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

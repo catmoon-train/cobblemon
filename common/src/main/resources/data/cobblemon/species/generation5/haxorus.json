@@ -233,5 +233,28 @@
     "legacy:toxic"
   ],
   "preEvolution": "fraxure",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "46-76",
+          "JUMP": "44-69",
+          "SKILL": "56-86",
+          "SPEED": "41-75",
+          "STAMINA": "55-85"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

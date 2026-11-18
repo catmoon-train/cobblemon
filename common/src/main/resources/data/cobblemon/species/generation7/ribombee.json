@@ -220,5 +220,25 @@
     "legacy:toxic"
   ],
   "preEvolution": "cutiefly",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "49-79",
+          "JUMP": "51-76",
+          "SKILL": "44-74",
+          "SPEED": "46-83",
+          "STAMINA": "45-75"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

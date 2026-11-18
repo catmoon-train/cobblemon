@@ -136,7 +136,6 @@
         "gen8",
         "gmax"
       ],
-      "riding": {},
       "baseScale": 0.6,
       "hitbox": {
         "width": 2.4,
@@ -179,5 +178,28 @@
       "drowsyChance": 0.0014,
       "rouseChance": 0.0042
     }
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "37-67",
+          "JUMP": "37-62",
+          "SKILL": "59-89",
+          "SPEED": "29-57",
+          "STAMINA": "82-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

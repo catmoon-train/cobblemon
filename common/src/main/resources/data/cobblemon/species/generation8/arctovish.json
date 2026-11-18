@@ -169,5 +169,28 @@
         "item": "minecraft:cod"
       }
     ]
+  },
+  "riding": {
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "34-59",
+          "SKILL": "45-75",
+          "SPEED": "30-60",
+          "STAMINA": "60-90"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

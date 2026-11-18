@@ -236,5 +236,25 @@
       "requirements": [],
       "requiredContext": "cobblemon:thunder_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "39-69",
+          "JUMP": "49-74",
+          "SKILL": "49-79",
+          "SPEED": "32-64",
+          "STAMINA": "41-71"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

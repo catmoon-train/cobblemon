@@ -200,5 +200,25 @@
       "drowsyChance": 0.0014,
       "rouseChance": 0.0042
     }
+  },
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "51-81",
+          "JUMP": "53-78",
+          "SKILL": "56-86",
+          "SPEED": "46-81",
+          "STAMINA": "73-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

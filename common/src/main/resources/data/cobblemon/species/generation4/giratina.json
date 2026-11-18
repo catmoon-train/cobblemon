@@ -388,6 +388,29 @@
         "herd": {
           "maxSize": 4
         }
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "49-79",
+              "JUMP": "51-76",
+              "SKILL": "55-85",
+              "SPEED": "43-77",
+              "STAMINA": "87-100"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       }
     }
   ],
@@ -415,5 +438,39 @@
     "herd": {
       "maxSize": 3
     }
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "49-79",
+          "JUMP": "39-64",
+          "SKILL": "51-81",
+          "SPEED": "43-77",
+          "STAMINA": "87-100"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "49-79",
+          "JUMP": "49-74",
+          "SKILL": "51-81",
+          "SPEED": "43-77",
+          "STAMINA": "87-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

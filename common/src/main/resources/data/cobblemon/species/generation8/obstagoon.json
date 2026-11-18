@@ -222,5 +222,28 @@
     "legacy:snore"
   ],
   "preEvolution": "linoone galarian",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "46-76",
+          "JUMP": "38-63",
+          "SKILL": "45-75",
+          "SPEED": "40-74",
+          "STAMINA": "61-91"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

@@ -19,10 +19,13 @@ class ShowdownThread : Thread("Cobblemon Showdown") {
     private val latch = CountDownLatch(1)
 
     private val whenReady : Queue<(ShowdownService) -> Unit> = LinkedList()
+    @Volatile
+    private var startupError: Throwable? = null
 
     fun launch() {
         this.start()
         this.latch.await()
+        startupError?.let { throw IllegalStateException("Cobblemon Showdown failed to initialize", it) }
         for (action in whenReady) {
             action(ShowdownService.service)
         }
@@ -30,16 +33,24 @@ class ShowdownThread : Thread("Cobblemon Showdown") {
 
     fun queue(action: (ShowdownService) -> Unit) {
         if (this.latch.count == 0L) {
-            action(ShowdownService.service)
+            if (startupError == null) {
+                action(ShowdownService.service)
+            }
         } else {
             this.whenReady.add(action)
         }
     }
 
     override fun run() {
-        LOGGER.info("Starting showdown service...")
-        ShowdownService.service.openConnection()
-        LOGGER.info("Showdown has been started!")
-        this.latch.countDown()
+        try {
+            LOGGER.info("Starting showdown service...")
+            ShowdownService.service.openConnection()
+            LOGGER.info("Showdown has been started!")
+        } catch (t: Throwable) {
+            startupError = t
+            LOGGER.error("Failed to start showdown service", t)
+        } finally {
+            this.latch.countDown()
+        }
     }
 }

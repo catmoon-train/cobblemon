@@ -265,5 +265,36 @@
     "special:sing"
   ],
   "preEvolution": "eevee",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "37-62",
+          "SKILL": "49-79",
+          "SPEED": "33-64",
+          "STAMINA": "73-100"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "40-70",
+          "JUMP": "37-62",
+          "SKILL": "49-79",
+          "SPEED": "33-64",
+          "STAMINA": "73-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

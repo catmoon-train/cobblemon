@@ -355,6 +355,51 @@
         "herd": {
           "maxSize": 4
         }
+      },
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "55-85",
+              "JUMP": "47-72",
+              "SKILL": "61-91",
+              "SPEED": "51-88",
+              "STAMINA": "67-97"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "55-85",
+              "JUMP": "57-82",
+              "SKILL": "61-91",
+              "SPEED": "51-88",
+              "STAMINA": "67-97"
+            }
+          },
+          "LIQUID": {
+            "key": "cobblemon:liquid/submarine",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "55-85",
+              "JUMP": "47-72",
+              "SKILL": "61-91",
+              "SPEED": "51-88",
+              "STAMINA": "67-97"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       }
     }
   ],
@@ -379,5 +424,50 @@
     "herd": {
       "maxSize": 3
     }
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "51-81",
+          "JUMP": "45-70",
+          "SKILL": "61-91",
+          "SPEED": "46-81",
+          "STAMINA": "67-97"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "51-81",
+          "JUMP": "55-80",
+          "SKILL": "61-91",
+          "SPEED": "46-81",
+          "STAMINA": "67-97"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "51-81",
+          "JUMP": "45-70",
+          "SKILL": "61-91",
+          "SPEED": "46-81",
+          "STAMINA": "67-97"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

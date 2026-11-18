@@ -197,5 +197,36 @@
     "special:featherdance"
   ],
   "preEvolution": "taillow",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-80",
+          "JUMP": "41-66",
+          "SKILL": "42-72",
+          "SPEED": "46-83",
+          "STAMINA": "45-75"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-80",
+          "JUMP": "51-76",
+          "SKILL": "42-72",
+          "SPEED": "46-83",
+          "STAMINA": "45-75"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

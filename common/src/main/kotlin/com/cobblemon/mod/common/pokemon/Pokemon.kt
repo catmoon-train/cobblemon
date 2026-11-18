@@ -221,6 +221,9 @@ open class Pokemon : ShowdownIdentifiable {
             updateHP(quotient)
             this.attemptAbilityUpdate()
             onChange(FormUpdatePacket({ this }, value))
+            if (oldForm.riding !== value.riding) {
+                entity?.refreshRiding()
+            }
         }
 
     // Need to happen before currentHealth init due to the calc

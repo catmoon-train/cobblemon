@@ -571,7 +571,50 @@
       ],
       "preEvolution": "pikachu",
       "evolutions": [],
-      "battleOnly": false
+      "battleOnly": false,
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "47-77",
+              "JUMP": "50-75",
+              "SKILL": "44-74",
+              "SPEED": "42-78",
+              "STAMINA": "45-75"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "40-65",
+          "SKILL": "43-73",
+          "SPEED": "42-78",
+          "STAMINA": "45-75"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

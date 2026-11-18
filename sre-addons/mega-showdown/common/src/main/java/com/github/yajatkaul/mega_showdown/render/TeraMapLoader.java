@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.resources.ResourceLocation;
@@ -21,7 +22,8 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
-public class TeraMapLoader implements ResourceManagerReloadListener {
+public class TeraMapLoader implements ResourceManagerReloadListener, IdentifiableResourceReloadListener {
+    private static final ResourceLocation FABRIC_ID = ResourceLocation.fromNamespaceAndPath(MegaShowdown.MOD_ID, "tera_map_loader");
     public static final HashMap<String, String> REGISTRY = new HashMap<>();
     private static final String DIRECTORY = "mega_showdown/tera_map";
 
@@ -86,6 +88,11 @@ public class TeraMapLoader implements ResourceManagerReloadListener {
     @Override
     public void onResourceManagerReload(ResourceManager resourceManager) {
 
+    }
+
+    @Override
+    public @NotNull ResourceLocation getFabricId() {
+        return FABRIC_ID;
     }
 
     @Override

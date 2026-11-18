@@ -3,7 +3,7 @@ package com.github.yajatkaul.mega_showdown.components;
 import com.cobblemon.mod.common.api.types.tera.TeraType;
 import com.github.yajatkaul.mega_showdown.MegaShowdown;
 import com.mojang.serialization.Codec;
-import dev.architectury.registry.registries.DeferredRegister;
+import com.github.yajatkaul.mega_showdown.registry.FabricDeferredRegister;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -11,8 +11,8 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.function.Supplier;
 
 public class MegaShowdownDataComponents {
-    private static final DeferredRegister<DataComponentType<?>> REGISTRAR =
-            DeferredRegister.create(MegaShowdown.MOD_ID, Registries.DATA_COMPONENT_TYPE);
+    private static final FabricDeferredRegister<DataComponentType<?>> REGISTRAR =
+            FabricDeferredRegister.create(MegaShowdown.MOD_ID, Registries.DATA_COMPONENT_TYPE);
 
     public static final Supplier<DataComponentType<PokemonStorge>> POKEMON_STORAGE = REGISTRAR.register(
             "pokemon_storage",

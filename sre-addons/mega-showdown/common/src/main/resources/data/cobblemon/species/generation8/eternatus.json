@@ -7,11 +7,22 @@
   "maleRatio": -1,
   "height": 200,
   "weight": 9500,
-  "pokedex": ["cobblemon.species.eternatus.desc"],
-  "labels": ["gen8", "legendary", "restricted"],
+  "pokedex": [
+    "cobblemon.species.eternatus.desc"
+  ],
+  "labels": [
+    "gen8",
+    "legendary",
+    "restricted"
+  ],
   "aspects": [],
-  "abilities": ["pressure", "h:pressure"],
-  "eggGroups": ["undiscovered"],
+  "abilities": [
+    "pressure",
+    "h:pressure"
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
   "baseStats": {
     "hp": 140,
     "attack": 85,
@@ -132,8 +143,14 @@
       "maleRatio": -1,
       "height": 1000,
       "weight": 0,
-      "pokedex": ["cobblemon.species.eternatus-eternamax.desc"],
-      "labels": ["gen8", "legendary", "restricted"],
+      "pokedex": [
+        "cobblemon.species.eternatus-eternamax.desc"
+      ],
+      "labels": [
+        "gen8",
+        "legendary",
+        "restricted"
+      ],
       "baseScale": 4,
       "hitbox": {
         "width": 4,
@@ -171,7 +188,9 @@
           }
         ]
       },
-      "aspects": ["eternamax"],
+      "aspects": [
+        "eternamax"
+      ],
       "baseStats": {
         "hp": 255,
         "attack": 115,
@@ -184,5 +203,28 @@
       "evolutions": [],
       "battleOnly": true
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "57-87",
+          "JUMP": "57-82",
+          "SKILL": "60-90",
+          "SPEED": "53-91",
+          "STAMINA": "83-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

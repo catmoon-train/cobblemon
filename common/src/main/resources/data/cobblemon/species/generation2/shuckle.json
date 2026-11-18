@@ -213,5 +213,25 @@
     "legacy:snore",
     "legacy:swagger"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "28-58",
+          "JUMP": "21-46",
+          "SKILL": "29-59",
+          "SPEED": "18-43",
+          "STAMINA": "36-66"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

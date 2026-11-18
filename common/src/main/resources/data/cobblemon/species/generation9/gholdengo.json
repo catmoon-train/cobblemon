@@ -166,5 +166,39 @@
     "tutor:trick"
   ],
   "preEvolution": "gimmighoul",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "41-66",
+          "SKILL": "53-83",
+          "SPEED": "38-71",
+          "STAMINA": "59-89"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "51-76",
+          "SKILL": "53-83",
+          "SPEED": "38-71",
+          "STAMINA": "59-89"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

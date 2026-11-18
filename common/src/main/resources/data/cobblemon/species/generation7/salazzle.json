@@ -236,5 +236,40 @@
     "legacy:snore"
   ],
   "preEvolution": "salandit",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "48-78",
+          "JUMP": "42-67",
+          "SKILL": "47-77",
+          "SPEED": "44-80",
+          "STAMINA": "47-77"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "48-78",
+          "JUMP": "42-67",
+          "SKILL": "47-77",
+          "SPEED": "44-80",
+          "STAMINA": "47-77"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

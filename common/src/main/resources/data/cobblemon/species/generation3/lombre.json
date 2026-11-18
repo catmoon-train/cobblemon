@@ -238,5 +238,25 @@
       "requirements": [],
       "requiredContext": "cobblemon:water_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "35-65",
+          "JUMP": "31-56",
+          "SKILL": "37-67",
+          "SPEED": "27-57",
+          "STAMINA": "45-75"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

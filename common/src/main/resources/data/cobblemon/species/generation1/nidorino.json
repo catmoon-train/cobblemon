@@ -221,5 +221,25 @@
       "requirements": [],
       "requiredContext": "cobblemon:moon_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "33-58",
+          "SKILL": "39-69",
+          "SPEED": "31-62",
+          "STAMINA": "45-75"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

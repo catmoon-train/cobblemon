@@ -207,5 +207,25 @@
     "height": 1,
     "fixed": false
   },
-  "standingEyeHeight": 0.65
+  "standingEyeHeight": 0.65,
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "31-61",
+          "JUMP": "29-54",
+          "SKILL": "37-67",
+          "SPEED": "23-51",
+          "STAMINA": "41-71"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

@@ -10,7 +10,7 @@ import com.github.yajatkaul.mega_showdown.gimmick.UltraGimmick;
 import com.github.yajatkaul.mega_showdown.networking.client.packet.InteractionWheelPacket;
 import com.github.yajatkaul.mega_showdown.render.layerEntities.states.TeraCrystalState;
 import com.github.yajatkaul.mega_showdown.utils.duck.cobblemon.interfaces.PokemonEntityDuck;
-import dev.architectury.networking.NetworkManager;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -61,7 +61,7 @@ public abstract class PokemonEntityMixin implements PokemonEntityDuck {
         Pokemon pokemon = self.getPokemon();
 
         if (self.isBattling()) {
-            NetworkManager.sendToPlayer(player, new InteractionWheelPacket(false, false, false, false, false, false, false, false));
+            ServerPlayNetworking.send(player, new InteractionWheelPacket(false, false, false, false, false, false, false, false));
         } else if (pokemon.getOwnerPlayer() == player) {
             boolean shouldPokemonMega = (SpeciesFeatureAssignments.getFeatures(pokemon.getSpecies()).contains("mega_evolution") || pokemon.getSpecies().getFeatures().contains("mega_evolution"));
             boolean shouldPokemonUltra = pokemon.getSpecies().getName().equals("Necrozma");
@@ -75,7 +75,7 @@ public abstract class PokemonEntityMixin implements PokemonEntityDuck {
             boolean canPokemonCrown = CrownGimmick.isCrowned(pokemon) || CrownGimmick.canCrown(pokemon);
             boolean canPokemonPrimal = PrimalGimmick.isPrimal(pokemon) || PrimalGimmick.canPrimal(pokemon);
 
-            NetworkManager.sendToPlayer(player, new InteractionWheelPacket(
+            ServerPlayNetworking.send(player, new InteractionWheelPacket(
                     shouldPokemonMega,
                     shouldPokemonUltra,
                     canPokemonMega,

@@ -255,6 +255,38 @@
           "willFlee": false
         },
         "fireImmune": true
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "53-83",
+              "JUMP": "57-82",
+              "SKILL": "63-93",
+              "SPEED": "48-84",
+              "STAMINA": "53-83"
+            }
+          },
+          "LIQUID": {
+            "key": "cobblemon:liquid/submarine",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "53-83",
+              "JUMP": "47-72",
+              "SKILL": "63-93",
+              "SPEED": "48-84",
+              "STAMINA": "53-83"
+            },
+            "legacyFluid": "lava"
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          }
+        ]
       }
     }
   ],
@@ -297,5 +329,37 @@
       "willFlee": false
     },
     "fireImmune": true
+  },
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "41-71",
+          "JUMP": "45-70",
+          "SKILL": "51-81",
+          "SPEED": "33-63",
+          "STAMINA": "53-83"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "41-71",
+          "JUMP": "35-60",
+          "SKILL": "51-81",
+          "SPEED": "33-63",
+          "STAMINA": "53-83"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

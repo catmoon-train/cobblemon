@@ -34,12 +34,19 @@ class RideBoostsComponent(
         }
 
         val PACKET_CODEC: StreamCodec<ByteBuf, RideBoostsComponent> = ByteBufCodecs.fromCodec(CODEC)
+
+        private val DEFAULT_QUALITY_THRESHOLDS = mapOf(
+            -999 to CookingQuality.LOW,
+            4 to CookingQuality.MEDIUM,
+            8 to CookingQuality.HIGH
+        )
     }
 
     fun getQuality(): CookingQuality {
-        val mechanic = CobblemonMechanics.aprijuices
+        val thresholds = CobblemonMechanics.aprijuices.cookingQualityPointThresholds
+            .ifEmpty { DEFAULT_QUALITY_THRESHOLDS }
         val totalPoints = boosts.values.sum()
-        return mechanic.cookingQualityPointThresholds.filter { totalPoints >= it.key }.maxOf { it.value }
+        return thresholds.filter { totalPoints >= it.key }.maxOfOrNull { it.value } ?: CookingQuality.LOW
     }
 
     override fun equals(other: Any?): Boolean {

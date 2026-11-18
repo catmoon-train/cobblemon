@@ -487,5 +487,25 @@
   "height": 11,
   "weight": 77,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "47-77",
+          "JUMP": "36-61",
+          "SKILL": "47-77",
+          "SPEED": "41-74",
+          "STAMINA": "70-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

@@ -2,7 +2,7 @@ package com.github.yajatkaul.mega_showdown.utils;
 
 import com.cobblemon.mod.common.api.types.ElementalType;
 import com.github.yajatkaul.mega_showdown.item.MegaShowdownItems;
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.github.yajatkaul.mega_showdown.registry.RegistrySupplier;
 import net.minecraft.world.item.Item;
 
 import java.util.Locale;

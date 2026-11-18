@@ -14,4 +14,4 @@ resources = {
     'train-shell-registries.json': REGISTRY_SNAPSHOT.read_bytes(),
     'LICENSE': Path('G:/download/cobblemon-main (1)/cobblemon-main/LICENSE').read_bytes()
 }
-print(compile_mod('Cobblemon-fabric-1.8.4+1.21.1-server-shell', [SOURCE_DIR/'RegistryShell.java'], metadata, resources))
+print(compile_mod('Cobblemon-fabric-1.8.4+1.21.1-server-shell', [SOURCE_DIR/'RegistryReplayEngine.java', SOURCE_DIR/'RegistryShell.java'], metadata, resources))

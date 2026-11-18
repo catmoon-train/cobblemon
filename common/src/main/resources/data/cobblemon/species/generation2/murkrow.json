@@ -265,5 +265,36 @@
       "requirements": [],
       "requiredContext": "cobblemon:dusk_stone"
     }
-  ]
+  ],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "37-62",
+          "SKILL": "42-72",
+          "SPEED": "37-71",
+          "STAMINA": "45-75"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "47-72",
+          "SKILL": "42-72",
+          "SPEED": "37-71",
+          "STAMINA": "45-75"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

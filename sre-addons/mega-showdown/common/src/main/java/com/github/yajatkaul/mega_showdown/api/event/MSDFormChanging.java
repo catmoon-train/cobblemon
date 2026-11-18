@@ -2,12 +2,19 @@ package com.github.yajatkaul.mega_showdown.api.event;
 
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import dev.architectury.event.Event;
-import dev.architectury.event.EventFactory;
+import net.fabricmc.fabric.api.event.Event;
+import net.fabricmc.fabric.api.event.EventFactory;
 import org.jetbrains.annotations.Nullable;
 
 public interface MSDFormChanging {
-    Event<MSDFormChanging> EVENT = EventFactory.createLoop(MSDFormChanging.class);
+    Event<MSDFormChanging> EVENT = EventFactory.createArrayBacked(
+            MSDFormChanging.class,
+            listeners -> event -> {
+                for (MSDFormChanging listener : listeners) {
+                    listener.onFormChange(event);
+                }
+            }
+    );
 
     void onFormChange(FormChangeEvent event);
 

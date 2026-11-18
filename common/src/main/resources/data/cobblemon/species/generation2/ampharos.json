@@ -322,5 +322,28 @@
   "lightingData": {
     "lightLevel": 12,
     "liquidGlowMode": "BOTH"
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "37-62",
+          "SKILL": "50-80",
+          "SPEED": "30-60",
+          "STAMINA": "60-90"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
   }
 }

@@ -148,5 +148,25 @@
     "legacy:confide",
     "legacy:doubleteam"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "26-56",
+          "JUMP": "26-51",
+          "SKILL": "37-67",
+          "SPEED": "16-41",
+          "STAMINA": "43-73"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

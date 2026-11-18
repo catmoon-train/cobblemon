@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.client.gui.summary.widgets.screens.moves.MoveSlo
 import com.cobblemon.mod.common.client.gui.summary.widgets.screens.moves.MovesWidget;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.github.yajatkaul.mega_showdown.networking.server.packet.SecretSwordMoveSwapPacket;
-import dev.architectury.networking.NetworkManager;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,7 +17,7 @@ public class MoveSlotWidgetMixin {
     private void inject(int pX, int pY, Move move, MovesWidget movesWidget, Pokemon pokemon, CallbackInfo ci) {
         if (move != null) {
             if (pokemon.getSpecies().getName().equals("Keldeo")) {
-                NetworkManager.sendToServer(new SecretSwordMoveSwapPacket("MoveSwapped"));
+                ClientPlayNetworking.send(new SecretSwordMoveSwapPacket("MoveSwapped"));
             }
         }
     }

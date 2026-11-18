@@ -9,9 +9,8 @@ import com.github.yajatkaul.mega_showdown.item.custom.dynamax.MaxMushroom;
 import com.github.yajatkaul.mega_showdown.item.custom.form_change.DeoxysMeteoridItem;
 import com.github.yajatkaul.mega_showdown.item.custom.form_change.Gracedia;
 import com.github.yajatkaul.mega_showdown.item.custom.form_change.RotomUnitItem;
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.DeferredSupplier;
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.github.yajatkaul.mega_showdown.registry.FabricDeferredRegister;
+import com.github.yajatkaul.mega_showdown.registry.RegistrySupplier;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -30,7 +29,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class MegaShowdownBlocks {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(MegaShowdown.MOD_ID, Registries.BLOCK);
+    public static final FabricDeferredRegister<Block> BLOCKS = FabricDeferredRegister.create(MegaShowdown.MOD_ID, Registries.BLOCK);
 
     public static final RegistrySupplier<Block> POWER_SPOT = registerBlockWithToolTip("power_spot",
             () -> new CustomHitBoxBlock(BlockBehaviour
@@ -50,7 +49,7 @@ public class MegaShowdownBlocks {
                     .noCollission()
                     .sound(SoundType.FLOWERING_AZALEA)
             ),
-            block -> new MaxMushroom(block.get(), new Item.Properties().arch$tab(MegaShowdownTabs.DYNAMAX_TAB))
+            block -> new MaxMushroom(block.get(), MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.DYNAMAX_TAB))
     );
 
     public static final RegistrySupplier<Block> GRACIDEA_FLOWER = registerBlockWithBlockItem("gracidea_flower",
@@ -60,7 +59,7 @@ public class MegaShowdownBlocks {
                     .lightLevel((state) -> 15)
                     .instabreak()
                     .sound(SoundType.GRASS)),
-            (block) -> new Gracedia(block.get(), new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB)));
+            (block) -> new Gracedia(block.get(), MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB)));
 
     public static final RegistrySupplier<Block> POTTED_GRACIDEA = registerFlowerPlotBlock("potted_gracidea", GRACIDEA_FLOWER);
 
@@ -162,7 +161,7 @@ public class MegaShowdownBlocks {
                                 .sound(SoundType.METAL), form),
                 (block) -> new RotomUnitItem(
                         block.get(),
-                        new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB),
+                        MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB),
                         form
                 ));
     }
@@ -180,7 +179,7 @@ public class MegaShowdownBlocks {
 
         MegaShowdownItems.ITEMS.register(name,
                 () -> new DeoxysMeteoridItem(blockSupplier.get(),
-                        new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB)));
+                        MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.FORM_TAB)));
         return blockSupplier;
     }
 
@@ -204,7 +203,7 @@ public class MegaShowdownBlocks {
 
         MegaShowdownItems.ITEMS.register(name,
                 () -> new BlockItem(blockSupplier.get(),
-                        new Item.Properties().arch$tab(MegaShowdownTabs.MEGA_TAB)));
+                        MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.MEGA_TAB)));
         return blockSupplier;
     }
 
@@ -219,7 +218,7 @@ public class MegaShowdownBlocks {
 
         MegaShowdownItems.ITEMS.register(name,
                 () -> new BlockItem(blockSupplier.get(),
-                        new Item.Properties().arch$tab(MegaShowdownTabs.MEGA_TAB)));
+                        MegaShowdownTabs.tab(new Item.Properties(), MegaShowdownTabs.MEGA_TAB)));
         return blockSupplier;
     }
 
@@ -232,9 +231,9 @@ public class MegaShowdownBlocks {
         return blockSupplier;
     }
 
-    private static RegistrySupplier<Block> registerBlock(String name, Supplier<Block> block, DeferredSupplier<CreativeModeTab> tab) {
+    private static RegistrySupplier<Block> registerBlock(String name, Supplier<Block> block, Supplier<CreativeModeTab> tab) {
         RegistrySupplier<Block> blockSupplier = BLOCKS.register(name, block);
-        MegaShowdownItems.ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), new Item.Properties().arch$tab(tab)));
+        MegaShowdownItems.ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), MegaShowdownTabs.tab(new Item.Properties(), tab)));
         return blockSupplier;
     }
 
@@ -242,9 +241,9 @@ public class MegaShowdownBlocks {
         return BLOCKS.register(name, block);
     }
 
-    private static RegistrySupplier<Block> registerBlockWithToolTip(String name, Supplier<Block> block, DeferredSupplier<CreativeModeTab> tab) {
+    private static RegistrySupplier<Block> registerBlockWithToolTip(String name, Supplier<Block> block, Supplier<CreativeModeTab> tab) {
         RegistrySupplier<Block> blockSupplier = BLOCKS.register(name, block);
-        MegaShowdownItems.ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), new Item.Properties().arch$tab(tab)) {
+        MegaShowdownItems.ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), MegaShowdownTabs.tab(new Item.Properties(), tab)) {
             @Override
             public void appendHoverText(ItemStack arg, TooltipContext arg2, List<Component> list, TooltipFlag arg3) {
                 list.add(Component.translatable("tooltip.mega_showdown." + name + ".tooltip"));

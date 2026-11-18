@@ -321,6 +321,38 @@
             "percentage": 10.0
           }
         ]
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "44-74",
+              "JUMP": "49-74",
+              "SKILL": "48-78",
+              "SPEED": "38-71",
+              "STAMINA": "46-76"
+            }
+          },
+          "LIQUID": {
+            "key": "cobblemon:liquid/submarine",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "44-74",
+              "JUMP": "39-64",
+              "SKILL": "48-78",
+              "SPEED": "38-71",
+              "STAMINA": "46-76"
+            },
+            "legacyFluid": "lava"
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          }
+        ]
       }
     },
     {
@@ -486,6 +518,26 @@
           {
             "item": "cobblemon:cell_battery",
             "percentage": 10.0
+          }
+        ]
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "44-74",
+              "JUMP": "49-74",
+              "SKILL": "48-78",
+              "SPEED": "38-71",
+              "STAMINA": "46-76"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
           }
         ]
       }
@@ -656,6 +708,26 @@
             "percentage": 10.0
           }
         ]
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "44-74",
+              "JUMP": "49-74",
+              "SKILL": "48-78",
+              "SPEED": "38-71",
+              "STAMINA": "46-76"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          }
+        ]
       }
     },
     {
@@ -821,6 +893,26 @@
           {
             "item": "cobblemon:cell_battery",
             "percentage": 10.0
+          }
+        ]
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "44-74",
+              "JUMP": "49-74",
+              "SKILL": "48-78",
+              "SPEED": "38-71",
+              "STAMINA": "46-76"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
           }
         ]
       }
@@ -991,6 +1083,26 @@
             "percentage": 10.0
           }
         ]
+      },
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "44-74",
+              "JUMP": "49-74",
+              "SKILL": "48-78",
+              "SPEED": "38-71",
+              "STAMINA": "46-76"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          }
+        ]
       }
     }
   ],
@@ -1030,5 +1142,25 @@
   "lightingData": {
     "lightLevel": 8,
     "liquidGlowMode": "BOTH"
+  },
+  "riding": {
+    "behaviours": {
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "43-73",
+          "JUMP": "48-73",
+          "SKILL": "44-74",
+          "SPEED": "37-71",
+          "STAMINA": "41-71"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

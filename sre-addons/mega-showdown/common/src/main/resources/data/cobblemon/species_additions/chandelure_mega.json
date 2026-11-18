@@ -1,14 +1,27 @@
 {
   "implemented": true,
   "target": "cobblemon:chandelure",
-  "features": ["mega_evolution"],
+  "features": [
+    "mega_evolution"
+  ],
   "forms": [
     {
       "name": "Mega",
-      "pokedex": ["cobblemon.species.chandelure-mega.desc"],
-      "abilities": ["infiltrator", "infiltrator", "h:infiltrator"],
-      "labels": ["gen5", "mega"],
-      "aspects": ["mega"],
+      "pokedex": [
+        "cobblemon.species.chandelure-mega.desc"
+      ],
+      "abilities": [
+        "infiltrator",
+        "infiltrator",
+        "h:infiltrator"
+      ],
+      "labels": [
+        "gen5",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
       "battleOnly": true,
       "dynamaxBlocked": true,
       "baseStats": {
@@ -26,7 +39,42 @@
         "fixed": false
       },
       "height": 25,
-      "weight": 696
+      "weight": 696,
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "49-79",
+              "JUMP": "56-81",
+              "SKILL": "66-95",
+              "SPEED": "43-77",
+              "STAMINA": "57-87"
+            }
+          },
+          "LIQUID": {
+            "key": "cobblemon:liquid/submarine",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "49-79",
+              "JUMP": "46-71",
+              "SKILL": "66-95",
+              "SPEED": "43-77",
+              "STAMINA": "57-87"
+            },
+            "legacyFluid": "lava"
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }

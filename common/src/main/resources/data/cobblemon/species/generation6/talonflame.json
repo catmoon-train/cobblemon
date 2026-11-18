@@ -203,5 +203,48 @@
     "legacy:toxic"
   ],
   "preEvolution": "fletchinder",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "52-82",
+          "JUMP": "40-65",
+          "SKILL": "43-73",
+          "SPEED": "48-85",
+          "STAMINA": "56-86"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "52-82",
+          "JUMP": "50-75",
+          "SKILL": "43-73",
+          "SPEED": "48-85",
+          "STAMINA": "56-86"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "52-82",
+          "JUMP": "40-65",
+          "SKILL": "43-73",
+          "SPEED": "48-85",
+          "STAMINA": "56-86"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

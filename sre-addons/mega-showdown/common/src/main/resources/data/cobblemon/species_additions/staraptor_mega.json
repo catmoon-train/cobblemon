@@ -5,10 +5,20 @@
       "name": "Mega",
       "primaryType": "fighting",
       "secondaryType": "flying",
-      "pokedex": ["cobblemon.species.staraptor-mega.desc"],
-      "abilities": ["contrary", "h:contrary"],
-      "labels": ["gen4", "mega"],
-      "aspects": ["mega"],
+      "pokedex": [
+        "cobblemon.species.staraptor-mega.desc"
+      ],
+      "abilities": [
+        "contrary",
+        "h:contrary"
+      ],
+      "labels": [
+        "gen4",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
       "battleOnly": true,
       "dynamaxBlocked": true,
       "baseStats": {
@@ -20,7 +30,41 @@
         "speed": 110
       },
       "height": 19,
-      "weight": 500
+      "weight": 500,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "53-83",
+              "JUMP": "45-70",
+              "SKILL": "59-89",
+              "SPEED": "48-84",
+              "STAMINA": "65-95"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "53-83",
+              "JUMP": "55-80",
+              "SKILL": "59-89",
+              "SPEED": "48-84",
+              "STAMINA": "65-95"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }

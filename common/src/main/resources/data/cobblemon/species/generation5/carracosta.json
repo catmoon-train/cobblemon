@@ -218,5 +218,39 @@
     "legacy:toxic"
   ],
   "preEvolution": "tirtouga",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "34-59",
+          "SKILL": "48-78",
+          "SPEED": "25-53",
+          "STAMINA": "54-84"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "33-63",
+          "JUMP": "34-59",
+          "SKILL": "48-78",
+          "SPEED": "25-53",
+          "STAMINA": "54-84"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

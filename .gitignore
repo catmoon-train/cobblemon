@@ -45,3 +45,8 @@ common/.fabric
 # MacOS
 .DS_Store
 /common/config/*
+
+# Local artifacts & working directories
+Cobblemon-1.8.4-resource-split/
+CobblemonMegaShowdown-main/
+

@@ -420,27 +420,27 @@
       "evolutions": [],
       "battleOnly": false,
       "riding": {
-        "stats": {
-          "SPEED": {
-            "ranges": "35-75"
-          },
-          "ACCELERATION": {
-            "ranges": "25-50"
-          },
-          "SKILL": {
-            "ranges": "50-80"
-          },
-          "JUMP": {
-            "ranges": "25-60"
-          },
-          "STAMINA": {
-            "ranges": "35-75"
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "25-50",
+              "JUMP": "25-60",
+              "SKILL": "50-80",
+              "SPEED": "35-75",
+              "STAMINA": "35-75"
+            }
           }
         },
-        "seats": [],
-        "behaviour": {
-          "key": "cobblemon:air/bird"
-        }
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       },
       "behaviour": {
         "herd": {

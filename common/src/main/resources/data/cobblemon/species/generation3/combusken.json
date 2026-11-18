@@ -260,5 +260,37 @@
       "rouseChance": 0.0042
     },
     "fireImmune": true
+  },
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "36-66",
+          "JUMP": "34-59",
+          "SKILL": "42-72",
+          "SPEED": "28-58",
+          "STAMINA": "45-75"
+        }
+      },
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "36-66",
+          "JUMP": "34-59",
+          "SKILL": "42-72",
+          "SPEED": "28-58",
+          "STAMINA": "45-75"
+        },
+        "legacyFluid": "lava"
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

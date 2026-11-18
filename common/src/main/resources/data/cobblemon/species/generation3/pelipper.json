@@ -230,5 +230,36 @@
     "legacy:uproar"
   ],
   "preEvolution": "wingull",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "36-61",
+          "SKILL": "44-74",
+          "SPEED": "31-62",
+          "STAMINA": "45-75"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "46-71",
+          "SKILL": "44-74",
+          "SPEED": "31-62",
+          "STAMINA": "45-75"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
+  }
 }

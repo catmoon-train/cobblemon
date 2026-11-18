@@ -2,14 +2,12 @@ package com.github.yajatkaul.mega_showdown.client;
 
 import com.github.yajatkaul.mega_showdown.client.battle.hud.BattleHUD;
 import com.github.yajatkaul.mega_showdown.config.MegaShowdownConfig;
-import dev.architectury.event.events.client.ClientGuiEvent;
-import dev.architectury.event.events.client.ClientPlayerEvent;
-import net.minecraft.client.player.LocalPlayer;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 
 public class ClientMinecraftRegister {
     public static void register() {
-        ClientPlayerEvent.CLIENT_PLAYER_QUIT.register((LocalPlayer player) -> MegaShowdownConfig.load());
-        ClientGuiEvent.RENDER_HUD.register(BattleHUD::hudCallback);
-
+        ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> MegaShowdownConfig.load());
+        HudRenderCallback.EVENT.register(BattleHUD::hudCallback);
     }
 }

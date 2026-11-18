@@ -297,5 +297,28 @@
     "special:wish"
   ],
   "preEvolution": "chansey",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "33-58",
+          "SKILL": "42-72",
+          "SPEED": "30-60",
+          "STAMINA": "95-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

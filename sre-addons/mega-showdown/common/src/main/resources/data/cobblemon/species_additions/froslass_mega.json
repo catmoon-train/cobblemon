@@ -1,13 +1,25 @@
 {
   "target": "cobblemon:froslass",
-  "features": ["mega_evolution"],
+  "features": [
+    "mega_evolution"
+  ],
   "forms": [
     {
       "name": "Mega",
-      "pokedex": ["cobblemon.species.froslass-mega.desc"],
-      "abilities": ["snowwarning", "h:snowwarning"],
-      "labels": ["gen4", "mega"],
-      "aspects": ["mega"],
+      "pokedex": [
+        "cobblemon.species.froslass-mega.desc"
+      ],
+      "abilities": [
+        "snowwarning",
+        "h:snowwarning"
+      ],
+      "labels": [
+        "gen4",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
       "battleOnly": true,
       "dynamaxBlocked": true,
       "baseStats": {
@@ -25,7 +37,30 @@
         "fixed": false
       },
       "height": 26,
-      "weight": 296
+      "weight": 296,
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "55-85",
+              "JUMP": "56-81",
+              "SKILL": "59-89",
+              "SPEED": "51-88",
+              "STAMINA": "60-90"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }

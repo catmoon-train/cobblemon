@@ -36,6 +36,13 @@ data class Seat(
         vehicle.position().add(Vec3(it.x, it.y, it.z).yRot(-yaw * (Math.PI / 180.0).toFloat()))
     }
 
+    fun fallbackPosition(vehicle: PokemonEntity, seatIndex: Int = 0): Vec3 {
+        val yaw = vehicle.controllingPassenger?.yRot ?: vehicle.yRot
+        val yOffset = (vehicle.bbHeight * 0.7).coerceAtLeast(0.45)
+        val zOffset = if (seatIndex == 0) 0.0 else -0.55 * seatIndex
+        return vehicle.position().add(Vec3(0.0, yOffset, zOffset).yRot(-yaw * (Math.PI / 180.0).toFloat()))
+    }
+
     override fun encode(buffer: RegistryFriendlyByteBuf) {
         buffer.writeNullable(locator) { _, v -> buffer.writeString(v) }
         buffer.writeNullable(condition) { _, v -> buffer.writeString(v.getString()) }

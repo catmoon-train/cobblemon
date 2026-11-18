@@ -362,7 +362,41 @@
       },
       "evolutions": [],
       "battleOnly": true,
-      "dynamaxBlocked": true
+      "dynamaxBlocked": true,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "47-77",
+              "JUMP": "39-64",
+              "SKILL": "53-83",
+              "SPEED": "41-74",
+              "STAMINA": "62-92"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "47-77",
+              "JUMP": "49-74",
+              "SKILL": "53-83",
+              "SPEED": "41-74",
+              "STAMINA": "62-92"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ],
   "flyingEyeHeight": 0.87,

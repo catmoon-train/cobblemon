@@ -8,13 +8,13 @@ import com.github.yajatkaul.mega_showdown.networking.client.handler.InteractionW
 import com.github.yajatkaul.mega_showdown.networking.client.packet.ConfigSyncPacket;
 import com.github.yajatkaul.mega_showdown.networking.client.packet.EffectivenessSyncPacket;
 import com.github.yajatkaul.mega_showdown.networking.client.packet.InteractionWheelPacket;
-import dev.architectury.networking.NetworkManager;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 
 public class MegaShowdownNetworkHandlerClient {
     public static void register() {
-        NetworkManager.registerReceiver(NetworkManager.Side.S2C, InteractionWheelPacket.TYPE, InteractionWheelPacket.STREAM_CODEC, InteractionWheelHandler::handle);
-        NetworkManager.registerReceiver(NetworkManager.Side.S2C, ConfigSyncPacket.TYPE, ConfigSyncPacket.STREAM_CODEC, ConfigSyncHandler::handle);
-        NetworkManager.registerReceiver(NetworkManager.Side.S2C, BattleStatePacketS2C.ID, BattleStatePacketS2C.PACKET_CODEC, BattleHUD::receivePacket);
-        NetworkManager.registerReceiver(NetworkManager.Side.S2C, EffectivenessSyncPacket.TYPE, EffectivenessSyncPacket.STREAM_CODEC, EffectivenessSyncHandler::handle);
+        ClientPlayNetworking.registerGlobalReceiver(InteractionWheelPacket.TYPE, (packet, context) -> InteractionWheelHandler.handle(packet));
+        ClientPlayNetworking.registerGlobalReceiver(ConfigSyncPacket.TYPE, (packet, context) -> ConfigSyncHandler.handle(packet));
+        ClientPlayNetworking.registerGlobalReceiver(BattleStatePacketS2C.ID, BattleHUD::receivePacket);
+        ClientPlayNetworking.registerGlobalReceiver(EffectivenessSyncPacket.TYPE, (packet, context) -> EffectivenessSyncHandler.handle(packet));
     }
 }

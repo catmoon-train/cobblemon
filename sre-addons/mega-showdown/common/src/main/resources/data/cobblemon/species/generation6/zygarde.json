@@ -256,7 +256,14 @@
             }
           }
         },
-        "seats": []
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       },
       "moves": [
         "1:bulldoze",
@@ -426,7 +433,14 @@
             }
           }
         },
-        "seats": []
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       },
       "baseExperienceYield": 243,
       "moves": [
@@ -738,7 +752,14 @@
             }
           }
         },
-        "seats": []
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       },
       "baseExperienceYield": 354,
       "moves": [
@@ -882,7 +903,14 @@
             }
           }
         },
-        "seats": []
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
       },
       "evolutions": [],
       "battleOnly": true

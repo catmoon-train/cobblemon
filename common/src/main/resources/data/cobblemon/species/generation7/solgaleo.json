@@ -209,5 +209,39 @@
     "legacy:toxic"
   ],
   "preEvolution": "cosmoem",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-80",
+          "JUMP": "43-68",
+          "SKILL": "58-88",
+          "SPEED": "45-79",
+          "STAMINA": "82-100"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-80",
+          "JUMP": "53-78",
+          "SKILL": "58-88",
+          "SPEED": "45-79",
+          "STAMINA": "82-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

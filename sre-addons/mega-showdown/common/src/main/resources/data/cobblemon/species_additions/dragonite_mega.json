@@ -1,13 +1,25 @@
 {
   "target": "cobblemon:dragonite",
-  "features": ["mega_evolution"],
+  "features": [
+    "mega_evolution"
+  ],
   "forms": [
     {
       "name": "Mega",
-      "pokedex": ["cobblemon.species.dragonite-mega.desc"],
-      "labels": ["gen1", "mega"],
-      "aspects": ["mega"],
-      "abilities": ["multiscale", "h:multiscale"],
+      "pokedex": [
+        "cobblemon.species.dragonite-mega.desc"
+      ],
+      "labels": [
+        "gen1",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "abilities": [
+        "multiscale",
+        "h:multiscale"
+      ],
       "baseStats": {
         "hp": 91,
         "attack": 124,
@@ -25,7 +37,52 @@
         "fixed": false
       },
       "height": 22,
-      "weight": 2900
+      "weight": 2900,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "51-81",
+              "JUMP": "44-69",
+              "SKILL": "60-90",
+              "SPEED": "46-81",
+              "STAMINA": "67-97"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "51-81",
+              "JUMP": "54-79",
+              "SKILL": "60-90",
+              "SPEED": "46-81",
+              "STAMINA": "67-97"
+            }
+          },
+          "LIQUID": {
+            "key": "cobblemon:liquid/submarine",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "51-81",
+              "JUMP": "44-69",
+              "SKILL": "60-90",
+              "SPEED": "46-81",
+              "STAMINA": "67-97"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }

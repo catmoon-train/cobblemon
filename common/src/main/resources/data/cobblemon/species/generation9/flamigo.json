@@ -185,5 +185,39 @@
     "tutor:throatchop",
     "tutor:waterpulse"
   ],
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "45-75",
+          "JUMP": "40-65",
+          "SKILL": "50-80",
+          "SPEED": "39-73",
+          "STAMINA": "57-87"
+        }
+      },
+      "AIR": {
+        "key": "cobblemon:air/bird",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "45-75",
+          "JUMP": "50-75",
+          "SKILL": "50-80",
+          "SPEED": "39-73",
+          "STAMINA": "57-87"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

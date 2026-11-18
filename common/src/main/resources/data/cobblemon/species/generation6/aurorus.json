@@ -217,5 +217,28 @@
     "legacy:toxic"
   ],
   "preEvolution": "amaura",
-  "evolutions": []
+  "evolutions": [],
+  "riding": {
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "38-68",
+          "JUMP": "35-60",
+          "SKILL": "46-76",
+          "SPEED": "31-61",
+          "STAMINA": "71-100"
+        }
+      }
+    },
+    "seats": [
+      {
+        "locator": "seat_1"
+      },
+      {
+        "locator": "seat_2"
+      }
+    ]
+  }
 }

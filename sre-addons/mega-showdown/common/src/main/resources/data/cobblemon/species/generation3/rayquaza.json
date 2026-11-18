@@ -351,7 +351,41 @@
       "catchRate": 45,
       "dynamaxBlocked": true,
       "evolutions": [],
-      "battleOnly": true
+      "battleOnly": true,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "54-84",
+              "JUMP": "49-74",
+              "SKILL": "67-95",
+              "SPEED": "49-85",
+              "STAMINA": "72-100"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "54-84",
+              "JUMP": "59-84",
+              "SKILL": "67-95",
+              "SPEED": "49-85",
+              "STAMINA": "72-100"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }

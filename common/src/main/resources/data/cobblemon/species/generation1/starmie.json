@@ -223,25 +223,46 @@
   "preEvolution": "staryu",
   "evolutions": [],
   "riding": {
-    "stats": {
-      "SPEED": {
-        "ranges": "40-80"
+    "behaviours": {
+      "LAND": {
+        "key": "cobblemon:land/horse",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-100",
+          "JUMP": "10-10",
+          "SKILL": "10-10",
+          "SPEED": "40-80",
+          "STAMINA": "50-100"
+        }
       },
-      "ACCELERATION": {
-        "ranges": "50-100"
+      "AIR": {
+        "key": "cobblemon:air/hover",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-100",
+          "JUMP": "10-10",
+          "SKILL": "10-10",
+          "SPEED": "40-80",
+          "STAMINA": "50-100"
+        }
       },
-      "SKILL": {
-        "ranges": "5-10"
-      },
-      "JUMP": {
-        "ranges": "5-10"
-      },
-      "STAMINA": {
-        "ranges": "50-100"
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-100",
+          "JUMP": "10-10",
+          "SKILL": "10-10",
+          "SPEED": "40-80",
+          "STAMINA": "50-100"
+        }
       }
     },
-    "seats": [],
-    "behaviour": null
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   },
   "lightingData": {
     "lightLevel": 7,

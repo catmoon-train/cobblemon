@@ -229,24 +229,23 @@
   "preEvolution": "omanyte",
   "evolutions": [],
   "riding": {
-    "stats": {
-      "SPEED": {
-        "ranges": "30-60"
-      },
-      "ACCELERATION": {
-        "ranges": "50-100"
-      },
-      "SKILL": {
-        "ranges": "5-10"
-      },
-      "JUMP": {
-        "ranges": "5-10"
-      },
-      "STAMINA": {
-        "ranges": "50-90"
+    "behaviours": {
+      "LIQUID": {
+        "key": "cobblemon:liquid/submarine",
+        "rideSounds": [],
+        "stats": {
+          "ACCELERATION": "50-100",
+          "JUMP": "10-10",
+          "SKILL": "10-10",
+          "SPEED": "30-60",
+          "STAMINA": "50-90"
+        }
       }
     },
-    "seats": [],
-    "behaviour": null
+    "seats": [
+      {
+        "locator": "seat_1"
+      }
+    ]
   }
 }

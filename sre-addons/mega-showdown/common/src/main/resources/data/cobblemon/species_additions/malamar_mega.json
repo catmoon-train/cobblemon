@@ -3,10 +3,20 @@
   "forms": [
     {
       "name": "Mega",
-      "pokedex": ["cobblemon.species.malamar-mega.desc"],
-      "labels": ["gen6", "mega"],
-      "aspects": ["mega"],
-      "abilities": ["contrary", "h:contrary"],
+      "pokedex": [
+        "cobblemon.species.malamar-mega.desc"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "abilities": [
+        "contrary",
+        "h:contrary"
+      ],
       "baseStats": {
         "hp": 86,
         "attack": 102,
@@ -23,7 +33,52 @@
       "battleOnly": true,
       "dynamaxBlocked": true,
       "height": 29,
-      "weight": 698
+      "weight": 698,
+      "riding": {
+        "behaviours": {
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "48-78",
+              "JUMP": "39-64",
+              "SKILL": "51-81",
+              "SPEED": "43-76",
+              "STAMINA": "65-95"
+            }
+          },
+          "AIR": {
+            "key": "cobblemon:air/hover",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "48-78",
+              "JUMP": "49-74",
+              "SKILL": "51-81",
+              "SPEED": "43-76",
+              "STAMINA": "65-95"
+            }
+          },
+          "LIQUID": {
+            "key": "cobblemon:liquid/submarine",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "48-78",
+              "JUMP": "39-64",
+              "SKILL": "51-81",
+              "SPEED": "43-76",
+              "STAMINA": "65-95"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          },
+          {
+            "locator": "seat_2"
+          }
+        ]
+      }
     }
   ]
 }
